@@ -1,0 +1,36 @@
+Design overview for website:
+
+
+main technical components:
+-a web server like Apache
+-a SQL database like mySQL or SQLite
+-JSON files containing static information, like the university profiles
+
+
+main functional parts:
+-a login page with an account mechanism [requires database]
+-a user profile and one/a few page(s) to edit it [require database]
+    -user info will be relevant to algorithm matching students with universities
+-a main page displaying the latest matches for the student
+-a search function to search for universities
+-a section to browse universities profiles
+-one university profile per university
+
+---
+
+homepage when signed off, with log in at the top
+sign up page
+homepage when signed in, with different tabs (search, recommendations, messages)
+search result page
+recommendation pages
+
+
+tasks:
+-university profile data
+-homepage (static html)
+-sign up page with html form, sending a post request
+
+
+
+-CSS and theme
+
