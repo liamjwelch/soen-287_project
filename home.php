@@ -11,12 +11,21 @@ session_start();
 
 <nav>
     <?php
+    if (isset($_SESSION["errormsg"])) {
+        echo "<strong style='color: red;'>" . $_SESSION["errormsg"] . "</strong>";
+        unset($_SESSION["errormsg"]);
+    }
+
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $username = $_SESSION["username"];
         echo "<span>Hello $username!</span><a href='logout.php'>logout</a>";
     }
     else {
-        echo "<a href='login.php'>login</a>";
+        echo "<form action='login.php' method='post'>
+                   <input type='text' name='username' placeholder='username'>
+                   <input type='password' name='password' placeholder='password'>
+                   <input type='submit' value='login'>
+              </form>";
     }
     ?>
 </nav>
