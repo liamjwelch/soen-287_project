@@ -1,13 +1,13 @@
 <?php
 
-require "session.php";
+require "database.php";
 
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    if (isValidLogin($username, $password)) {
+    if (doCredentialsExist($username, $password)) {
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $username;
         header("location: home.php");

@@ -34,3 +34,10 @@ function doesTableExists($connection, $dbname, $table_name) {
     $result = $connection->query($query);
     return $result->num_rows === 1;
 }
+
+function doCredentialsExist($username, $password) {
+    global $conn, $table_name;
+    $query = "SELECT username, password FROM $table_name WHERE username = BINARY '$username' AND password = BINARY '$password'";
+    $result = $conn->query($query);
+    return $result->num_rows === 1;
+}
