@@ -12,7 +12,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_errno) {
     echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
 }
-else if (!doesTableExists($conn, $dbname, $table_name)) {
+else if (!doesTableExist($conn, $dbname, $table_name)) {
     createTable($conn, $table_name);
 }
 else {
@@ -29,7 +29,7 @@ function createTable($connection, $name) {
     }
 }
 
-function doesTableExists($connection, $dbname, $table_name) {
+function doesTableExist($connection, $dbname, $table_name) {
     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='$dbname' and table_name='$table_name'";
     $result = $connection->query($query);
     return $result->num_rows === 1;
