@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$username = "nicolas";
+$username = get_current_user();
 $password = "password";
 $table_name = "users";
 $dbname = "soen287";
