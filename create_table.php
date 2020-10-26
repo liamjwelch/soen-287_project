@@ -1,17 +1,13 @@
 <?php
 
-$servername = "localhost";
-$username = get_current_user();
-$password = "password";
+require "database.php";
+
 $table_name = "users";
 $dbname = "soen287";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = createConnection();
 
-if ($conn->connect_errno) {
-    echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
-}
-else if (!doesTableExist($conn, $dbname, $table_name)) {
+if (!doesTableExist($conn, $dbname, $table_name)) {
     createTable($conn, $table_name);
 
 }
