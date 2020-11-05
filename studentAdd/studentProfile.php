@@ -18,10 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //to be initialized
     //$major = trim(filter_input(INPUT_POST, 'major', FILTER_SANITIZE_STRING));
     //these are required fields so we must know that they are not empty
-      if(empty($first_name) 
-      || empty($last_name) 
-      || empty($phone_number) 
-      || empty($email_address)
+      if(empty($first_name) || empty($last_name) || empty($phone_number) || empty($email_address)
     //  || empty($major)
       )
        {
@@ -37,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
+<!DOCTYPE html>
     <head>
 
         <title><?php echo $pageTitle ?></title>
