@@ -64,19 +64,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           <label for="name"></label>
           <br>
           <input name="first_name" id="first_name" placeholder="First Name"
-          value="<?php echo htmlspecialchars($first_name); ?>">
+          value="<?php echo htmlspecialchars($first_name); ?>" max="20">
           <input name="last_name" id="last_name" placeholder="Last Name"
-          value="<?php echo htmlspecialchars($last_name); ?>">
+          value="<?php echo htmlspecialchars($last_name); ?>" max="20">
           <br>
           <br>          
           <label>Phone Number</label>
           <input name="phone_number" id="phone_number" placeholder="Format: 123-456-7890"
-          value="<?php echo htmlspecialchars($phone_number); ?>">
+          value="<?php echo htmlspecialchars($phone_number); ?>" max="10">
           <br>
           <br>
           <label>Email Address</label>
           <input name="email_address" id="email_address" placeholder="email address"
-          value="<?php echo htmlspecialchars($email_address); ?>">
+          value="<?php echo htmlspecialchars($email_address); ?>" max="75">
         </div>
         
         </fieldset>
