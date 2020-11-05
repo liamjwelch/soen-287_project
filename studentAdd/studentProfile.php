@@ -43,7 +43,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <body text-align="center">
       <div align="center">
 
-        
       <form class="form-container form-add" method="post" action="studentProfile.php">
         
         <h1>Student Profile</h1>
@@ -92,8 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
               <option
               value="<?php echo htmlspecialchars($major); ?>">Software Engineering</option>
           </select>
-          
-        
+
         </div>
         
         </fieldset>
@@ -104,10 +102,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit">Start Over</button>
         
       </form>
-
-      
-
-      
     </body>
 
 </div>

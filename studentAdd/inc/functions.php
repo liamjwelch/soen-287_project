@@ -1,8 +1,4 @@
 <?php
-// application functions
-
-
-//
 function add_task($first_name, $last_name, $phone_number, $email_address) {
     //connects to database
     include 'connection.php';
