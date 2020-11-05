@@ -1,5 +1,6 @@
 <?php
 
+//TESTING COMMIT FROM PHPSTORM
 // Configure this to your own server database settings
 $host = "localhost";
 $user = "liamw";
