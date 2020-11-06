@@ -45,8 +45,6 @@ nav a:active {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     padding: 45px 60px;
     background-color: white;
