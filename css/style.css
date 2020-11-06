@@ -4,29 +4,26 @@
 
 body {
     margin: 0;
-    height: 100%;
-    text-align: center;
     background-color: #EBEDEF;
-    color: #680F13;
 }
 
 nav {
     overflow: hidden;
     background-color: #680F13;
-    position: sticky;
+    position: fixed;
     top: 0;
     height: 70px;
+    width: 100%;
 }
 
 nav a {
     float: right;
     padding-right: 20px;
     padding-left: 20px;
-    height: 70px;
     line-height: 70px;
     color: white;
     text-decoration: none;
-    font-family: "Lato", sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 18px;
     transition: all .5s linear;
 }
@@ -36,18 +33,26 @@ nav a:hover {
     color: #680F13;
 }
 
+nav a:active {
+    background-color: #501517;
+    color: white;
+}
+
 .logo {
-    float: left;
     height: 60px;
     width: 60px;
-    margin-top: 5px;
-    margin-left: 20px;
+    margin: 5px 20px;
 }
 
 footer {
-    padding: 60px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 45px 60px;
     background-color: white;
-    font-family: verdana;
+    text-align: center;
+    color: #680F13;
+    font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
 }
 
@@ -56,11 +61,11 @@ footer a {
     text-decoration: none; /* Links not underlined */
 }
 
-#createdby {
+.our_info {
     font-size: 10px;
 }
 
-#createdby a {
+.our_info a {
     text-decoration: underline; /* Links underlined */
 }
 
@@ -69,6 +74,7 @@ footer a {
     height: 40px;
 }
 
+/* Style for smaller screens (less than 800px wide) */
 @media screen and (max-width: 800px) {
 
     /* Hide the text on the navbar */
@@ -77,7 +83,7 @@ footer a {
     }
 
     /* Display only the icons on the navbar */
-    nav .icons {
+    nav a i {
         font-size: 30px;
     }
 }
