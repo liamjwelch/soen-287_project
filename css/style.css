@@ -10,7 +10,7 @@ body {
 nav {
     overflow: hidden;
     background-color: #680F13;
-    position: fixed;
+    position: sticky;
     top: 0;
     height: 70px;
     width: 100%;
