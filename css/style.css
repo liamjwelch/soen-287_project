@@ -83,7 +83,7 @@ footer a {
     }
 
     /* Display only the icons on the navbar */
-    nav a i {
+    nav .icons {
         font-size: 30px;
     }
 }
