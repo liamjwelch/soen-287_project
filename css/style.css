@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #EBEDEF;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #680F13;
+    position: sticky;
+    top: 0;
+    height: 70px;
+    width: 100%;
+}
+
+nav a {
+    float: right;
+    padding-right: 20px;
+    padding-left: 20px;
+    line-height: 70px;
+    color: white;
+    text-decoration: none;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    transition: all .5s linear;
+}
+
+nav a:hover {
+    background-color: #F3E2E3;
+    color: #680F13;
+}
+
+nav a:active {
+    background-color: #501517;
+    color: white;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    margin: 5px 20px;
+}
+
+footer {
+    width: 100%;
+    padding: 45px 60px;
+    background-color: white;
+    text-align: center;
+    color: #680F13;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+footer a {
+    color: #680F13;
+    text-decoration: none; /* Links not underlined */
+}
+
+.our_info {
+    font-size: 10px;
+}
+
+.our_info a {
+    text-decoration: underline; /* Links underlined */
+}
+
+#teapot {
+    width: 45px;
+    height: 40px;
+}
+
+/* Style for smaller screens (less than 800px wide) */
+@media screen and (max-width: 800px) {
+
+    /* Hide the text on the navbar */
+    nav a{
+        font-size: 0;
+    }
+
+    /* Display only the icons on the navbar */
+    nav .icons {
+        font-size: 30px;
+    }
+}
