@@ -1,9 +1,7 @@
 <?php
-
-//TESTING COMMIT FROM PHPSTORM
 // Configure this to your own server database settings
 $host = "localhost";
-$user = "liamw";
+$user = get_current_user();
 $dbname = "soen287";
 $pass = "password";
 
