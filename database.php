@@ -3,20 +3,17 @@
 $table_name = "users";
 
 function createConnection() {
-    $conn = new mysqli("127.0.0.1",get_current_user(), "password", "soen287");
-
-    if ($conn->connect_errno) {
-        throw new Exception("Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error);
-    }
-    else {
-        return $conn;
-    }
+    $conn = new PDO('mysql:host=127.0.0.1;dbname=soen287', get_current_user(), "password");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $conn;
 }
 
 function doCredentialsExist($username, $password) {
     global $table_name;
     $conn = createConnection();
-    $query = "SELECT username, password FROM $table_name WHERE username = BINARY '$username' AND password = BINARY '$password'";
-    $result = $conn->query($query);
-    return $result->num_rows === 1;
+    $statement = $conn->prepare("SELECT username, password FROM $table_name WHERE username = BINARY ? AND 
+                                password = BINARY ?");
+    $statement->execute([$username, $password]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return count($rows) === 1;
 }
