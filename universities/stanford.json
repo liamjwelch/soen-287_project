@@ -1,0 +1,17 @@
+[
+{
+    "name": "Stanford University",
+    "location": "Stanford, CA, USA",
+    "programs": ["Aeronautics and Astronautics", "Applied Physics", "Computer Science", "Economics", "Music"],
+    "scolarship": ["University Scholarship", "Federal Grants", "State Grants", "Student Employment", "Loans"],
+    "application_deadline": {
+        "arts_portfolio": "December 1",
+        "standard": "January 2",
+        "SAT": "December",
+        "ACT": "December"
+    },
+    "pictures": ""
+}
+
+
+]

@@ -1,0 +1,13 @@
+{
+    "name": "Concordia University",
+    "location": "montreal, QC, CAN",
+    "programs": ["Administration", "Computer Science", "Film Animation", "Electrical Engineering", "Business Technology Management"],
+    "scolarship": ["In-course scholarships", "In-course bursary", "Entrance scholarship", "Entrance bursary"],
+    "application_deadline": {
+        "inside_fall": "March 1",
+        "inside_winter": "Novemeber 1",
+        "outside_fall": "February 1",
+        "outside_winter": "September 1"    
+    },
+    "pictures": ""
+}

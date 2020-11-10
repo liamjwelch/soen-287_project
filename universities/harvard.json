@@ -1,0 +1,8 @@
+{
+    "name": "Harvard University",
+    "location": "Cambridge, MA, USA",
+    "programs": ["Biostatistics", "Business Administration", "Computational Science and Engineering", "Government", "Mathematics"],
+    "scolarship": ["University Scholarship", "Federal Grants", "State Grants"],
+    "application_deadline": {"standard": "January 1"},
+    "pictures": ""
+}

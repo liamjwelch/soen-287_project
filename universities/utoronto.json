@@ -1,0 +1,8 @@
+{
+    "name": "University of Toronto",
+    "location": "Toronto, ON, CAN",
+    "programs": ["Actuarial Science", "Economics", "Education", "Computer Engineering", "Nursing"],
+    "scolarship": ["Admission Awards", "Grants", "Awards for Current Students"],
+    "application_deadline": {"standard":"January 15"},
+    "pictures": ""
+}

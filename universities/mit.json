@@ -1,0 +1,8 @@
+{
+    "name": "Massachusetts Institute of Technology",
+    "location": "Cambridge, MA, USA",
+    "programs": ["Chemistry and Biology", "Computation and Cognition", "Computer Science and Molecular Biology", "Humanities", "Computer Science, Economics, and Data Science"],
+    "scolarship": ["University Scholarship", "First Year Grant"],
+    "application_deadline": {"standard": "january 1"},
+    "pictures": ""
+}
