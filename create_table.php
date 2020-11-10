@@ -9,37 +9,39 @@ $conn = createConnection();
 
 if (!doesTableExist($conn, $dbname, $table_name)) {
     createTable($conn, $table_name);
-
 }
 else {
     echo "Table already exists";
 }
 
 function createTable($connection, $name) {
-    $query = "CREATE TABLE $name (username VARCHAR(50) PRIMARY KEY NOT NULL, password VARCHAR(255) NOT NULL)";
+    $statement = $connection->prepare("CREATE TABLE $name (username VARCHAR(50) PRIMARY KEY NOT NULL,
+                                      password VARCHAR(255) NOT NULL)");
 
-    if ($connection->query($query) === TRUE) {
+    if ($statement->execute() === TRUE) {
         echo "Table users created successfully";
-        addUser("nicolas", "qwerty");
-        addUser("Elon", "spaceX");
+        addUser($connection,"nicolas", "qwerty");
+        addUser($connection,"Elon", "spaceX");
     } else {
-        echo "Error creating table: " . $connection->error;
+        echo "Error creating table: " . $statement->errorInfo()[2] . "<br>";
     }
 }
 
 function doesTableExist($connection, $dbname, $table_name) {
-    $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA='$dbname' and table_name='$table_name'";
-    $result = $connection->query($query);
-    return $result->num_rows === 1;
+    $statement = $connection->prepare("SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA=? and table_name=?");
+    $statement->execute([$dbname, $table_name]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return count($rows) === 1;
 }
 
-function addUser($name, $pass) {
-    global $table_name, $conn;
-    $query = "INSERT INTO $table_name VALUES ('$name', '$pass')";
-    if ($conn->query($query) === true) {
+function addUser($connection, $name, $pass) {
+    global $table_name;
+    $statement = $connection->prepare("INSERT INTO $table_name VALUES (?, ?)");
+    $statement->execute([$name, $pass]);
+    if ($statement->rowCount() === 1) {
         echo "<br>user $name added to database<br>";
     }
     else {
-        echo "<br>Failed to add user to table: (" . $conn->connect_errno . ") " . $conn->connect_error . "<br>";
+        echo "<br>Failed to add user to table: (" . $statement->errorInfo()[2] . "<br>";
     }
 }
