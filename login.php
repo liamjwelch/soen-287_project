@@ -24,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["errormsg"] = $e->getMessage();
     }
 }
+else if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: home.php");
+}
 ?>
 
 <!DOCTYPE html>
