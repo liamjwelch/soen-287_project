@@ -40,11 +40,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<input type="text" name="username" placeholder="Username"/>
 		<input type="password" name="password" placeholder="Password"/>
 		<button type="submit" name="login">Login</button>
+        <p class="error-message">
+            <?php
+            if (isset($_SESSION["errormsg"])) {
+                echo $_SESSION["errormsg"];
+                unset($_SESSION["errormsg"]);
+            }
+            ?>
+        </p>
 		<p class="message">Not registered?
 			<a href="register.php">Create an account.</a>
 		</p>
-		<p class="error-message">
-        </p>
 	</form>
 </main>
 </body>
