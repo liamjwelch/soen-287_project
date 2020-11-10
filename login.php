@@ -16,6 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["errormsg"] = "Invalid login credentials";
         }
     }
+    catch (PDOException $e) {
+        $_SESSION["errormsg"] = "Error when connecting to the database: " .  $e->getMessage();
+    }
     catch (Exception $e) {
         $_SESSION["errormsg"] = $e->getMessage();
     }
