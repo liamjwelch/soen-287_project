@@ -1,30 +1,7 @@
 <?php
 
-require "database.php";
-
 session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    try {
-        if (doCredentialsExist($username, $password)) {
-            $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $username;
-            header("location: home.php");
-        }
-        else {
-            $_SESSION["errormsg"] = "Invalid login credentials";
-        }
-    }
-    catch (PDOException $e) {
-        $_SESSION["errormsg"] = "Error when connecting to the database: " .  $e->getMessage();
-    }
-    catch (Exception $e) {
-        $_SESSION["errormsg"] = $e->getMessage();
-    }
-}
-else if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: home.php");
 }
 ?>
@@ -39,16 +16,16 @@ else if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 </head>
 <body>
 <main class="form">
-	<form class="login-form" method="post" action="login.php">
+	<form class="login-form" method="post" action="validate_login.php">
 		<input type="text" name="username" placeholder="Username"/>
 		<input type="password" name="password" placeholder="Password"/>
 		<button type="submit" name="login">Login</button>
         <p class="error-message">
             <?php
-            if (isset($_SESSION["errormsg"])) {
-                echo $_SESSION["errormsg"];
-                unset($_SESSION["errormsg"]);
-            }
+                if (isset($_SESSION["errormsg"])) {
+                    echo $_SESSION["errormsg"];
+                    unset($_SESSION["errormsg"]);
+                }
             ?>
         </p>
 		<p class="message">Not registered?
