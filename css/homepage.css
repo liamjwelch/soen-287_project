@@ -1,0 +1,50 @@
+/* ------ WELCOME ------ */
+.welcome-msg {
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    width: 100%;
+    padding: 10px 80px;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 18px;
+    color: #680F13;
+}
+
+/* ------ SLIDES ------ */
+.slides_image { width: 100%;}
+
+/* ------ SECTIONS ------ */
+.page-sec {
+    padding: 80px 120px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+}
+
+.sec1 { background: white; color: #680F13;}
+.sec1 p { width: 50%; margin: auto;}
+
+.sec2 { color: #680F13;}
+.sec2 h1 { font-size: 35px; padding-bottom: 20px;}
+.sec2 h2 { font-size: 20px;}
+.services section{ display: inline-block; overflow: hidden; width: 25%;}
+.services section .icons { width: 40%;}
+
+.sec3 { background: #680F13; color: white;}
+.sec3 .card { display: inline-block;}
+
+/* ------ CARDS ------ */
+div.card {
+    margin: 30px;
+    padding: 20px 40px;
+    max-width: 40%;
+    text-align: left;
+    background: white;
+    color: #680F13;
+    border-bottom: 4px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+div.card:hover {
+    border-color: #C4A1A1;
+}
