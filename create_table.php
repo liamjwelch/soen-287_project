@@ -7,23 +7,37 @@ $dbname = "soen287";
 
 $conn = createConnection();
 
+$message = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $conn->exec("DROP TABLE $table_name");
+}
+
 if (!doesTableExist($conn, $dbname, $table_name)) {
     createTable($conn, $table_name);
 }
 else {
-    echo "Table already exists";
+    $message .= "Table already exists<br>";
 }
 
 function createTable($connection, $name) {
-    $statement = $connection->prepare("CREATE TABLE $name (username VARCHAR(50) PRIMARY KEY NOT NULL,
-                                      password VARCHAR(255) NOT NULL)");
+    global $message;
+    $statement = $connection->prepare("CREATE TABLE $name (
+                                       username VARCHAR(50) PRIMARY KEY NOT NULL,
+                                       password VARCHAR(255) NOT NULL,
+                                       first_name VARCHAR(50) NOT NULL,
+                                       last_name VARCHAR(50) NOT NULL,
+                                       phone_number CHAR(12) NOT NULL,
+                                       address VARCHAR(200),
+                                       program VARCHAR(100),
+                                       gpa DECIMAL(3,2) NOT NULL)");
 
     if ($statement->execute() === TRUE) {
-        echo "Table users created successfully";
+        $message .= "Table users created successfully";
         addUser($connection,"nicolas", "qwerty");
         addUser($connection,"Elon", "spaceX");
     } else {
-        echo "Error creating table: " . $statement->errorInfo()[2] . "<br>";
+        $message .= "Error creating table: " . $statement->errorInfo()[2] . "<br>";
     }
 }
 
@@ -35,13 +49,36 @@ function doesTableExist($connection, $dbname, $table_name) {
 }
 
 function addUser($connection, $name, $pass) {
-    global $table_name;
-    $statement = $connection->prepare("INSERT INTO $table_name VALUES (?, ?)");
-    $statement->execute([$name, $pass]);
+    global $table_name, $message;
+    $statement = $connection->prepare("INSERT INTO $table_name VALUES (:username, :pass, :first, :last, :phone,
+                                                                       :address, :program, :gpa)");
+    $statement->bindValue("username", "$name@example.com");
+    $statement->bindValue("pass", $pass);
+    $statement->bindValue("first", $name);
+    $statement->bindValue("last", "Smith");
+    $statement->bindValue("phone", "123-456-7890");
+    $statement->bindValue("address", "somewhere in boston");
+    $statement->bindValue("program", "computer science");
+    $statement->bindValue("gpa", 2.5);
+    $statement->execute();
     if ($statement->rowCount() === 1) {
-        echo "<br>user $name added to database<br>";
+        $message .= "<br>user $name added to database<br>";
     }
     else {
-        echo "<br>Failed to add user to table: (" . $statement->errorInfo()[2] . "<br>";
+        $message .= "<br>Failed to add user to table: (" . $statement->errorInfo()[2] . "<br>";
     }
 }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database management</title>
+</head>
+<body>
+    <p><?php echo $message ?></p>
+    <form method="post">
+        <input type="submit" value="Reset users table">
+    </form>
+</body>
+</html>
