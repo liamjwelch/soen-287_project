@@ -1,7 +1,13 @@
 <?php
+session_start();
 $title = "North America Higher Education Database";
 $styles = ["css/homepage.css"];
-$greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dream';
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    $greeting = "Welcome back, ". $_SESSION["username"] . "!";
+}
+else {
+    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dream';
+}
 $content = "
     
     <section class='welcome-msg'>
