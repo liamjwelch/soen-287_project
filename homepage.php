@@ -24,14 +24,6 @@ $content = "
         <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
     </article>
     
-    <section class='page-sec sec1'>
-        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
-        <p>OUR INFO OUR INFO OUR INFO OUR INFO</p>
-        <p>OUR INFO OUR INFO OUR INFO OUR INFO</p>
-        <p>OUR INFO OUR INFO OUR INFO OUR INFO</p>
-        <p>OUR INFO OUR INFO OUR INFO OUR INFO</p>
-    </section>
-    
      <section class='page-sec sec2'>
         <h1>We are the Tinder of prospective students!</h1>
         <article class='services'>
@@ -52,17 +44,22 @@ $content = "
             </section>
         </article>
      </section>
+ 
+     <section class='page-sec sec1'>
+        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
+        <p>North-american students trust us to find the perfect university for them since 1794!</p>
+    </section>
      
     <section class='page-sec sec3'>
         <div class='card'>
-            <h2>INFORMATION</h2>
-            <p>We could place information in cards</p>
-            <p>They are a nice way to display information</p>
+            <h2>STOP WASTING TIME</h2>
+            <p>Don't spend your precious time researching about 15 universities</p>
+            <p>We know everything about every university!</p>
         </div>
         <div class='card'>
-            <h2>INFORMATION</h2>
-            <p>We could place information in cards</p>
-            <p>They are a nice way to display information</p>
+            <h2>NO NEED TO TAKE HARD DECISION</h2>
+            <p>Our AI will make the right decision for YOUR future</p>
+            <p>All you need to do is fill up your profile with your preferences</p>
         </div>
     </section>
 	
