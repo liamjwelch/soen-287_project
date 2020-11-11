@@ -13,21 +13,31 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 	<title>Create an account - AHED</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
+    <script src="js/signup.js" type="text/javascript"></script>
 </head>
 <body>
-<main class="form">
+<main class="form" onsubmit="return validateForm()">
     <h1>Create an Account</h1>
 	<form class="signup-form" method="post" action="create_user.php">
         <fieldset>
             <legend>Account Information</legend>
-            <label>Your Email Address:<input type="text" name="username" placeholder="me@example.com" required></label>
-            <label>Your Password:<input type="password" name="password" placeholder="Password" required></label>
+            <label>Your Email Address:
+                <input type="text" name="username" placeholder="me@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
+                       title="valid email address" maxlength="50" required>
+            </label>
+            <label>Your Password:
+                <input type="password" name="password" placeholder="Password" minlength="10" maxlength="250" required>
+            </label>
         </fieldset>
         <fieldset>
             <legend>Personal Information</legend>
-            <label>First Name:<input type="text" name="first_name" required></label>
-            <label>Last Name:<input type="text" name="last_name" required></label>
-            <label>Phone Number:<input type="tel" name="telephone" required></label>
+            <label>First Name:<input type="text" name="first_name" pattern="[A-Za-z-]+" title="only letters and hyphens"
+                                     required>
+            </label>
+            <label>Last Name:<input type="text" name="last_name"  pattern="[A-Za-z-]+" title="only letters and hyphens"
+                                    required></label>
+            <label>Phone Number:<input type="tel" name="phone" placeholder="123-456-7890"  pattern="\d{3}-\d{3}-\d{4}"
+                                       title="123-456-7890" required></label>
             <label>Home Address:<input type="text" name="address" required></label>
         </fieldset>
         <fieldset>
@@ -35,7 +45,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             <label>What do you want to study?
                 <select name="programs" id="programs"><option value="computer_science">Computer Science</option></select>
             </label>
-            <label>What is your GPA?<input type="number" min="0" max="4.3" required></label>
+            <label>What is your GPA?<input type="text" name="gpa" required></label>
         </fieldset>
         <label><input type="checkbox" name="tc_agreed" class="checkbox" required>I agree with the <a href="terms.php">terms and conditions</a></label>
         <p id="js-validation-msg" class="error-message"></p>

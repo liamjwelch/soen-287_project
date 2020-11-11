@@ -60,3 +60,7 @@ h1 {
     margin-top: 0;
     font-size: 20pt;
 }
+
+.error-message {
+    color: red;
+}
