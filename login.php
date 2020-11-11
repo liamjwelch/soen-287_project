@@ -29,7 +29,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             ?>
         </p>
 		<p class="message">Not registered?
-			<a href="register.php">Create an account.</a>
+			<a href="signup.php">Create an account.</a>
 		</p>
 	</form>
 </main>
