@@ -1,0 +1,32 @@
+#myProgress {
+  align:center;
+  padding:100px;
+  width: 100%;
+}
+
+#myBarOutline{
+border-style: solid;
+width:100%
+}
+
+#myBar {
+  width: 2%;
+  height: 30px;
+  background-color: green;
+}
+
+button {
+  text-transform: uppercase;
+  background: #680F13;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  border-radius: 20px;
+  border-width: 1px 1px 3px;
+  cursor: pointer;
+}
+
+#matchButton {
+  padding:20px;
+}
