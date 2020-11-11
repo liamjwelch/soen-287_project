@@ -24,44 +24,42 @@ $content = "
         <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
     </article>
     
-     <section class='page-sec sec2'>
+     <article class='centered-article highlights-article'>
         <h1>We are the Tinder of prospective students!</h1>
-        <article class='services'>
-            <section>
-                <img src='images/users.ico' class='icons'>
-                <h2>YOUR PROFILE</h2>
-                <p>Create YOUR personalized profile!</p>
-            </section>
-             <section>
-                <img src='images/star.ico' class='icons'>
-                <h2>YOUR RECOMMENDATIONS</h2>
-                <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams</p>
-            </section>
-            <section>
-                <img src='images/map.ico' class='icons'>
-                <h2>NEXT TO HOME OR ABROAD?</h2>
-                <p>Our cloud-based geographical search has you covered!</p>
-            </section>
-        </article>
-     </section>
+        <section class='highlight'>
+            <img src='images/users.ico' class='icons'>
+            <h2>YOUR PROFILE</h2>
+            <p>Create YOUR personalized profile!</p>
+        </section>
+         <section class='highlight'>
+            <img src='images/star.ico' class='icons'>
+            <h2>YOUR RECOMMENDATIONS</h2>
+            <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams</p>
+        </section>
+        <section class='highlight'>
+            <img src='images/map.ico' class='icons'>
+            <h2>NEXT TO HOME OR ABROAD?</h2>
+            <p>Our cloud-based geographical search has you covered!</p>
+        </section>
+     </article>
  
-     <section class='page-sec sec1'>
+     <article class='centered-article bragging'>
         <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
         <p>North-american students trust us to find the perfect university for them since 1794!</p>
-    </section>
+    </article>
      
-    <section class='page-sec sec3'>
-        <div class='card'>
+    <article class='centered-article cards'>
+        <section class='card'>
             <h2>STOP WASTING TIME</h2>
             <p>Don't spend your precious time researching about 15 universities</p>
             <p>We know everything about every university!</p>
-        </div>
-        <div class='card'>
+        </section>
+        <section class='card'>
             <h2>NO NEED TO TAKE HARD DECISION</h2>
             <p>Our AI will make the right decision for YOUR future</p>
             <p>All you need to do is fill up your profile with your preferences</p>
-        </div>
-    </section>
+        </section>
+    </article>
 	
 	<script src='js/carousel.js' type='text/javascript'></script>
 ";

@@ -14,25 +14,31 @@
 
 .slides_image { width: 100%;}
 
-.page-sec {
+.centered-article {
     padding: 80px 120px;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
 }
 
-.sec1 { background: white; color: #680F13;}
-.sec1 p { width: 50%; margin: auto;}
+.bragging { background: white; color: #680F13;}
+.bragging p { margin: 0;}
 
-.sec2 { color: #680F13;}
-.sec2 h1 { font-size: 35px; padding-bottom: 20px;}
-.sec2 h2 { font-size: 20px;}
-.services section{ display: inline-block; overflow: hidden; width: 25%;}
-.services section .icons { width: 40%;}
+.highlights-article { color: #680F13; }
+.highlights-article h1 { font-size: 35px; padding-bottom: 20px;}
+.highlights-article h2 { font-size: 20px;}
 
-.sec3 { background: #680F13; color: white;}
-.sec3 .card { display: inline-block;}
+.highlight {
+    display: inline-block;
+    overflow: hidden;
+    width: 25%;
+    margin: 10px;
+}
+.highlight img { width: 30%;}
 
-div.card {
+.cards { background: #680F13; }
+
+.card {
+    display: inline-block;
     margin: 30px;
     padding: 20px 40px;
     max-width: 40%;
@@ -44,6 +50,6 @@ div.card {
     font-size: 16px;
 }
 
-div.card:hover {
+.card:hover {
     border-color: #C4A1A1;
 }
