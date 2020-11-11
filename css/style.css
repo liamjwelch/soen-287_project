@@ -7,7 +7,6 @@ body {
     background-color: #EBEDEF;
 }
 
-/* ------ NAVBAR ------ */
 nav {
     overflow: hidden;
     background-color: #680F13;
@@ -45,7 +44,6 @@ nav a:active {
     margin: 5px 20px;
 }
 
-/* ------ FOOTER ------ */
 footer {
     width: 100%;
     padding: 45px 60px;
