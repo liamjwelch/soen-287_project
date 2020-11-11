@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (doCredentialsExist($username, $password)) {
             $_SESSION["loggedin"] = true;
             $_SESSION["username"] = $username;
-            header("location: home.php");
+            header("location: homepage.php");
             return;
         }
         else {
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 else {
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-        header("location: home.php");
+        header("location: homepage.php");
     }
     else {
         header("location: login.php");
