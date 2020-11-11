@@ -10,6 +10,10 @@
     color: #680F13;
 }
 
+.welcome-msg a {
+    color: #680F13;
+}
+
 /* ------ SLIDES ------ */
 .slides_image { width: 100%;}
 

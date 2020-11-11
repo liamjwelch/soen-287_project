@@ -1,10 +1,11 @@
 <?php
 $title = "North America Higher Education Database";
 $styles = ["css/homepage.css"];
+$greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dream';
 $content = "
     
     <section class='welcome-msg'>
-        <p>WELCOME BACK USER!</p>
+        <p>$greeting</p>
     </section>
     
     <!-- AUTOMATIC SLIDESHOW IMAGES -->
