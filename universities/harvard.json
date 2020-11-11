@@ -6,7 +6,9 @@
     "application_deadline": {"standard": "January 1"},
     "pictures": ""
     "brief_discription": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States[6] and among the most prestigious in the world."
-    "contact_info": "https://www.harvard.edu/contact-harvard"
+    "contact_page": "https://www.harvard.edu/contact-harvard"
+    "telephone_number": "(617) 495-1000"
+    "email": "about@harvard.com" //this is ficticious
     "path_to_logo": "https://1000logos.net/wp-content/uploads/2017/02/Harvard-Logo.png"
     "number_of_students": "7582"
     "ranking": "1"

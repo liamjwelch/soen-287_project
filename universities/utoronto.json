@@ -5,4 +5,13 @@
     "scolarship": ["Admission Awards", "Grants", "Awards for Current Students"],
     "application_deadline": {"standard":"January 15"},
     "pictures": ""
+    "brief_discription": "The University of Toronto (U of T or UToronto) is a public research university in Toronto, Ontario, Canada, located on the grounds that surround Queen's Park. It was founded by royal charter in 1827 as King's College, the oldest university in the province of Ontario. Originally controlled by the Church of England, the university assumed its present name in 1850 upon becoming a secular institution. As a collegiate university, it comprises eleven colleges each with substantial autonomy on financial and institutional affairs and significant differences in character and history."
+    "contact_page": "https://www.utoronto.ca/contacts"
+    "telephone_number": "(416) 978-2190"
+    "email": "admissions@utoronto.ca " 
+    "path_to_logo": "https://en.wikipedia.org/wiki/University_of_Toronto#/media/File:Utoronto_coa.svg"
+    "number_of_students": "430790"
+    "ranking": "42" //ficticious
+    "cost_per_semester_after_aid": "5000"
+    "setting": "urban"
 }

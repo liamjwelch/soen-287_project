@@ -10,4 +10,13 @@
         "ACT": "December"
     },
     "pictures": ""
+    "brief_discription": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV,[9] the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. "
+    "contact_page": "https://www.mcgill.ca/contact-us/"
+    "telephone_number": "(514) 398-4455"
+    "email": "student.services@mcgill.ca" 
+    "path_to_logo": "https://en.wikipedia.org/wiki/File:McGill_University_CoA.svg"
+    "number_of_students": "40036"
+    "ranking": "46" //ficticious
+    "cost_per_semester_after_aid": "5000"
+    "setting": "urban"
 }
