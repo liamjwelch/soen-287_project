@@ -17,3 +17,20 @@ function doCredentialsExist($username, $password) {
     $rows = $statement->fetchAll(PDO::FETCH_NUM);
     return count($rows) === 1;
 }
+
+function addUser($email, $pass, $first, $last, $phone, $address, $program, $gpa) {
+    global $table_name;
+    $connection = createConnection();
+    $statement = $connection->prepare("INSERT INTO $table_name VALUES (:email, :pass, :first, :last, :phone,
+                                                                       :address, :program, :gpa)");
+    $statement->bindValue("email", $email);
+    $statement->bindValue("pass", $pass);
+    $statement->bindValue("first", $first);
+    $statement->bindValue("last", $last);
+    $statement->bindValue("phone", $phone);
+    $statement->bindValue("address", $address);
+    $statement->bindValue("program", $program);
+    $statement->bindValue("gpa", $gpa);
+    $statement->execute();
+    return $statement->rowCount() === 1;  // FIXME this does not seem to work
+}

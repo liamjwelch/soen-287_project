@@ -22,7 +22,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         <fieldset>
             <legend>Account Information</legend>
             <label>Your Email Address:
-                <input type="text" name="username" placeholder="me@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
+                <input type="text" name="email" placeholder="me@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
                        title="valid email address" maxlength="50" required>
             </label>
             <label>Your Password:
