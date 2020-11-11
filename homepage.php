@@ -38,7 +38,7 @@ $content = "
             <section>
                 <img src='images/users.ico' class='icons'>
                 <h2>YOUR PROFILE</h2>
-                <p>Create YOUR profile with</p>
+                <p>Create YOUR personalized profile!</p>
             </section>
              <section>
                 <img src='images/star.ico' class='icons'>
