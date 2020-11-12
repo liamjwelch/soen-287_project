@@ -1,21 +1,26 @@
 var i = 0;
 
 function move() {
+  
+  var x = document.getElementById("progressBar");
+  x.style.display = "block";
+
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
     var infoPrintOut = document.getElementById("infoPrintOut");
     var congratulations = document.getElementById("congratulations");
+
     var width = 1;
     speed = 100;
     var id = setInterval(frame, speed);
     function frame() {
-      if (width >= 1){	
+      if (width >= 1){  
       width+= .5;
       elem.style.width = width + "%";
-      elem.innerHTML = width + "%";
+      elem.innerHTML = Math.round(width) + "%";
       infoPrintOut.innerHTML = "initializing..."
-	  }
+    }
 
       if(width >= 11) {
       infoPrintOut.innerHTML = "Geographical cross-triangulation comparison analysis..."
@@ -75,16 +80,21 @@ function move() {
       }
 
       if (width >= 100) {
-      	elem.style.width = 100;
-      	elem.innerHTML = "MATCH COMPLETE";
-      	congratulations.innerHTML = "CONGRATULATIONS... you matched with CONCORDIA UNIVERSITY!";
-      	elem.style.color = "white";
-      	elem.style.backgroundColor = "#680F13";
+        elem.style.color = "white";
+        elem.style.backgroundColor = "#680F13";
         infoPrintOut.innerHTML = "";
         i = 0;
+        elem.style.width = 100;
         clearInterval(id);
-      } 
+        var after = document.getElementById("afterBarCompletion");
+        elem.innerHTML = "MATCH COMPLETE";
 
+        setTimeout(() => {after.style.display = "none";}, 500);
+        setTimeout(() => {jQuery("#congratulations").fadeIn(3000);}, 1500);
+        setTimeout(() => {jQuery("#congratulationsII").fadeIn(3000);}, 3000);
+        setTimeout(() => {jQuery("#hiddenLogo").fadeIn(3000);}, 4500);
+
+      } 
     }
   }
-} 	
+}  	
