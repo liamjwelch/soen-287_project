@@ -10,6 +10,9 @@
             echo '<link rel="stylesheet" type="text/css" href="' . $stylesheet . '">';
         }
     ?>
+    <?php
+        echo $headerContent;
+    ?>
 </head>
 <body>
 <?php
