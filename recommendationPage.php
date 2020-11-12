@@ -10,7 +10,7 @@ else {
 }
 $content = "
 
-<script src='recommendationBar.js'></script> 
+  <script src='js/recommendationBar.js'></script> 
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 
 <div id='myProgress'>
