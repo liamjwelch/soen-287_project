@@ -1,5 +1,21 @@
+#progressBar {
+  display:none;
+}
+
+#congratulations {
+  display:none;
+}
+
+#congratulationsII {
+  display:none;
+}
+
+#hiddenLogo {
+  display: none;
+}
+
 #myProgress {
-  align:center;
+  align-content: center;
   padding:100px;
   width: 100%;
 }
