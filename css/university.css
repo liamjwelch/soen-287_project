@@ -9,17 +9,15 @@
     margin: 30px;
     padding: 20px 20px;
     width: 80%;
-    text-align: left;
     background: white;
     color: #680F13;
-    border-bottom: 4px solid #ccc;
-    border-radius: 6px;
     font-size: 16px;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .university-card:hover {
-    border-color: #680F13;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .university-card img {
