@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         addUser($email, $password, $first_name, $last_name, $phone_number, $address, $program, $gpa);
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $email;
-        header("location: home.php");
+        header("location: homepage.php");
     }
     catch (PDOException $e) {
         // TODO redirect to signup and display error to the user
