@@ -34,3 +34,13 @@ function addUser($email, $pass, $first, $last, $phone, $address, $program, $gpa)
     $statement->execute();
     return $statement->rowCount() === 1;  // FIXME this does not seem to work
 }
+
+function getUserFirstName($email) {
+    // TODO handle exceptions
+    global $table_name;
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT first_name FROM $table_name WHERE username = BINARY ?");
+    $statement->execute([$email]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return $rows[0][0];
+}
