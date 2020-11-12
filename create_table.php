@@ -34,8 +34,11 @@ function createTable($connection, $name) {
 
     if ($statement->execute() === TRUE) {
         $message .= "Table users created successfully";
-        addUser($connection,"nicolas", "qwerty");
-        addUser($connection,"Elon", "spaceX");
+        addUser("nicolas@example.com", "qwerty", "Nicolas", "Aubry", "123-456-7890", "somewhere",
+            "computer science", 2.3);
+        $message .= "<br>user nicolas@example.com added to database<br>";
+        addUser("james@example.com", "qwerty", "James", "Smith", "123-456-7890", "somewhere", "computer science", 2.3);
+        $message .= "<br>user james@example.com added to database<br>";
     } else {
         $message .= "Error creating table: " . $statement->errorInfo()[2] . "<br>";
     }
@@ -48,26 +51,6 @@ function doesTableExist($connection, $dbname, $table_name) {
     return count($rows) === 1;
 }
 
-function addUser($connection, $name, $pass) {
-    global $table_name, $message;
-    $statement = $connection->prepare("INSERT INTO $table_name VALUES (:username, :pass, :first, :last, :phone,
-                                                                       :address, :program, :gpa)");
-    $statement->bindValue("username", "$name@example.com");
-    $statement->bindValue("pass", $pass);
-    $statement->bindValue("first", $name);
-    $statement->bindValue("last", "Smith");
-    $statement->bindValue("phone", "123-456-7890");
-    $statement->bindValue("address", "somewhere in boston");
-    $statement->bindValue("program", "computer science");
-    $statement->bindValue("gpa", 2.5);
-    $statement->execute();
-    if ($statement->rowCount() === 1) {
-        $message .= "<br>user $name added to database<br>";
-    }
-    else {
-        $message .= "<br>Failed to add user to table: (" . $statement->errorInfo()[2] . "<br>";
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
