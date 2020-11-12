@@ -4,7 +4,7 @@ var Harvard = L.latLng([42.36790855, -71.12678237443698]);
 var mit = L.latLng([42.3583961, -71.09567787663931]);
 var McGill = L.latLng([45.50691775, -73.5791162596496]);
 var Toronto = L.latLng([43.663461999999996, -79.39775965337452]);
-var marker;
+var popup = L.popup();
 
 mymap = L.map('mapId').setView([40.8088861, -96.7077751], 4);
 
@@ -13,11 +13,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(mymap);
 
-L.marker(Concordia).addTo(mymap);
-L.marker(Harvard).addTo(mymap);
-L.marker(mit).addTo(mymap);
-L.marker(McGill).addTo(mymap);
-L.marker(Toronto).addTo(mymap);
+L.marker(Concordia).addTo(mymap).bindPopup("<a href='university.php'>Concordia University</a>");
+L.marker(Harvard).addTo(mymap).bindPopup("<a href='university.php'>Harvard University</a>");
+L.marker(mit).addTo(mymap).bindPopup("<a href='university.php'>Massachusetts Institute of Technology</a>");
+L.marker(McGill).addTo(mymap).bindPopup("<a href='university.php'>McGill University</a>");
+L.marker(Toronto).addTo(mymap).bindPopup("<a href='university.php'>University of Toronto</a>");
 
 function addr_search() {
     var addr = document.getElementById("search").value;

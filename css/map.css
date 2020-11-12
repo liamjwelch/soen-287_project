@@ -26,11 +26,13 @@ form.search button {
     border: #680F13 solid 2.5px;
     cursor: pointer;
 }
+
 .map-section {
     padding: 25px 10px 10px 10px;
     background-color: #680F13;
     width: 100%;
 }
 
-#mapId { width: 100%; height: 500px;}
+#mapId {width: 100%; height: 500px;}
+#mapId a { text-decoration: none;color: #680F13;}
 #map { height: 400px;}
