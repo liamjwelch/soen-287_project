@@ -44,3 +44,15 @@ function getUserFirstName($email) {
     $rows = $statement->fetchAll(PDO::FETCH_NUM);
     return $rows[0][0];
 }
+
+function getUserProfile($email) {
+    // TODO handle exceptions
+    global $table_name;
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT * FROM $table_name WHERE username = BINARY ?");
+    $statement->execute([$email]);
+    $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $profile = $rows[0];
+    unset($profile["password"]);
+    return $profile;
+}
