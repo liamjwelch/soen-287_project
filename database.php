@@ -7,13 +7,3 @@ function createConnection() {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     return $conn;
 }
-
-function doCredentialsExist($username, $password) {
-    global $table_name;
-    $conn = createConnection();
-    $statement = $conn->prepare("SELECT username, password FROM $table_name WHERE username = BINARY ? AND 
-                                password = BINARY ?");
-    $statement->execute([$username, $password]);
-    $rows = $statement->fetchAll(PDO::FETCH_NUM);
-    return count($rows) === 1;
-}

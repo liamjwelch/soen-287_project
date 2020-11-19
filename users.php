@@ -14,3 +14,13 @@ function addUser($email, $password, $role, $firstName, $lastName) {
     $statement->execute();
     return $statement->rowCount() === 1;
 }
+
+function doCredentialsExist($username, $password) {
+    global $table_name;
+    $conn = createConnection();
+    $statement = $conn->prepare("SELECT email, password FROM $table_name WHERE email = BINARY ? AND 
+                                password = BINARY ?");
+    $statement->execute([$username, $password]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return count($rows) === 1;
+}
