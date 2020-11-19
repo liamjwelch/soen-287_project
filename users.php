@@ -12,5 +12,5 @@ function addUser($email, $password, $role, $firstName, $lastName) {
     $statement->bindValue("first", $firstName);
     $statement->bindValue("last", $lastName);
     $statement->execute();
-    return $statement->rowCount() === 1;  // FIXME this does not seem to work
+    return $statement->rowCount() === 1;
 }
