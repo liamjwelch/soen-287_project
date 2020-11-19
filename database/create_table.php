@@ -1,6 +1,6 @@
 <?php
 
-require_once "database.php";
+require_once "connection.php";
 require "users.php";
 
 $table_name = "users";

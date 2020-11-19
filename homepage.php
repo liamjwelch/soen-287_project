@@ -1,5 +1,5 @@
 <?php
-require "users.php";
+require "database/users.php";
 
 session_start();
 $title = "North America Higher Education Database";

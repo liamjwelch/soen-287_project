@@ -1,6 +1,6 @@
 <?php
 
-require "users.php";
+require "database/users.php";
 
 session_start();
 
