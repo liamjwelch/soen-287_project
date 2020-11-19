@@ -2,6 +2,8 @@
 
 require_once "database.php";
 
+$table_name = "users";
+
 function addUser($email, $password, $role, $firstName, $lastName) {
     global $table_name;
     $connection = createConnection();
@@ -13,6 +15,15 @@ function addUser($email, $password, $role, $firstName, $lastName) {
     $statement->bindValue("last", $lastName);
     $statement->execute();
     return $statement->rowCount() === 1;
+}
+
+function getUserFirstName($email) {
+    global $table_name;
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT firstName FROM $table_name WHERE email = BINARY ?");
+    $statement->execute([$email]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return $rows[0][0];
 }
 
 function doCredentialsExist($username, $password) {
