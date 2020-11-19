@@ -5,12 +5,12 @@ require "database.php";
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
+    $email = $_POST["email"];
     $password = $_POST["password"];
     try {
-        if (doCredentialsExist($username, $password)) {
+        if (doCredentialsExist($email, $password)) {
             $_SESSION["loggedin"] = true;
-            $_SESSION["username"] = $username;
+            $_SESSION["email"] = $email;
             header("location: homepage.php");
             return;
         }
