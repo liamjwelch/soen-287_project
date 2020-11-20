@@ -1,0 +1,33 @@
+{
+"name": "Texas Tech University",
+"location": "Lubbock, TX, United States",
+"programs": [
+    {"name":"general","avg_gpa":"3.0","admission_rate":"70.7%","avg_sat":"1155"},
+    {"name":"Business","minimum_gpa":"2.7","minimum_sat":"1100"},
+    {"name":"Management","minimum_gpa":"2.65","minimum_sat":"1100"},
+    {"name":"Marketing","minimum_gpa":"2.7","minimum_sat":"1100"},
+    {"name":"Engineering","minimum_gpa":"2.8","minimum_sat":"1150"},
+    {"name":"Communication","minimum_gpa":"2.55","minimum_sat":"1100"}
+],
+"scholarship": [
+    {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"900","residence": "United States", "financial_need":"1000","scholarship_value": "20000" },
+    {"name":"Freshman Merit Scholarship 1","minimum_gpa":"2.0","minimum_sat":"1500","maximum_sat":"1600" ,"residence":"","financial_need":"","scholarship_value":"9000"},
+    {"name":"Freshman Merit Scholarship 2","minimum_gpa":"2.0","minimum_sat":"1300","maximum_sat":"1499","residence":"","financial_need":"","scholarship_value":"5000"},
+    {"name":"Freshman Merit Scholarship 3","minimum_gpa":"2.0","minimum_sat":"1200","maximum_sat":"1299", "residence":"","financial_need":"","scholarship_value":"3000"}
+
+],
+"application_deadline": {
+    "scholarship": "December 1",
+    "standard": "December 1"   
+},
+"pictures": "",
+"brief_discription": "Texas Tech University (Texas Tech, Tech, or TTU) is a public research university in Lubbock, Texas, United States. Established on February 10, 1923, and called until 1969 Texas Technological College, it is the main institution of the four-institution Texas Tech University System. The university's student enrollment is the seventh-largest in Texas as of the Fall 2018 semester." ,
+"contact_page": "http://www.depts.ttu.edu/admissions/apply/status/first_freshmen/" ,
+"telephone_number": "806.742.1480",
+"email": "admissions@ttu.edu" ,
+"path_to_logo": "Texas_Tech_University_seal.svg",
+"number_of_students": "40,332",
+"ranking": "143" ,
+"cost_per_semester": {"resident":"27156", "non-resident":"39426"} ,
+"setting": "urban"
+} 
