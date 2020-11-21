@@ -1,3 +1,7 @@
+main {
+    min-width: 500px;
+}
+
 .search-article, .map-article {
     padding-left: 120px;
     padding-right: 120px;
@@ -14,6 +18,7 @@ form.search input[type=text] {
     color: #680F13;
     font-size: 20px;
     font-family: Verdana, Geneva, sans-serif;
+    height: 60px;
 }
 
 form.search button {
@@ -22,9 +27,10 @@ form.search button {
     width: 20%;
     background: #680F13;
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     border: #680F13 solid 2.5px;
     cursor: pointer;
+    height: 60px;
 }
 
 .map-section {
@@ -33,6 +39,19 @@ form.search button {
     width: 100%;
 }
 
-#mapId {width: 100%; height: 500px;}
+#mapId {width: 100%; height: 500px; z-index: 0;}
 #mapId a { text-decoration: none;color: #680F13;}
-#map { height: 400px;}
+
+/* Style for smaller screens (less than 800px wide) */
+@media screen and (max-width: 845px) {
+
+    /* Hide the text on the search bar */
+    form.search button{
+        font-size: 0;
+    }
+
+    /* Display only the icons on the search bar */
+    form.search button .icons {
+        font-size: 20px;
+    }
+}

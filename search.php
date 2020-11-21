@@ -14,7 +14,7 @@ $content = "
     <article class='search-article'>
         <form action class='search'>
             <input type='text' placeholder='University name' name='search' id='search'>
-            <button type='button' name='searchButton' onclick='addr_search()'><i class='fa fa-search'></i> Search</button>
+            <button class='search-button' type='button' name='searchButton' onclick='addr_search()'><i class='fa fa-search icons'></i> Search</button>
         </form>
     </article>
     <article class='map-article'>
