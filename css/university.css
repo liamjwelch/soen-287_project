@@ -1,0 +1,27 @@
+.centered-article {
+    padding: 80px 120px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+}
+
+.university-card {
+    display: inline-block;
+    margin: 30px;
+    padding: 20px 20px;
+    width: 80%;
+    background: white;
+    color: #680F13;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.university-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.university-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
