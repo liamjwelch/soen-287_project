@@ -17,7 +17,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 <body>
 <main class="form">
 	<form class="login-form" method="post" action="validate_login.php">
-		<input type="text" name="username" placeholder="Username"/>
+		<input type="text" name="email" placeholder="Email Address"/>
 		<input type="password" name="password" placeholder="Password"/>
 		<button type="submit" name="login">Login</button>
         <p class="error-message">
