@@ -27,7 +27,8 @@ form.search button {
     width: 20%;
     background: #680F13;
     color: white;
-    font-size: 22px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 20px;
     border: #680F13 solid 2.5px;
     cursor: pointer;
     height: 60px;
