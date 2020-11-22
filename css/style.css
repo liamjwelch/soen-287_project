@@ -34,9 +34,8 @@ nav a:hover {
     color: #680F13;
 }
 
-nav a:active {
-    background-color: #501517;
-    color: white;
+nav a.active {
+    font-weight: bold;
 }
 
 .logo {
