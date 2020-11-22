@@ -19,6 +19,12 @@ L.marker(mit).addTo(mymap).bindPopup("<a href='university.php'>Massachusetts Ins
 L.marker(McGill).addTo(mymap).bindPopup("<a href='university.php'>McGill University</a>");
 L.marker(Toronto).addTo(mymap).bindPopup("<a href='university.php'>University of Toronto</a>");
 
+document.getElementById('search').addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+        document.getElementById('searchButton').click();
+    }
+});
+
 function addr_search() {
     var addr = document.getElementById("search").value;
     var xmlhttp = new XMLHttpRequest();
