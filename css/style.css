@@ -36,6 +36,7 @@ nav a:hover {
 
 nav a.active {
     font-weight: bold;
+    background-color: #8D3A3B;
 }
 
 .logo {
