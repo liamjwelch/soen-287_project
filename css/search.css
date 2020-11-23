@@ -75,7 +75,7 @@ form.filter input[type=text], select {
 }
 
 .centered-cards {
-    padding: 50px 0px;
+    padding: 50px 0;
     margin: auto;
     text-align: center;
 }
@@ -88,8 +88,8 @@ form.filter input[type=text], select {
     color: #680F13;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-.university-card a{ text-decoration: none; color: #680F13; }
-.university-card:hover { box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); }
+.university-card a{ text-decoration: none; color: #680F13;}
+.university-card:hover { box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);}
 .university-card img {
     width: 30%;
     float: left;
@@ -104,20 +104,14 @@ form.filter input[type=text], select {
     font-size: 17px;
 }
 
-#filterTable {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
+#filterTable { width: 100%; border-collapse: collapse; text-align: center;}
 #filterTable td, #filterTable th {
     padding: 15px 10px;
     font-size: 18px;
-    font-family: Verdana, Geneva, sans-serif;
     height: 60px;
     border: solid #680F13 1px;
 }
-#filterTable th { background-color: #680F13; color: white; }
+#filterTable th { background-color: #680F13; color: white;}
 #filterTable tr:nth-child(even){background-color: white;}
 #filterTable tr:hover {background-color: #ddd;}
 #filterTable a {text-decoration: none; color: #680F13}

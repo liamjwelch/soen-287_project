@@ -1,28 +1,35 @@
 function filterUniversities() {
-    var country = document.getElementById('country').value.toUpperCase();
-    var city = document.getElementById('city').value.toUpperCase();
+    const country = document.getElementById('country').value.toUpperCase();
+    const city = document.getElementById('city').value.toUpperCase();
     //var degree = document.getElementById('degree').value.toUpperCase();
-    var tr = document.getElementById('filterTable').getElementsByTagName('tr');
-    var i, tdCountry, tdCity, txtCountry, txtCity, cont = 0;
+    const tr = document.getElementById('filterTable').getElementsByTagName('tr');
+    var tdCountry, tdCity, txtCountry, txtCity, cont = 0;
 
-    for(i = 1; i < tr.length; i++) {
+    for(let i = 1; i < tr.length; i++) {
         tr[i].style.display = "none";
-        tdCountry = tr[i].getElementsByTagName('td')[1];
-        tdCity = tr[i].getElementsByTagName('td')[2];
+        tdCountry = tr[i].getElementsByTagName('td')[2];
+        tdCity = tr[i].getElementsByTagName('td')[3];
         if(tdCountry || tdCity) {
-            if(country != "") {
+            if (country !== "") { // Filters the country
                 txtCountry = tdCountry.textContent || tdCountry.innerText;
-                if(txtCountry.toUpperCase().indexOf(country) > -1) {
-                    if(city != "") {
+                if (txtCountry.toUpperCase().indexOf(country) > -1) {
+                    if (city !== "") { // Filters the city
                         txtCity = tdCity.textContent || tdCity.innerText;
-                        if(txtCity.toUpperCase().indexOf(city) > -1) {
-                            tr[i].style.display= "";
+                        if (txtCity.toUpperCase().indexOf(city) > -1) {
+                            tr[i].style.display = "";
                         } else {
                             cont++;
                         }
                     } else {
-                        tr[i].style.display= "";
+                        tr[i].style.display = "";
                     }
+                } else {
+                    cont++;
+                }
+            } else if (city !== "") { // Filters the city
+                txtCity = tdCity.textContent || tdCity.innerText;
+                if(txtCity.toUpperCase().indexOf(city) > -1) {
+                    tr[i].style.display= "";
                 } else {
                     cont++;
                 }
