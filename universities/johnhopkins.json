@@ -3,17 +3,17 @@
     "name": "John Hopkins University",
     "location": "Baltimore, MD, United States",
     "programs": [
-        {"name":"general","avg_gpa":"3.7","admission_rate":"11.5%","avg_sat":"1505"},
-        {"name":"Medecine","minimum_gpa":"3.7", "minimum_sat":"1480"},
-        {"name":"Engineering","minimum_gpa":"3.6","minimum_sat":"1470"},
-        {"name":"Biology","minimum_gpa":"3.5","minimum_sat":"1470"},
-        {"name":"Neuroscience","minimum_gpa":"3.7","minimum_sat":"1500" },
-        {"name":"Business","minimum_gpa":"3.4","minimum_sat":"1410"}
+        {"name":"general","avg_gpa":"3.7","admission_rate":"11.5%"},
+        {"name":"Medicine","minimum_gpa":"3.7"},
+        {"name":"Engineering","minimum_gpa":"3.6"},
+        {"name":"Biology","minimum_gpa":"3.5"},
+        {"name":"Neuroscience","minimum_gpa":"3.7"},
+        {"name":"Business","minimum_gpa":"3.4"}
     ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
-        {"name":"The Hodson Trust Scholarship","minimum_gpa":"3.8","minimum_sat":"1520","residence":"","financial_need":"10000","scholarship_value":"30000"},
-        {"name":"John Hopkins Grant", "minimum_gpa":"3.0","minimum_sat":"1300","residence":"","financial_need":"10000","scholarship_value":"40000"}
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
+        {"name":"The Hodson Trust Scholarship","minimum_gpa":"3.8","residence":"","financial_need":"10000","scholarship_value":"30000"},
+        {"name":"John Hopkins Grant", "minimum_gpa":"3.0","residence":"","financial_need":"10000","scholarship_value":"40000"}
     ],
     "application_deadline": {
         "standard": "January 4"

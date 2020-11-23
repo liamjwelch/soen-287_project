@@ -3,18 +3,18 @@
     "name": "University of California, Berkeley",
     "location": "Berkeley, CA, United States" ,
     "programs": [
-        {"name":"general","avg_gpa":"3.58","admission_rate":"14.8%","avg_sat":"1430"},
-        {"name":"Aerospace studies","minimum_gpa":"3.5","minimum_sat":"1450"},
-        {"name":"Applied Physics", "minimum_gpa":"3.5","minimum_sat":"1400"},
-        {"name":"Computer Science", "minimum_gpa":"3.4","minimum_sat":"1400"},
-        {"name":"Economics","minimum_gpa":"3.2","minimum_sat":"1300"},
-        {"name":"Music","minimum_gpa":"3.0","minimum_sat":"1250"}
+        {"name":"general","avg_gpa":"3.58","admission_rate":"14.8%"},
+        {"name":"Aerospace Studies","minimum_gpa":"3.5"},
+        {"name":"Applied Physics", "minimum_gpa":"3.5"},
+        {"name":"Computer Science", "minimum_gpa":"3.4"},
+        {"name":"Economics","minimum_gpa":"3.2"},
+        {"name":"Music","minimum_gpa":"3.0"}
     ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"900","residence": "United States", "financial_need":"1000","scholarship_value": "20000" },
-        {"name": "Berkeley Scholarship", "minimum_gpa": "3.5","residence": "California","financial_need": "15000","scholarship_value": "10000" },
-        {"name": "Cal Grant", "minimum_gpa": "2.0","residence":"California","financial_need":"10000","scholarship_value":"5000"},
-        {"name": "Berkeley Loan","minimum_gpa":"2.0","residence":"California","financial_need":"5000","loan_value":"25000"}
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
+        {"name":"Berkeley Scholarship", "minimum_gpa": "3.5","residence": "California","financial_need": "15000","scholarship_value": "10000" },
+        {"name":"Cal Grant", "minimum_gpa": "2.0","residence":"California","financial_need":"10000","scholarship_value":"5000"},
+        {"name":"Berkeley Loan","minimum_gpa":"2.0","residence":"California","financial_need":"5000","loan_value":"25000"}
                 ],
     "application_deadline": {
         "financial_aid": "October 1",

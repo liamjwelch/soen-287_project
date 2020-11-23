@@ -3,15 +3,15 @@
     "name": "Stanford University",
     "location": "Stanford, CA, United States",
     "programs": [
-        {"name":"general","avg_gpa":"3.7","admission_rate":"5.2%","avg_sat":"1495"},
-        {"name":"Aerospace Studies","minimum_gpa":"3.7","minimum_sat":"1490"},
-        {"name":"Physics","minimum_gpa":"3.5","minimum_sat":"1420" },
-        {"name":"Computer Science","minimum_gpa":"3.5","minimum_sat":"1420" },
-        {"name":"Engineering", "minimum_gpa":"3.6","minimum_sat":"1450"},
-        {"name":"Music","minimum_gpa":"3.3","minimum_sat":"1350"}
+        {"name":"general","avg_gpa":"3.7","admission_rate":"5.2%"},
+        {"name":"Aerospace Studies","minimum_gpa":"3.7"},
+        {"name":"Physics","minimum_gpa":"3.5"},
+        {"name":"Computer Science","minimum_gpa":"3.5"},
+        {"name":"Engineering", "minimum_gpa":"3.6"},
+        {"name":"Music","minimum_gpa":"3.3"}
         ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
         {"name":"Stanford Financial Aid","minimum_gpa":"3.5","residence":"","financial_need":"25000","scholarship_value":"40000"}
     ],
     "application_deadline": {

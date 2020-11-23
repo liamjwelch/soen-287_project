@@ -8,10 +8,10 @@
         {"name":"Computer Science", "minimum_gpa":"2.45"},
         {"name":"Engineering", "minimum_gpa":"2.5"},
         {"name":"Marketing", "minimum_gpa":"2.3"},
-        {"name":"Social sciences","minimum_gpa":"2.2"}
+        {"name":"Social Sciences","minimum_gpa":"2.2"}
     ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
         {"name":"Concordia Entrance Scholarship","minimum_gpa":"3.5","residence":"","financial_need":"1000","scholarship_value":"3000"},
         {"name":"Concordia Entrance Bursary","minimum_gpa":"3.5","residence":"Canada","financial_need":"1000","scholarship_value":"2500"}
     ],

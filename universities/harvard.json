@@ -3,17 +3,17 @@
     "name": "Harvard University",
     "location": "Cambridge, MA, United States",
     "programs": [
-        {"name":"general", "avg_gpa":"3.88","admission_rate":"4.7%","avg_sat":"1520"},
-        {"name":"Social_Sciences","minimum_gpa": "3.5","minimum_sat":"1400" },
-        {"name":"Business","minimum_gpa":"3.6","minimum_sat":"1420" },
-        {"name":"law","minimum_gpa":"3.8","minimum_sat":"1490" },
-        {"name":"Biology","minimum_gpa":"3.7","minimum_sat":"1480" },
-        {"name":"Mathematics","minimum_gpa":"3.6","minimum_sat":"1460"}
+        {"name":"general", "avg_gpa":"3.88","admission_rate":"4.7%"},
+        {"name":"Social Sciences","minimum_gpa": "3.5"},
+        {"name":"Business","minimum_gpa":"3.6"},
+        {"name":"Law","minimum_gpa":"3.8"},
+        {"name":"Biology","minimum_gpa":"3.7"},
+        {"name":"Mathematics","minimum_gpa":"3.6"}
     ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
-        {"name": "Harvard Academic Scholarship","minimum_gpa":"3.9","minimum_sat":"1550","residence":"","financial_need":"10000","scholarship_value":"50000"},
-        {"name":"Harvard Bursaries & Grants","minimum_gpa":"3.6","minimum_sat":"1450","residence":"","financial_need":"5000","scholarship_value":"50000"}
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
+        {"name":"Harvard Academic Scholarship","minimum_gpa":"3.9","residence":"","financial_need":"10000","scholarship_value":"50000"},
+        {"name":"Harvard Bursaries & Grants","minimum_gpa":"3.6","residence":"","financial_need":"5000","scholarship_value":"50000"}
     ],
     "application_deadline": {"standard": "January 1"},
     "pictures": "",

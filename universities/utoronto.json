@@ -8,7 +8,7 @@
         {"name":"Economics","minimum_gpa":"2.5"},
         {"name":"Urban Studies","minimum_gpa":"2.7"},
         {"name":"Computer Engineering","minimum_gpa":"3.0"},
-        {"name":"Medecine","minimum_gpa":"3.8"}
+        {"name":"Medicine","minimum_gpa":"3.8"}
     ],
     "scholarship": [
         {"name":"National Scholarship Program", "minimum_gpa": "3.3","residence": "Canada", "financial_need":"1000","scholarship_value": "11000"},
