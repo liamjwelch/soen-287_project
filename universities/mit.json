@@ -17,7 +17,7 @@
     ],
     "application_deadline": {"standard": "january 1"},
     "pictures": "",
-    "brief_discription": "Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. The institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile (1.6 km) alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
+    "description": "Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. The institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile (1.6 km) alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
     "contact_page": "https://www.mit.edu/contact/",
     "telephone_number": "(617) 253-1000",
     "email": "admissions@mit.edu" ,

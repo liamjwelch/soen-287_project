@@ -3,13 +3,13 @@
     "name": "University of California, Los Angeles",
     "location": "Los Angeles, CA, USA",
     "programs": ["Biology", "Political Science", "Psychology", "Business Economics", "Statistics"],
-    "scolarship": ["UCLA Regents Scholarships", "UCLA Alumni Scholarships", "UCLA Achievement Scholarship", "University Student Aid Program Funds"],
+    "scholarship": ["UCLA Regents Scholarships", "UCLA Alumni Scholarships", "UCLA Achievement Scholarship", "University Student Aid Program Funds"],
     "application_deadline": {
         "inside_fall": "November 30", 
         "outside_fall": null
     },
     "pictures": "UCLA.jpg",
-    "brief_description": "UCLA is an american public university located in California, founded in 1919. It is composed of many schools and departement such as the College of Letters, the Anderson School of Management, the Henry Samueli School of Engineering and Applied Science, the School of Law and the David Geffen School of Medicine.",
+    "description": "UCLA is an american public university located in California, founded in 1919. It is composed of many schools and department such as the College of Letters, the Anderson School of Management, the Henry Samueli School of Engineering and Applied Science, the School of Law and the David Geffen School of Medicine.",
     "setting": "urban",
     "size": 45000,
     "ranking": 15,
