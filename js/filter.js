@@ -10,28 +10,13 @@ function filterUniversities() {
         tdCountry = tr[i].getElementsByTagName('td')[2];
         tdCity = tr[i].getElementsByTagName('td')[3];
         if(tdCountry || tdCity) {
-            if (country !== "") { // Filters the country
+            if (country !== "" || city !== "") {
                 txtCountry = tdCountry.textContent || tdCountry.innerText;
-                if (txtCountry.toUpperCase().indexOf(country) > -1) {
-                    if (city !== "") { // Filters the city
-                        txtCity = tdCity.textContent || tdCity.innerText;
-                        if (txtCity.toUpperCase().indexOf(city) > -1) {
-                            tr[i].style.display = "";
-                        } else {
-                            cont++;
-                        }
-                    } else {
-                        tr[i].style.display = "";
-                    }
-                } else {
-                    cont++;
-                }
-            } else if (city !== "") { // Filters the city
                 txtCity = tdCity.textContent || tdCity.innerText;
-                if(txtCity.toUpperCase().indexOf(city) > -1) {
-                    tr[i].style.display= "";
+                if (txtCountry.toUpperCase().localeCompare(country) === 0 || txtCity.toUpperCase().localeCompare(city) === 0) {
+                    tr[i].style.display = "";
                 } else {
-                    cont++;
+                    cont ++;
                 }
             } else {
                 tr[i].style.display= "";
@@ -39,7 +24,7 @@ function filterUniversities() {
         }
     }
 
-    if(cont == (tr.length - 1)) {
+    if(cont === (tr.length - 1)) {
         tr[0].style.display = "none";
         document.getElementById('msg').innerHTML = "NO RESULTS"
     } else {
