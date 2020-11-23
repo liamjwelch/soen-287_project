@@ -3,7 +3,7 @@
     "name": "New York University",
     "location": " New York, NY, USA",
     "programs": ["Business", "Management", "Marketing", "Visual and Performing Arts", "Social Sciences"],
-    "scolarship": ["New York University Scholarships", "Federal Grant Programs", "State Scholarship and Grant Programs"],
+    "scholarship": ["New York University Scholarships", "Federal Grant Programs", "State Scholarship and Grant Programs"],
     "application_deadline": {
         "inside_fall": "April 1",
         "inside_spring": "October 15",
@@ -11,7 +11,7 @@
         "outside_spring": "September 15"    
     },
     "pictures": "NYU.jpg",
-    "brief_description": "New York University is a private university in the city of New York, founded in 1831. It is one the largest univeristy in the United States, providing education to more than 50 000 students, coming from New York, or other states, and even other countries.",
+    "description": "New York University is a private university in the city of New York, founded in 1831. It is one the largest university in the United States, providing education to more than 50 000 students, coming from New York, or other states, and even other countries.",
     "setting": "urban",
     "size": 51123,
     "ranking": 35,

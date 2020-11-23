@@ -17,12 +17,12 @@
     ],
     "application_deadline": {
         "inside_fall": "March 1",
-        "inside_winter": "Novemeber 1",
+        "inside_winter": "November 1",
         "outside_fall": "February 1",
         "outside_winter": "September 1"    
     },
     "pictures": "",
-    "brief_discription": "Concordia University (French: Université Concordia); commonly referred to as Concordia is a public comprehensive research university located in Montreal, Quebec, Canada.[5] Founded in 1974 following the merger of Loyola College and Sir George Williams University, Concordia is one of the three universities in Quebec where English is the primary language of instruction (the others being McGill and Bishop's). As of the 2018–19 academic year, there were 46,829 students enrolled in credit courses at Concordia, making the university among the largest in Canada by enrollment.",
+    "description": "Concordia University (French: Université Concordia); commonly referred to as Concordia is a public comprehensive research university located in Montreal, Quebec, Canada.[5] Founded in 1974 following the merger of Loyola College and Sir George Williams University, Concordia is one of the three universities in Quebec where English is the primary language of instruction (the others being McGill and Bishop's). As of the 2018–19 academic year, there were 46,829 students enrolled in credit courses at Concordia, making the university among the largest in Canada by enrollment.",
     "contact_page": "https://www.concordia.ca/offices/registrar/staff-contact.html",
     "telephone_number": "(514) 848-2424",
     "email": "students@concordia.ca",
