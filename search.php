@@ -37,26 +37,31 @@ $content = "
         <h3 id='msg'></h3>
         <table class='filter-table' id='filterTable'>
           <tr>
+            <th>Logo</th>
             <th>Name of the University</th>
             <th>Country</th>
             <th>City</th>
           </tr>
           <tr>
+            <td class='logo-cell'><img src='images/harvardlogo.png' alt='Harvard Logo' class='logo'></td>
             <td><a href='#'>HARVARD UNIVERSITY</a></td>
             <td>USA</td>
             <td>Boston</td>
           </tr>
           <tr>
+            <td><img src='images/mitlogo.png' alt='MIT Logo' class='logo'></td>
             <td><a href='#'>MASSACHUSSETS INSTITUTE OF TECHNOLOGY</a></td>
             <td>USA</td>
             <td>Boston</td>
           </tr>
           <tr>
+            <td><img src='images/concordialogo.jpeg' alt='Concordia Logo' class='logo'></td>
             <td><a href='#'>CONCORDIA UNIVERSITY</a></td>
             <td>Canada</td>
             <td>Montreal</td>
           </tr>
           <tr>
+            <td><img src='images/mcgilllogo.png' alt='McGill Logo' class='logo'></td>
             <td><a href='#'>MCGILL UNIVERSITY</a></td>
             <td>Canada</td>
             <td>Montreal</td>
