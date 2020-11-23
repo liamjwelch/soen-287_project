@@ -23,5 +23,6 @@
     "ranking": 67,
     "cost": {"resident":"4500","non_resident":"24400"},
     "setting": "urban",
-    "address": "1455 De Maisonneuve Blvd. W. Montreal, Quebec, Canada H3G 1M8"
+    "address": "1455 De Maisonneuve Blvd. W. Montreal, Quebec, Canada H3G 1M8",
+    "avg_gpa": 2.7
 }
