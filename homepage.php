@@ -24,6 +24,7 @@ $content = "
         <img src='images/mcgill.jpg' alt='McGill' class='slides_image'>
         <img src='images/concordia.jpg' alt='Concordia' class='slides_image'>
         <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
+        <img src='images/harvard2.jpg' alt='Toronto' class='slides_image'>
     </article>
     
      <article class='centered-article highlights-article'>
