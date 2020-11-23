@@ -1,9 +1,10 @@
 {
+    "id": "ucla";
     "name": "University of California, Los Angeles",
     "location": "Los Angeles, CA, USA",
     "programs": ["Biology", "Political Science", "Psychology", "Business Economics", "Statistics"],
     "scolarship": ["UCLA Regents Scholarships", "UCLA Alumni Scholarships", "UCLA Achievement Scholarship", "University Student Aid Program Funds"],
-    "application_deadline": { // UCLA only accepts students in Fall
+    "application_deadline": {
         "inside_fall": "November 30", 
         "outside_fall": null
     },
