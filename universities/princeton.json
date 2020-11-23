@@ -1,5 +1,5 @@
 {
-    "id": "princeton";
+    "id": "princeton",
     "name": "Princeton University",
     "location": "Princeton, NJ, USA",
     "programs": ["Chemistry", "Anthropology", "Finance", "Sociology", "Psychology"],
