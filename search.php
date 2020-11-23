@@ -12,7 +12,7 @@ $headerContent = "<link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/d
 $content = "
     <article class='search-article'>
         <form class='search'>
-            <input type='text' placeholder='University name' name='search' id='search'>
+            <input type='text' placeholder='Search the university on the map...' name='search' id='search'>
             <button class='search-button' type='button' name='searchButton' id='searchButton' onclick='addr_search()'><i class='fa fa-search icons'></i> Search</button>
         </form>
     </article>
@@ -22,7 +22,7 @@ $content = "
         </section>
     </article>
 	<script src='js/map.js' type='text/javascript'></script>
-	<article class='filter-article'>
+	<article class='table-article'>
 	    <form class='filter'>
 	        <input type='text' placeholder='Country' name='country' id='country'>
 	        <input type='text' placeholder='City' name='city' id='city'>
@@ -30,8 +30,41 @@ $content = "
 	            <option value='computer_science'>Compute Science</option>
 	            <option value='economics'>Economics</option>
             </select> 
-            <button class='filter-button' type='button' name='filterButton' onclick='filter_universities()'><i class='fa fa-sliders icons'></i> Filter</button>  
+            <button class='filter-button' type='button' name='filterButton' onclick='filterUniversities()'>
+                <i class='fa fa-sliders icons'></i> Filter
+            </button>
         </form> 
+        <h3 id='msg'></h3>
+        <table class='filter-table' id='filterTable'>
+          <tr>
+            <th>Name of the University</th>
+            <th>Country</th>
+            <th>City</th>
+          </tr>
+          <tr>
+            <td><a href='#'>HARVARD UNIVERSITY</a></td>
+            <td>USA</td>
+            <td>Boston</td>
+          </tr>
+          <tr>
+            <td><a href='#'>MASSACHUSSETS INSTITUTE OF TECHNOLOGY</a></td>
+            <td>USA</td>
+            <td>Boston</td>
+          </tr>
+          <tr>
+            <td><a href='#'>CONCORDIA UNIVERSITY</a></td>
+            <td>Canada</td>
+            <td>Montreal</td>
+          </tr>
+          <tr>
+            <td><a href='#'>MCGILL UNIVERSITY</a></td>
+            <td>Canada</td>
+            <td>Montreal</td>
+          </tr>
+        </table>
+        <script src='js/filter.js' type='text/javascript'></script>
+    </article>
+	<article class='filter-article'>
         <article class='centered-cards'>
             <section class='university-card'>
                 <a href='university.php'>

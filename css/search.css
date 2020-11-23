@@ -1,19 +1,28 @@
 main { min-width: 500px;}
 
 .search-article { padding-top: 60px; padding-bottom: 10px;}
-.map-article { padding-top: 10px; padding-bottom: 60px;}
-.search-article, .map-article, .filter-article {
+.map-article, .table-article { padding-top: 10px; padding-bottom: 60px;}
+.search-article, .map-article, .table-article, .filter-article {
     padding-left: 80px;
     padding-right: 80px;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
 }
 
-.filter-article {
+.filter-article{
     margin-left: 80px;
     margin-right: 80px;
     margin-bottom: 80px;
     padding: 80px;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.table-article {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    padding: 30px;
     background-color: rgba(255,255,255,0.3);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
 }
@@ -70,7 +79,6 @@ form.filter input[type=text], select {
     margin: auto;
     text-align: center;
 }
-
 .university-card {
     display: inline-block;
     padding: 20px 20px;
@@ -80,16 +88,8 @@ form.filter input[type=text], select {
     color: #680F13;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
-
-.university-card a{
-    text-decoration: none;
-    color: #680F13;
-}
-
-.university-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
+.university-card a{ text-decoration: none; color: #680F13; }
+.university-card:hover { box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); }
 .university-card img {
     width: 30%;
     float: left;
@@ -97,13 +97,32 @@ form.filter input[type=text], select {
     border-top: 2px;
     border-color: #680F13;
 }
-
 .university-info {
     width: 70%;
     float: right;
     text-align: center;
     font-size: 17px;
 }
+
+#filterTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#filterTable td, #filterTable th {
+    padding: 15px 10px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, sans-serif;
+    height: 60px;
+    border: solid #680F13 1px;
+}
+#filterTable th { background-color: #680F13; color: white; }
+#filterTable tr:nth-child(even){background-color: white;}
+#filterTable tr:hover {background-color: #ddd;}
+#filterTable a {text-decoration: none; color: #680F13}
+
+h3 { color: #680F13; font-size: 22px;}
 
 /* Style for smaller screens (less than 800px wide) */
 @media screen and (max-width: 845px) {

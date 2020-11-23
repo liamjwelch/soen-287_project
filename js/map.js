@@ -20,7 +20,8 @@ L.marker(McGill).addTo(mymap).bindPopup("<a href='university.php'>McGill Univers
 L.marker(Toronto).addTo(mymap).bindPopup("<a href='university.php'>University of Toronto</a>");
 
 document.getElementById('search').addEventListener('keyup', function(event) {
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 || event.which === 13) {
+        event.preventDefault();
         document.getElementById('searchButton').click();
     }
 });
