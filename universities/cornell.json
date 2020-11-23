@@ -3,17 +3,17 @@
     "name": "Cornell University" ,
     "location": "Ithaca, NY, United States",
     "programs": [
-        {"name":"general","avg_gpa":"3.63","admission_rate":"10.6%","avg_sat":"1465"},
-        {"name":"Chemistry", "minimum_gpa":"3.5","minimum_sat":"1420"} ,
-        {"name":"Law", "minimum_gpa":"3.55","minimum_sat":"1430"},
-        {"name":"Mathematics", "minimum_gpa":"3.45","minimum_sat":"1420"},
-        {"name":"Marketing", "minimum_gpa":"3.3","minimum_sat":"1400"},
-        {"name":"Social sciences", "minimum_gpa":"3.2","minimum_sat":"1350"}
+        {"name":"general","avg_gpa":"3.63","admission_rate":"10.6%"},
+        {"name":"Chemistry", "minimum_gpa":"3.5"} ,
+        {"name":"Law", "minimum_gpa":"3.55"},
+        {"name":"Mathematics", "minimum_gpa":"3.45"},
+        {"name":"Marketing", "minimum_gpa":"3.3"},
+        {"name":"Social Sciences", "minimum_gpa":"3.2"}
     ],
     "scholarship": [
-        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
-        {"name":"Cornell Scholarship","minimum_gpa":"3.8","minimum_sat":"1500","residence":"","financial_need":"10000","scholarship_value": "65000"},
-        {"name":"Cornell Grant","minimum_gpa":"3.6","minimum_sat":"1470","residence":"","financial_need":"5000","scholarship_value": "50000"}
+        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
+        {"name":"Cornell Scholarship","minimum_gpa":"3.8","residence":"","financial_need":"10000","scholarship_value": "65000"},
+        {"name":"Cornell Grant","minimum_gpa":"3.6","residence":"","financial_need":"5000","scholarship_value": "50000"}
     ],
     "application_deadline": {
         "arts_portfolio": "December 1",

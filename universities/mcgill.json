@@ -3,10 +3,10 @@
     "name": "McGill University",
     "location": "Montreal, QC, Canada",
     "programs": [
-        {"name":"general","avg_gpa":"3.3","admission_rate":"46%","avg_sat":"1400"},
+        {"name":"general","avg_gpa":"3.3","admission_rate":"46%"},
         {"name":"Law","minimum_gpa":"3.4" },
         {"name":"Biology", "minimum_gpa":"3.2" },
-        {"name":"Medecine","minimum_gpa":"3.4" },
+        {"name":"Medicine","minimum_gpa":"3.4" },
         {"name":"Chemistry", "minimum_gpa":"3.1" },
         {"name":"Music","minimum_gpa":"2.9"}
     ],
