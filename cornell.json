@@ -1,4 +1,5 @@
 {
+    "id": "cornell";
     "name": "Cornell University",
     "location": "Ithaca, NY, USA",
     "programs": ["Architecture", "Civil Engineering", "History", "Computer Science", "Linguistics"],

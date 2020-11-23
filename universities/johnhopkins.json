@@ -1,30 +1,31 @@
 {
-"name": "John Hopkins University",
-"location": "Baltimore, MD, United States",
-"programs": [
-    {"name":"general","avg_gpa":"3.7","admission_rate":"11.5%","avg_sat":"1505"},
-    {"name":"Medecine","minimum_gpa":"3.7", "minimum_sat":"1480"},
-    {"name":"Engineering","minimum_gpa":"3.6","minimum_sat":"1470"},
-    {"name":"Biology","minimum_gpa":"3.5","minimum_sat":"1470"},
-    {"name":"Neuroscience","minimum_gpa":"3.7","minimum_sat":"1500" },
-    {"name":"Business","minimum_gpa":"3.4","minimum_sat":"1410"}
-],
-"scholarship": [
-    {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
-    {"name":"The Hodson Trust Scholarship","minimum_gpa":"3.8","minimum_sat":"1520","residence":"","financial_need":"10000","scholarship_value":"30000"},
-    {"name":"John Hopkins Grant", "minimum_gpa":"3.0","minimum_sat":"1300","residence":"","financial_need":"10000","scholarship_value":"40000"}
-],
-"application_deadline": {
-    "standard": "January 4"
-  },
-"pictures": "",
-"brief_discription": "The Johns Hopkins University is a private research university in Baltimore, Maryland. Founded in 1876, the university was named for its first benefactor, the American entrepreneur, abolitionist, and philanthropist Johns Hopkins. His $7 million bequest (approximately $147.5 million in today's currency)—of which half financed the establishment of the Johns Hopkins Hospital—was the largest philanthropic gift in the history of the United States up to that time. Daniel Coit Gilman, who was inaugurated as the institution's first president on February 22, 1876, led the university to revolutionize higher education in the U.S. by integrating teaching and research.",
-"contact_page": "https://apply.jhu.edu/contact/" ,
-"telephone_number": "410 516 8028",
-"email": "applyhelp@jhu.edu",
-"path_to_logo": "Johns_Hopkins_University's_Academic_Seal.svg",
-"number_of_students": "23917",
-"ranking": "9" ,
-"cost_per_semester":"54000" ,
-"setting": "suburban"
+    "id": "johnhopkins";
+    "name": "John Hopkins University",
+    "location": "Baltimore, MD, United States",
+    "programs": [
+        {"name":"general","avg_gpa":"3.7","admission_rate":"11.5%","avg_sat":"1505"},
+        {"name":"Medecine","minimum_gpa":"3.7", "minimum_sat":"1480"},
+        {"name":"Engineering","minimum_gpa":"3.6","minimum_sat":"1470"},
+        {"name":"Biology","minimum_gpa":"3.5","minimum_sat":"1470"},
+        {"name":"Neuroscience","minimum_gpa":"3.7","minimum_sat":"1500" },
+        {"name":"Business","minimum_gpa":"3.4","minimum_sat":"1410"}
+    ],
+    "scholarship": [
+        {"name": "FAFSA", "minimum_gpa": "2.0","minimum_sat":"","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
+        {"name":"The Hodson Trust Scholarship","minimum_gpa":"3.8","minimum_sat":"1520","residence":"","financial_need":"10000","scholarship_value":"30000"},
+        {"name":"John Hopkins Grant", "minimum_gpa":"3.0","minimum_sat":"1300","residence":"","financial_need":"10000","scholarship_value":"40000"}
+    ],
+    "application_deadline": {
+        "standard": "January 4"
+      },
+    "pictures": "",
+    "brief_discription": "The Johns Hopkins University is a private research university in Baltimore, Maryland. Founded in 1876, the university was named for its first benefactor, the American entrepreneur, abolitionist, and philanthropist Johns Hopkins. His $7 million bequest (approximately $147.5 million in today's currency)—of which half financed the establishment of the Johns Hopkins Hospital—was the largest philanthropic gift in the history of the United States up to that time. Daniel Coit Gilman, who was inaugurated as the institution's first president on February 22, 1876, led the university to revolutionize higher education in the U.S. by integrating teaching and research.",
+    "contact_page": "https://apply.jhu.edu/contact/" ,
+    "telephone_number": "410 516 8028",
+    "email": "applyhelp@jhu.edu",
+    "path_to_logo": "Johns_Hopkins_University's_Academic_Seal.svg",
+    "number_of_students": "23917",
+    "ranking": "9" ,
+    "cost_per_semester":"54000" ,
+    "setting": "suburban"
 }
