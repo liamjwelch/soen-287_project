@@ -1,6 +1,7 @@
 <?php
 
 require_once "connection.php";
+require_once "universities.php";
 require "users.php";
 
 $table_name = "users";
@@ -11,7 +12,11 @@ $conn = createConnection();
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $conn->exec("DROP TABLE $table_name");
+    dropTable($conn, $table_name);
+    dropTable($conn, "programs");
+    dropTable($conn, "scholarships");
+    dropTable($conn, "costs");
+    dropTable($conn, "universities");
 }
 
 if (!doesTableExist($conn, $dbname, $table_name)) {
@@ -19,6 +24,13 @@ if (!doesTableExist($conn, $dbname, $table_name)) {
 }
 else {
     $message .= "Table already exists<br>";
+}
+
+if (doesTableExist($conn, $dbname, "universities")) {
+    $message .= "Table universities already exists<br>";
+}
+else {
+    createUniversitiesTable();
 }
 
 function createTable($connection, $name) {
@@ -51,6 +63,16 @@ function doesTableExist($connection, $dbname, $table_name) {
     $statement->execute([$dbname, $table_name]);
     $rows = $statement->fetchAll(PDO::FETCH_NUM);
     return count($rows) === 1;
+}
+
+function dropTable($connection, $table) {
+    global $message;
+    try {
+        $connection->exec("DROP TABLE $table");
+    }
+    catch (PDOException $e) {
+        $message .= "Error dropping table $table: " . $e->getMessage() . "<br>";
+    }
 }
 
 ?>
