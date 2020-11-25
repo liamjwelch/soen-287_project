@@ -21,7 +21,7 @@
     "email": "admissions@harvard.edu",
     "ranking": 2,
     "cost": {"resident": "85470", "non-resident": "104589"},
-    "setting": "suburban"
+    "setting": "suburban",
     "address": "University Hall, Cambridge, MA 02138",
     "avg_gpa": 4.18
 }
