@@ -3,33 +3,26 @@
     "name": "Stanford University",
     "location": "Stanford, CA, United States",
     "programs": [
-        {"name":"general","avg_gpa":"3.7","admission_rate":"5.2%"},
-        {"name":"Aerospace Studies","minimum_gpa":"3.7"},
-        {"name":"Physics","minimum_gpa":"3.5"},
-        {"name":"Computer Science","minimum_gpa":"3.5"},
-        {"name":"Engineering", "minimum_gpa":"3.6"},
-        {"name":"Music","minimum_gpa":"3.3"}
-        ],
-    "scholarship": [
-        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States","financial_need":"1000","scholarship_value": "20000"},
-        {"name":"Stanford Financial Aid","minimum_gpa":"3.5","residence":"","financial_need":"25000","scholarship_value":"40000"}
+        {"name":"Aerospace Engineering", "minimum_gpa": 3.7},
+        {"name":"Physics", "minimum_gpa": 3.5},
+        {"name":"Computer Science", "minimum_gpa": 3.5},
+        {"name":"Engineering", "minimum_gpa": 3.6},
+        {"name":"Music", "minimum_gpa": 3.3}
     ],
-    "application_deadline": {
-        "arts_portfolio": "December 1",
-        "standard": "January 2",
-        "SAT": "December",
-        "ACT": "December"
-    },
-    "pictures": "",
+    "scholarship": [
+        {"name":"FAFSA", "minimum_gpa": 2.0, "residence": "United States", "financial_need": 1000, "scholarship_value": 20000},
+        {"name":"Stanford Financial Aid", "minimum_gpa": 3.5,"residence": null, "financial_need": 25000, "scholarship_value": 40000}
+    ],
+    "deadline": "January 2",
     "description": "Stanford University, officially Leland Stanford Junior University,[12] is a private research university in Stanford, California. Stanford is ranked among the most prestigious universities in the world by numerous major education publications.",
     "contact_page": "https://www.stanford.edu/contact/",
-    "telephone_number": "(650) 723-2300",
+    "phone": "6507232300",
     "email": "admission@stanford.edu",
-    "path_to_logo": "Stanford_University_seal_2003.svg",
-    "number_of_students": "7083",
-    "ranking": "6" ,
-    "cost_per_semester": "78218",
-    "setting": "rural"
-
+    "size": 7083,
+    "ranking": 6 ,
+    "cost": { "resident": 78218, "non-resident": 98394},
+    "setting": "rural",
+    "address": "450 Serra Mall, Stanford, CA 94305, United States",
+    "avg_gpa": 3.95         
 }
 
