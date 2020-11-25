@@ -7,12 +7,12 @@
         {"name": "Anthropology", "minimum_gpa": 3.0},
         {"name": "Finance", "minimum_gpa": 3.0},
         {"name": "Sociology", "minimum_gpa": 3.0},
-        {"name": "Psychology" "minimum_gpa": 3.0}
+        {"name": "Psychology", "minimum_gpa": 3.0}
     ],
     "scholarship": [
-        {"Beinecke Scholarship Program", "minimum_gpa": 2.0, "residence": , "amount": "minimum_gpa": , "residence": , "amount": 34000},
-        {"AIA/F Diversity Advancement Scholarship", "minimum_gpa": , "residence": , "amount": "minimum_gpa": , "residence": , "amount": 20000},
-        {"Princeton University Undergraduate Financial Aid Program", "minimum_gpa": 2.0, "residence": null, "amount": 52800}
+        {"name": "Beinecke Scholarship Program", "minimum_gpa": 2.0, "residence": null, "amount": 34000},
+        {"name": "AIA/F Diversity Advancement Scholarship", "minimum_gpa": 2.0, "residence": null, "amount": 20000},
+        {"name": "Princeton University Undergraduate Financial Aid Program", "minimum_gpa": 2.0, "residence": null, "amount": 52800}
     ],
     "deadline": "January 1",
     "description": "Princeton University is a private Ivy League research university in the state of New Jersey founded in 1746. This university, set in a suburban environment, provides scholarity for 8623 students on about 600 acres of land.",
