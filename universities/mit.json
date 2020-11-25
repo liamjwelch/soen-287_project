@@ -22,7 +22,7 @@
     "size": 11520,
     "ranking": 4 ,
     "cost": {"resident": 73160, "non-resident": 98626},
-    "setting": "urban"
+    "setting": "urban",
     "address": "77 Massachusetts Ave, Cambridge, MA 02139, United States",
     "avg_gpa": 4.17
 }
