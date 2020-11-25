@@ -11,8 +11,8 @@
     ],
     "scholarship": [
         {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"scholarship_value": 20000},
-        {"name":"First Year Grant","minimum_gpa": 2.0,"residence":"","financial_need": 10000,"scholarship_value": 2000},
-        {"name":"MIT Scholarship","minimum_gpa": 2.0,"residence":"","financial_need": 30000,"scholarship_value": 50000}
+        {"name":"First Year Grant","minimum_gpa": 2.0,"residence": null,"financial_need": 10000,"scholarship_value": 2000},
+        {"name":"MIT Scholarship","minimum_gpa": 2.0,"residence": null,"financial_need": 30000,"scholarship_value": 50000}
     ],
     "deadline": "january 1",
     "description": "Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. The institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile (1.6 km) alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
