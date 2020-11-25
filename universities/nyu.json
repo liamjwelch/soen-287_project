@@ -10,9 +10,9 @@
         {"name": "Social Sciences", "minimum_gpa": 3.3}
     ],
     "scholarship": [ 
-         {"name": "New York University Scholarships", "minimum_gpa": 3.0,"residence": null, "amount": 30000},
-         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "amount": 20000}, 
-         {"name": "State Scholarship and Grant Programs", "minimum_gpa": null, "residence": "United States", "amount": 5165}
+         {"name": "New York University Scholarships", "minimum_gpa": 3.0,"residence": null,  "financial_need": 1000, "amount": 30000},
+         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "financial_need": 5000 "amount": 20000}, 
+         {"name": "State Scholarship and Grant Programs", "minimum_gpa": null, "residence": "United States",  "financial_need": 3000, "amount": 5165}
     ],
     "deadline": "April 1",
     "description": "New York University is a private university in the city of New York, founded in 1831. It is one the largest university in the United States, providing education to more than 50 000 students, coming from New York, or other states, and even other countries.",
