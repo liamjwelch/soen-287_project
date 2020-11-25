@@ -21,8 +21,8 @@
     "email": "applyhelp@jhu.edu",
     "size": 23917,
     "ranking": 9,
-    "cost": {"resident": 4000, "non-resident": "20000" ,
+    "cost": {"resident": 54000, "non-resident": 71901,
     "setting": "suburban"
-    "address": "845 Sherbrooke St W, Montreal, Quebec H3A 0G4",
-    "avg_gpa": 3.3
+    "address": "Baltimore, MD 21218, United States",
+    "avg_gpa": 3.9
 }
