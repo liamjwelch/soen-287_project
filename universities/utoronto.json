@@ -3,31 +3,28 @@
     "name": "University of Toronto",
     "location": "Toronto, ON, Canada",
     "programs": [
-        {"name":"general","avg_gpa":"3.5","admission_rate":"43%"},
-        {"name":"Actuarial Science","minimum_gpa":"3.3"},
-        {"name":"Economics","minimum_gpa":"2.5"},
-        {"name":"Urban Studies","minimum_gpa":"2.7"},
-        {"name":"Computer Engineering","minimum_gpa":"3.0"},
-        {"name":"Medicine","minimum_gpa":"3.8"}
+        {"name":"Actuarial Science","minimum_gpa": 3.3},
+        {"name":"Economics","minimum_gpa": 2.5},
+        {"name":"Urban Studies","minimum_gpa": 2.7},
+        {"name":"Computer Engineering","minimum_gpa": 3.0},
+        {"name":"Medicine","minimum_gpa": 3.8}
     ],
     "scholarship": [
-        {"name":"National Scholarship Program", "minimum_gpa": "3.3","residence": "Canada", "financial_need":"1000","scholarship_value": "11000"},
-        {"name":"President's Scholars of Excellence Program","minimum_gpa":"4.0","residence":"","financial_need":"","scholarship_value":"10000"},
-        {"name":"University of Toronto Scholars Program","minimum_gpa":"3.8","residence":"","financial_need":"","scholarship_value":"7500"},
-        {"name":"Ontario Student Assistance Program","minimum_gpa":"2.0","residence":"Ontario","financial_need":"1000","loan_value":"10000"},
-        {"name":"University of Toronto financial aid","minimum_gpa":"2.0","residence":"Canada","financial_need":"1000","loan_value":"5000"}
+        {"name":"National Scholarship Program", "minimum_gpa": 3.3,"residence": "Canada", "financial_need": 1000,"scholarship_value": 11000},
+        {"name":"President's Scholars of Excellence Program","minimum_gpa": 4.0,"residence": null,"financial_need": null,"scholarship_value": 10000},
+        {"name":"University of Toronto Scholars Program","minimum_gpa": 3.8 ,"residence": null,"financial_need": null,"scholarship_value": 7500},
+        {"name":"Ontario Student Assistance Program","minimum_gpa": 2.0,"residence":"Ontario","financial_need": 1000,"loan_value": 10000},
+        {"name":"University of Toronto financial aid","minimum_gpa": 2.0,"residence":"Canada","financial_need": 1000, "loan_value": 5000}
     ],
-    "application_deadline": {
-        "standard":"January 15",
-        "scholarship": "October 22"},
-    "pictures": "",
+    "application_deadline": "January 15"
     "description": "The University of Toronto (U of T or UToronto) is a public research university in Toronto, Ontario, Canada, located on the grounds that surround Queen's Park. It was founded by royal charter in 1827 as King's College, the oldest university in the province of Ontario. Originally controlled by the Church of England, the university assumed its present name in 1850 upon becoming a secular institution. As a collegiate university, it comprises eleven colleges each with substantial autonomy on financial and institutional affairs and significant differences in character and history.",
     "contact_page": "https://www.utoronto.ca/contacts",
-    "telephone_number": "(416) 978-2190",
+    "phone": "4169782190",
     "email": "admissions@utoronto.ca " ,
-    "path_to_logo": "Utoronto_coa.svg",
-    "number_of_students": "93081",
-    "ranking": "42",
-    "cost_per_semester": "9000",
-    "setting": "urban"
+    "size": 93081,
+    "ranking": 42,
+    "cost": {"resident": 9000, "non-resident": },
+    "setting": "urban",
+    "address": "27 King's College Circle, Toronto, Ontario M5S 1A1 Canada",
+    "avg_gpa": 3.6
 }
