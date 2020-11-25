@@ -22,7 +22,7 @@
     "size": 23917,
     "ranking": 9,
     "cost": {"resident": 54000, "non-resident": 71901,
-    "setting": "suburban"
+    "setting": "suburban",
     "address": "Baltimore, MD 21218, United States",
     "avg_gpa": 3.9
 }
