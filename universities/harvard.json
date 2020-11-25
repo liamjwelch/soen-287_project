@@ -3,26 +3,25 @@
     "name": "Harvard University",
     "location": "Cambridge, MA, United States",
     "programs": [
-        {"name":"general", "avg_gpa":"3.88","admission_rate":"4.7%"},
-        {"name":"Social Sciences","minimum_gpa": "3.5"},
-        {"name":"Business","minimum_gpa":"3.6"},
-        {"name":"Law","minimum_gpa":"3.8"},
-        {"name":"Biology","minimum_gpa":"3.7"},
-        {"name":"Mathematics","minimum_gpa":"3.6"}
+        {"name":"Social Sciences","minimum_gpa": 3.5},
+        {"name":"Business","minimum_gpa": 3.6},
+        {"name":"Law","minimum_gpa": 3.8},
+        {"name":"Biology","minimum_gpa": 3.7},
+        {"name":"Mathematics","minimum_gpa": 3.6}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": "2.0","residence": "United States", "financial_need":"1000","scholarship_value": "20000"},
-        {"name":"Harvard Academic Scholarship","minimum_gpa":"3.9","residence":"","financial_need":"10000","scholarship_value":"50000"},
-        {"name":"Harvard Bursaries & Grants","minimum_gpa":"3.6","residence":"","financial_need":"5000","scholarship_value":"50000"}
+        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States", "financial_need": 1000,"scholarship_value": 20000},
+        {"name":"Harvard Academic Scholarship","minimum_gpa": 3.9,"residence":"","financial_need": 10000,"scholarship_value": 50000},
+        {"name":"Harvard Bursaries & Grants","minimum_gpa": 3.6,"residence":"","financial_need": 5000,"scholarship_value": 50000}
     ],
-    "application_deadline": {"standard": "January 1"},
-    "pictures": "",
+    "deadline": "January 1",
     "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States[6] and among the most prestigious in the world.",
     "contact_page": "https://www.harvard.edu/contact-harvard",
-    "telephone_number": "(617) 495-1000",
+    "phone": "6174951000",
     "email": "admissions@harvard.edu",
-    "path_to_logo": "Harvard_shield_wreath.svg",
-    "ranking": "2",
-    "cost_per_semester_after_aid": "85470",
+    "ranking": 2,
+    "cost": {"resident": "85470", "non-resident": "104589"},
     "setting": "suburban"
+    "address": "University Hall, Cambridge, MA 02138",
+    "avg_gpa": 4.18
 }
