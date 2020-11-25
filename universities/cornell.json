@@ -22,7 +22,7 @@
     "size": 24027,
     "ranking": 18,
     "cost":{"resident": 58610,"non-resident": 78000} ,
-    "setting": "suburban"
+    "setting": "suburban",
     "address": "616 Thurston Ave. Ithaca, NY 14853",
     "avg_gpa": 3.9
 }
