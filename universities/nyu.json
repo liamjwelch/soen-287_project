@@ -2,25 +2,27 @@
     "id": "nyu",
     "name": "New York University",
     "location": " New York, NY, USA",
-    "programs": ["Business", "Management", "Marketing", "Visual and Performing Arts", "Social Sciences"],
-    "scholarship": ["New York University Scholarships", "Federal Grant Programs", "State Scholarship and Grant Programs"],
-    "application_deadline": {
-        "inside_fall": "April 1",
-        "inside_spring": "October 15",
-        "outside_fall": "February 15",
-        "outside_spring": "September 15"    
-    },
-    "pictures": "NYU.jpg",
+    "programs": [
+        {"name": "Business", "minimum_gpa": 3.51},
+        {"name": "Management", "minimum_gpa": 3.51}, 
+        {"name": "Marketing", "minimum_gpa": 3.51}, 
+        {"name": "Arts", "minimum_gpa": 3.0}, 
+        {"name": "Social Sciences", "minimum_gpa": 3.3}
+    ],
+    "scholarship": [ 
+         {"name": "New York University Scholarships", "minimum_gpa": 3.0,"residence": null, "amount": 30000},
+         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "amount": 20000}, 
+         {"name": "State Scholarship and Grant Programs", "minimum_gpa": null, "residence": "United States", "amount": 5165}
+    ],
+    "deadline": "April 1",
     "description": "New York University is a private university in the city of New York, founded in 1831. It is one the largest university in the United States, providing education to more than 50 000 students, coming from New York, or other states, and even other countries.",
-    "setting": "urban",
-    "size": 51123,
-    "ranking": 35,
     "contact_page": "https://www.nyu.edu/footer/contact-us.html",
     "email": "admissions.ops@nyu.edu",
-    "phone_number": "2129981212",
-    "cost_per_year": 78742,
-    "path_to_logo": "NYU_LOGO.jpg",
-    "average_gpa": 3.69,
-    "average_sat": 1440,
-    "acceptance_rate_(%)": 16.2
+    "phone": "2129981212",
+    "size": 51123,
+    "ranking": 35,
+    "cost": {"resident": 78742, "non-resident": 78742},
+    "setting": "urban",
+    "address": "New York, NY 10003, United States",
+    "avg_gpa": 3.69
 }
