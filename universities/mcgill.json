@@ -10,10 +10,10 @@
         {"name":"Music","minimum_gpa": 2.9}
     ],
     "scholarship": [
-        {"name":"Minor Entrance Scholarship","minimum_gpa": 3.95,"residence":"","financial_need": 0,"scholarship_value": 3000},
-        {"name":"Major Entrance Scholarship","minimum_gpa":"4.0","residence":"","financial_need": 12000,"scholarship_value": 12000},
-        {"name":"Entrance Bursary Program","minimum_gpa": 3.0,"residence":"","financial_need": 10000,"scholarship_value": 7000},
-        {"name":"McGill Student Loan","minimum_gpa": 3.2,"residence":"","financial_need": 10000,"loan_value": 10000}
+        {"name":"Minor Entrance Scholarship","minimum_gpa": 3.95,"residence": null,"financial_need": null,"scholarship_value": 3000},
+        {"name":"Major Entrance Scholarship","minimum_gpa":"4.0","residence": null,"financial_need": 12000,"scholarship_value": 12000},
+        {"name":"Entrance Bursary Program","minimum_gpa": 3.0,"residence": null,"financial_need": 10000,"scholarship_value": 7000},
+        {"name":"McGill Student Loan","minimum_gpa": 3.2,"residence": null,"financial_need": 10000,"loan_value": 10000}
     ],
     "deadline": "January 2",
     "description": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV,[9] the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. ",
