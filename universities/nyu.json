@@ -11,7 +11,7 @@
     ],
     "scholarship": [ 
          {"name": "New York University Scholarships", "minimum_gpa": 3.0,"residence": null,  "financial_need": 1000, "amount": 30000},
-         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "financial_need": 5000 "amount": 20000}, 
+         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "financial_need": 5000, "amount": 20000}, 
          {"name": "State Scholarship and Grant Programs", "minimum_gpa": null, "residence": "United States",  "financial_need": 3000, "amount": 5165}
     ],
     "deadline": "April 1",
