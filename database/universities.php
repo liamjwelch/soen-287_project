@@ -177,6 +177,13 @@ function addUniversityCost($connection, $university) {
     }
 }
 
+/*
+ * Return the university with the id $id from the database, as an associative array. The programs and scholarships
+ * are return inside the university as an indexed array of associative arrays. The cost is returned as an associative
+ * array. See the json files for the universities to see exactly how the data is returned.
+ *
+ * If no university with the given id exists, then an empty array is returned. If an error occurs, null is returned.
+ */
 function getUniversity($id) {
     $connection = createConnection();
 
