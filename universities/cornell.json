@@ -3,26 +3,26 @@
     "name": "Cornell University" ,
     "location": "Ithaca, NY, United States",
     "programs": [
-        {"name":"Chemistry", "minimum_gpa": 3.5} ,
-        {"name":"Law", "minimum_gpa": 3.55},
-        {"name":"Mathematics", "minimum_gpa": 3.45},
-        {"name":"Marketing", "minimum_gpa": 3.3},
-        {"name":"Social Sciences", "minimum_gpa": 3.2}
+        {"name":"Chemistry", "minimumGPA": 3.5} ,
+        {"name":"Law", "minimumGPA": 3.55},
+        {"name":"Mathematics", "minimumGPA": 3.45},
+        {"name":"Marketing", "minimumGPA": 3.3},
+        {"name":"Social Sciences", "minimumGPA": 3.2}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financial_need": 1000,"amount": 20000},
-        {"name":"Cornell Scholarship","minimumGPA": 3.8,"residence": null,"financial_need": 10000,"amount": 65000},
-        {"name":"Cornell Grant","minimumGPA": 3.6,"residence": null,"financial_need": 5000,"amount": 50000}
+        {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
+        {"name":"Cornell Scholarship","minimumGPA": 3.8,"residence": null,"financialNeed": 10000,"amount": 65000},
+        {"name":"Cornell Grant","minimumGPA": 3.6,"residence": null,"financialNeed": 5000,"amount": 50000}
     ],
     "application_deadline": "January 2",
     "description": "Cornell University is a private and statutory Ivy League research university in Ithaca, New York. Founded in 1865 by Ezra Cornell and Andrew Dickson White, the university was intended to teach and make contributions in all fields of knowledge—from the classics to the sciences, and from the theoretical to the applied.",
-    "contact_page": "https://admissions.cornell.edu/webform/contact" ,
+    "contactPage": "https://admissions.cornell.edu/webform/contact" ,
     "phone": "6072555241",
     "email": "admissions@cornell.edu" ,
     "size": 24027,
     "ranking": 18,
-    "cost":{"resident": 58610,"non-resident": 78000} ,
+    "cost":{"resident": 58610,"nonResident": 78000} ,
     "setting": "suburban",
     "address": "616 Thurston Ave. Ithaca, NY 14853",
-    "avg_gpa": 3.9
+    "avgGPA": 3.9
 }

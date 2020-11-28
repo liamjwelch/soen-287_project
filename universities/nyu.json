@@ -3,26 +3,26 @@
     "name": "New York University",
     "location": " New York, NY, USA",
     "programs": [
-        {"name": "Business", "minimum_gpa": 3.51},
-        {"name": "Management", "minimum_gpa": 3.51}, 
-        {"name": "Marketing", "minimum_gpa": 3.51}, 
-        {"name": "Arts", "minimum_gpa": 3.0}, 
-        {"name": "Social Sciences", "minimum_gpa": 3.3}
+        {"name": "Business", "minimumGPA": 3.51},
+        {"name": "Management", "minimumGPA": 3.51}, 
+        {"name": "Marketing", "minimumGPA": 3.51}, 
+        {"name": "Arts", "minimumGPA": 3.0}, 
+        {"name": "Social Sciences", "minimumGPA": 3.3}
     ],
     "scholarship": [ 
-         {"name": "New York University Scholarships", "minimum_gpa": 3.0,"residence": null,  "financial_need": 1000, "amount": 30000},
-         {"name": "FAFSA", "minimum_gpa": null,"residence": "United States", "financial_need": 5000, "amount": 20000}, 
-         {"name": "State Scholarship and Grant Programs", "minimum_gpa": null, "residence": "United States",  "financial_need": 3000, "amount": 5165}
+         {"name": "New York University Scholarships", "minimumGPA": 3.0,"residence": null,  "financialNeed": 1000, "amount": 30000},
+         {"name": "FAFSA", "minimumGPA": null,"residence": "United States", "financialNeed": 5000, "amount": 20000}, 
+         {"name": "State Scholarship and Grant Programs", "minimumGPA": null, "residence": "United States",  "financialNeed": 3000, "amount": 5165}
     ],
     "deadline": "April 1",
     "description": "New York University is a private university in the city of New York, founded in 1831. It is one the largest university in the United States, providing education to more than 50 000 students, coming from New York, or other states, and even other countries.",
-    "contact_page": "https://www.nyu.edu/footer/contact-us.html",
+    "contactPage": "https://www.nyu.edu/footer/contact-us.html",
     "email": "admissions.ops@nyu.edu",
     "phone": "2129981212",
     "size": 51123,
     "ranking": 35,
-    "cost": {"resident": 78742, "non-resident": 78742},
+    "cost": {"resident": 78742, "nonResident": 78742},
     "setting": "urban",
     "address": "New York, NY 10003, United States",
-    "avg_gpa": 3.69
+    "avgGPA": 3.69
 }

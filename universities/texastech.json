@@ -3,28 +3,28 @@
     "name": "Texas Tech University",
     "location": "Lubbock, TX, United States",
     "programs": [
-        {"name":"Business","minimum_gpa": 2.7},
-        {"name":"Management","minimum_gpa": 2.65},
-        {"name":"Marketing","minimum_gpa": 2.7},
-        {"name":"Engineering","minimum_gpa": 2.8},
-        {"name":"Communication","minimum_gpa": 2.55}
+        {"name":"Business","minimumGPA": 2.7},
+        {"name":"Management","minimumGPA": 2.65},
+        {"name":"Marketing","minimumGPA": 2.7},
+        {"name":"Engineering","minimumGPA": 2.8},
+        {"name":"Communication","minimumGPA": 2.55}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"amount": 20000},
-        {"name":"Freshman Merit Scholarship 1","minimum_gpa": 2.0,"residence": null,"financial_need": null,"amount": 9000},
-        {"name":"Freshman Merit Scholarship 2","minimum_gpa":"2.0","residence": null,"financial_need": null,"amount": 5000},
-        {"name":"Freshman Merit Scholarship 3","minimum_gpa":"2.0", "residence": null,"financial_need": null,"amount": 3000}
+        {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
+        {"name":"Freshman Merit Scholarship 1","minimumGPA": 2.0,"residence": null,"financialNeed": null,"amount": 9000},
+        {"name":"Freshman Merit Scholarship 2","minimumGPA":"2.0","residence": null,"financialNeed": null,"amount": 5000},
+        {"name":"Freshman Merit Scholarship 3","minimumGPA":"2.0", "residence": null,"financialNeed": null,"amount": 3000}
 
     ],
     "deadline": "December 1",
     "description": "Texas Tech University (Texas Tech, Tech, or TTU) is a public research university in Lubbock, Texas, United States. Established on February 10, 1923, and called until 1969 Texas Technological College, it is the main institution of the four-institution Texas Tech University System. The university's student enrollment is the seventh-largest in Texas as of the Fall 2018 semester." ,
-    "contact_page": "http://www.depts.ttu.edu/admissions/apply/status/first_freshmen/" ,
+    "contactPage": "http://www.depts.ttu.edu/admissions/apply/status/first_freshmen/" ,
     "phone": "8067421480",
     "email": "admissions@ttu.edu" ,
     "size": 40332,
     "ranking": 143,
-    "cost": {"resident":27156, "non-resident": 39426} ,
+    "cost": {"resident":27156, "nonResident": 39426} ,
     "setting": "urban",
     "address": "2500 Broadway, Lubbock, TX 79409, United States",
-    "avg_gpa": 3.57
+    "avgGPA": 3.57
 } 

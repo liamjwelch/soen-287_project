@@ -3,26 +3,26 @@
     "name": "Massachusetts Institute of Technology",
     "location": "Cambridge, MA, United States",
     "programs": [
-        {"name":"Biology","minimum_gpa": 3.7},
-        {"name":"Engineering","minimum_gpa": 3.6},
-        {"name":"Computer Science","minimum_gpa": 3.6},
-        {"name":"Economics","minimum_gpa": 3.5},
-        {"name":"Data Science","minimum_gpa": 3.7}
+        {"name":"Biology","minimumGPA": 3.7},
+        {"name":"Engineering","minimumGPA": 3.6},
+        {"name":"Computer Science","minimumGPA": 3.6},
+        {"name":"Economics","minimumGPA": 3.5},
+        {"name":"Data Science","minimumGPA": 3.7}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"amount": 20000},
-        {"name":"First Year Grant","minimum_gpa": 2.0,"residence": null,"financial_need": 10000,"amount": 2000},
-        {"name":"MIT Scholarship","minimum_gpa": 2.0,"residence": null,"financial_need": 30000,"amount": 50000}
+        {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
+        {"name":"First Year Grant","minimumGPA": 2.0,"residence": null,"financialNeed": 10000,"amount": 2000},
+        {"name":"MIT Scholarship","minimumGPA": 2.0,"residence": null,"financialNeed": 30000,"amount": 50000}
     ],
     "deadline": "january 1",
     "description": "Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. The institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile (1.6 km) alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
-    "contact_page": "https://www.mit.edu/contact/",
+    "contactPage": "https://www.mit.edu/contact/",
     "phone": "6172531000",
     "email": "admissions@mit.edu",
     "size": 11520,
     "ranking": 4 ,
-    "cost": {"resident": 73160, "non-resident": 98626},
+    "cost": {"resident": 73160, "nonResident": 98626},
     "setting": "urban",
     "address": "77 Massachusetts Ave, Cambridge, MA 02139, United States",
-    "avg_gpa": 4.17
+    "avgGPA": 4.17
 }

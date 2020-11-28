@@ -3,27 +3,27 @@
     "name": "McGill University",
     "location": "Montreal, QC, Canada",
     "programs": [
-        {"name":"Law","minimum_gpa": 3.4},
-        {"name":"Biology", "minimum_gpa": 3.2},
-        {"name":"Medicine","minimum_gpa": 3.4},
-        {"name":"Chemistry", "minimum_gpa": 3.1},
-        {"name":"Music","minimum_gpa": 2.9}
+        {"name":"Law","minimumGPA": 3.4},
+        {"name":"Biology", "minimumGPA": 3.2},
+        {"name":"Medicine","minimumGPA": 3.4},
+        {"name":"Chemistry", "minimumGPA": 3.1},
+        {"name":"Music","minimumGPA": 2.9}
     ],
     "scholarship": [
-        {"name":"Minor Entrance Scholarship","minimum_gpa": 3.95,"residence": null,"financial_need": null,"amount": 3000},
-        {"name":"Major Entrance Scholarship","minimum_gpa":"4.0","residence": null,"financial_need": 12000,"amount": 12000},
-        {"name":"Entrance Bursary Program","minimum_gpa": 3.0,"residence": null,"financial_need": 10000,"amount": 7000},
-        {"name":"McGill Student Loan","minimum_gpa": 3.2,"residence": null,"financial_need": 10000,"loan_value": 10000}
+        {"name":"Minor Entrance Scholarship","minimumGPA": 3.95,"residence": null,"financialNeed": null,"amount": 3000},
+        {"name":"Major Entrance Scholarship","minimumGPA":"4.0","residence": null,"financialNeed": 12000,"amount": 12000},
+        {"name":"Entrance Bursary Program","minimumGPA": 3.0,"residence": null,"financialNeed": 10000,"amount": 7000},
+        {"name":"McGill Student Loan","minimumGPA": 3.2,"residence": null,"financialNeed": 10000,"loan_value": 10000}
     ],
     "deadline": "January 2",
     "description": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV,[9] the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. ",
-    "contact_page": "https://www.mcgill.ca/contact-us/",
+    "contactPage": "https://www.mcgill.ca/contact-us/",
     "phone": "5143984455",
     "email": "student.services@mcgill.ca",
     "size": 40036,
     "ranking": 46,
-    "cost": {"resident":"5000", "non-resident":"48500"},
+    "cost": {"resident":"5000", "nonResident":"48500"},
     "setting": "urban",
     "address": "845 Sherbrooke St W, Montreal, Quebec H3A 0G4",
-    "avg_gpa": 3.3
+    "avgGPA": 3.3
 }
