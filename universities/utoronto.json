@@ -10,9 +10,9 @@
         {"name":"Medicine","minimum_gpa": 3.8}
     ],
     "scholarship": [
-        {"name":"National Scholarship Program", "minimum_gpa": 3.3,"residence": "Canada", "financial_need": 1000,"scholarship_value": 11000},
-        {"name":"President's Scholars of Excellence Program","minimum_gpa": 4.0,"residence": null,"financial_need": null,"scholarship_value": 10000},
-        {"name":"University of Toronto Scholars Program","minimum_gpa": 3.8 ,"residence": null,"financial_need": null,"scholarship_value": 7500},
+        {"name":"National Scholarship Program", "minimum_gpa": 3.3,"residence": "Canada", "financial_need": 1000,"amount": 11000},
+        {"name":"President's Scholars of Excellence Program","minimum_gpa": 4.0,"residence": null,"financial_need": null,"amount": 10000},
+        {"name":"University of Toronto Scholars Program","minimum_gpa": 3.8 ,"residence": null,"financial_need": null,"amount": 7500},
         {"name":"Ontario Student Assistance Program","minimum_gpa": 2.0,"residence":"Ontario","financial_need": 1000,"loan_value": 10000},
         {"name":"University of Toronto financial aid","minimum_gpa": 2.0,"residence":"Canada","financial_need": 1000, "loan_value": 5000}
     ],

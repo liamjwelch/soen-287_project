@@ -10,10 +10,10 @@
         {"name":"Communication","minimum_gpa": 2.55}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"scholarship_value": 20000},
-        {"name":"Freshman Merit Scholarship 1","minimum_gpa": 2.0,"residence": null,"financial_need": null,"scholarship_value": 9000},
-        {"name":"Freshman Merit Scholarship 2","minimum_gpa":"2.0","residence": null,"financial_need": null,"scholarship_value": 5000},
-        {"name":"Freshman Merit Scholarship 3","minimum_gpa":"2.0", "residence": null,"financial_need": null,"scholarship_value": 3000}
+        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"amount": 20000},
+        {"name":"Freshman Merit Scholarship 1","minimum_gpa": 2.0,"residence": null,"financial_need": null,"amount": 9000},
+        {"name":"Freshman Merit Scholarship 2","minimum_gpa":"2.0","residence": null,"financial_need": null,"amount": 5000},
+        {"name":"Freshman Merit Scholarship 3","minimum_gpa":"2.0", "residence": null,"financial_need": null,"amount": 3000}
 
     ],
     "deadline": "December 1",

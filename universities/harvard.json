@@ -10,9 +10,9 @@
         {"name":"Mathematics","minimum_gpa": 3.6}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States", "financial_need": 1000,"scholarship_value": 20000},
-        {"name":"Harvard Academic Scholarship","minimum_gpa": 3.9,"residence": null,"financial_need": 10000,"scholarship_value": 50000},
-        {"name":"Harvard Bursaries & Grants","minimum_gpa": 3.6,"residence": null,"financial_need": 5000,"scholarship_value": 50000}
+        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States", "financial_need": 1000,"amount": 20000},
+        {"name":"Harvard Academic Scholarship","minimum_gpa": 3.9,"residence": null,"financial_need": 10000,"amount": 50000},
+        {"name":"Harvard Bursaries & Grants","minimum_gpa": 3.6,"residence": null,"financial_need": 5000,"amount": 50000}
     ],
     "deadline": "January 1",
     "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States[6] and among the most prestigious in the world.",

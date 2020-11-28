@@ -10,8 +10,8 @@
         {"name":"Music", "minimum_gpa": 3.3}
     ],
     "scholarship": [
-        {"name":"FAFSA", "minimum_gpa": 2.0, "residence": "United States", "financial_need": 1000, "scholarship_value": 20000},
-        {"name":"Stanford Financial Aid", "minimum_gpa": 3.5,"residence": null, "financial_need": 25000, "scholarship_value": 40000}
+        {"name":"FAFSA", "minimum_gpa": 2.0, "residence": "United States", "financial_need": 1000, "amount": 20000},
+        {"name":"Stanford Financial Aid", "minimum_gpa": 3.5,"residence": null, "financial_need": 25000, "amount": 40000}
     ],
     "deadline": "January 2",
     "description": "Stanford University, officially Leland Stanford Junior University,[12] is a private research university in Stanford, California. Stanford is ranked among the most prestigious universities in the world by numerous major education publications.",

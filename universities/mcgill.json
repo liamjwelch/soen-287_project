@@ -10,9 +10,9 @@
         {"name":"Music","minimum_gpa": 2.9}
     ],
     "scholarship": [
-        {"name":"Minor Entrance Scholarship","minimum_gpa": 3.95,"residence": null,"financial_need": null,"scholarship_value": 3000},
-        {"name":"Major Entrance Scholarship","minimum_gpa":"4.0","residence": null,"financial_need": 12000,"scholarship_value": 12000},
-        {"name":"Entrance Bursary Program","minimum_gpa": 3.0,"residence": null,"financial_need": 10000,"scholarship_value": 7000},
+        {"name":"Minor Entrance Scholarship","minimum_gpa": 3.95,"residence": null,"financial_need": null,"amount": 3000},
+        {"name":"Major Entrance Scholarship","minimum_gpa":"4.0","residence": null,"financial_need": 12000,"amount": 12000},
+        {"name":"Entrance Bursary Program","minimum_gpa": 3.0,"residence": null,"financial_need": 10000,"amount": 7000},
         {"name":"McGill Student Loan","minimum_gpa": 3.2,"residence": null,"financial_need": 10000,"loan_value": 10000}
     ],
     "deadline": "January 2",

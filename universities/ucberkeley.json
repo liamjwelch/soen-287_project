@@ -10,9 +10,9 @@
         {"name":"Music","minimum_gpa": 3.0}
     ],
     "scholarship": [
-        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"scholarship_value": 20000},
-        {"name":"Berkeley Scholarship", "minimum_gpa": 3.5,"residence": "California","financial_need": 15000,"scholarship_value": 10000},
-        {"name":"Cal Grant", "minimum_gpa": 2.0,"residence":"California","financial_need":10000,"scholarship_value": 5000},
+        {"name":"FAFSA","minimum_gpa": 2.0,"residence": "United States","financial_need": 1000,"amount": 20000},
+        {"name":"Berkeley Scholarship", "minimum_gpa": 3.5,"residence": "California","financial_need": 15000,"amount": 10000},
+        {"name":"Cal Grant", "minimum_gpa": 2.0,"residence":"California","financial_need":10000,"amount": 5000},
         {"name":"Berkeley Loan","minimum_gpa": 2.0,"residence":"California","financial_need": 5000,"loan_value": 25000}
     ],
     "deadline": "November 30",
