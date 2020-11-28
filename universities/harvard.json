@@ -19,6 +19,7 @@
     "contactPage": "https://www.harvard.edu/contact-harvard",
     "phone": "6174951000",
     "email": "admissions@harvard.edu",
+    "size": 22947,
     "ranking": 2,
     "cost": {"resident":85470, "nonResident":104589},
     "setting": "suburban",

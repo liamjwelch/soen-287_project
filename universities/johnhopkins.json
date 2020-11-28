@@ -21,7 +21,7 @@
     "email": "applyhelp@jhu.edu",
     "size": 23917,
     "ranking": 9,
-    "cost": {"resident": 54000, "nonResident": 71901,
+    "cost": {"resident": 54000, "nonResident": 71901},
     "setting": "suburban",
     "address": "Baltimore, MD 21218, United States",
     "avgGPA": 3.9

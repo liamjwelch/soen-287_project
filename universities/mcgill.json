@@ -13,7 +13,7 @@
         {"name":"Minor Entrance Scholarship","minimumGPA": 3.95,"residence": null,"financialNeed": null,"amount": 3000},
         {"name":"Major Entrance Scholarship","minimumGPA":4.0,"residence": null,"financialNeed": 12000,"amount": 12000},
         {"name":"Entrance Bursary Program","minimumGPA": 3.0,"residence": null,"financialNeed": 10000,"amount": 7000},
-        {"name":"McGill Student Loan","minimumGPA": 3.2,"residence": null,"financialNeed": 10000,"loan_value": 10000}
+        {"name":"McGill Student Loan","minimumGPA": 3.2,"residence": null,"financialNeed": 10000, "amount": 10000}
     ],
     "deadline": "January 2",
     "description": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV,[9] the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. ",

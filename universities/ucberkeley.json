@@ -13,7 +13,7 @@
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"Berkeley Scholarship", "minimumGPA": 3.5,"residence": "California","financialNeed": 15000,"amount": 10000},
         {"name":"Cal Grant", "minimumGPA": 2.0,"residence":"California","financialNeed":10000,"amount": 5000},
-        {"name":"Berkeley Loan","minimumGPA": 2.0,"residence":"California","financialNeed": 5000,"loan_value": 25000}
+        {"name":"Berkeley Loan","minimumGPA": 2.0,"residence":"California","financialNeed": 5000,"amount": 25000}
     ],
     "deadline": "November 30",
     "description": "The University of California, Berkeley (UC Berkeley, Berkeley, Cal, or California)[7][8] is a public research university in Berkeley, California. Established in 1868 as the state's first land-grant university, it is the oldest campus of the University of California system and a founding member of the Association of American Universities. Its 14 colleges and schools offer over 350 degree programs and enroll some 31,000 undergraduate and 12,000 graduate students.[2][9][10] Berkeley is ranked among the world's top universities by major educational publications." ,
@@ -22,7 +22,7 @@
     "email": "webmaster@berkeley.edu",
     "size": 43204 ,
     "ranking": 22,
-    "corst": {"residets": "36,700", "nonResidents": "66,500"},
+    "cost": {"residents": 36700, "nonResidents": 66500},
     "setting": "urban",
     "address": "200 California Hall, Berkeley, CA 94720",
     "avgGPA": 3.89
