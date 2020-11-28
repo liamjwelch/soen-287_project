@@ -9,7 +9,7 @@
         {"name": "Arts", "minimumGPA": 3.0}, 
         {"name": "Social Sciences", "minimumGPA": 3.3}
     ],
-    "scholarship": [ 
+    "scholarships": [
          {"name": "New York University Scholarships", "minimumGPA": 3.0,"residence": null,  "financialNeed": 1000, "amount": 30000},
          {"name": "FAFSA", "minimumGPA": null,"residence": "United States", "financialNeed": 5000, "amount": 20000}, 
          {"name": "State Scholarship and Grant Programs", "minimumGPA": null, "residence": "United States",  "financialNeed": 3000, "amount": 5165}

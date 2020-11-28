@@ -9,7 +9,7 @@
         {"name":"Engineering", "minimumGPA": 3.6},
         {"name":"Music", "minimumGPA": 3.3}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA", "minimumGPA": 2.0, "residence": "United States", "financialNeed": 1000, "amount": 20000},
         {"name":"Stanford Financial Aid", "minimumGPA": 3.5,"residence": null, "financialNeed": 25000, "amount": 40000}
     ],

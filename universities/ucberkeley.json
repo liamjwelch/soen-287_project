@@ -9,7 +9,7 @@
         {"name":"Economics","minimumGPA": 3.2},
         {"name":"Music","minimumGPA": 3.0}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"Berkeley Scholarship", "minimumGPA": 3.5,"residence": "California","financialNeed": 15000,"amount": 10000},
         {"name":"Cal Grant", "minimumGPA": 2.0,"residence":"California","financialNeed":10000,"amount": 5000},

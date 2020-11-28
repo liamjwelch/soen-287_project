@@ -9,7 +9,7 @@
         {"name":"Chemistry", "minimumGPA": 3.1},
         {"name":"Music","minimumGPA": 2.9}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"Minor Entrance Scholarship","minimumGPA": 3.95,"residence": null,"financialNeed": null,"amount": 3000},
         {"name":"Major Entrance Scholarship","minimumGPA":"4.0","residence": null,"financialNeed": 12000,"amount": 12000},
         {"name":"Entrance Bursary Program","minimumGPA": 3.0,"residence": null,"financialNeed": 10000,"amount": 7000},

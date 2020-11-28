@@ -3,7 +3,7 @@
     "name": "University of California, Los Angeles",
     "location": "Los Angeles, CA, USA",
     "programs": ["Biology", "Political Science", "Psychology", "Business Economics", "Statistics"],
-    "scholarship": ["UCLA Regents Scholarships", "UCLA Alumni Scholarships", "UCLA Achievement Scholarship", "University Student Aid Program Funds"],
+    "scholarships": ["UCLA Regents Scholarships", "UCLA Alumni Scholarships", "UCLA Achievement Scholarship", "University Student Aid Program Funds"],
     "application_deadline": {
         "inside_fall": "November 30", 
         "outside_fall": null

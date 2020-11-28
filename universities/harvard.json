@@ -9,7 +9,7 @@
         {"name":"Biology","minimumGPA": 3.7},
         {"name":"Mathematics","minimumGPA": 3.6}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States", "financialNeed": 1000,"amount": 20000},
         {"name":"Harvard Academic Scholarship","minimumGPA": 3.9,"residence": null,"financialNeed": 10000,"amount": 50000},
         {"name":"Harvard Bursaries & Grants","minimumGPA": 3.6,"residence": null,"financialNeed": 5000,"amount": 50000}

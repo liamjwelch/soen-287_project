@@ -9,7 +9,7 @@
         {"name": "Sociology", "minimumGPA": 3.0},
         {"name": "Psychology", "minimumGPA": 3.0}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name": "Beinecke Scholarship Program", "minimumGPA": 2.0, "residence": null, "financialNeed": 1000, "amount": 34000},
         {"name": "AIA/F Diversity Advancement Scholarship", "minimumGPA": 2.0, "residence": null, "financialNeed": 10000, "amount": 20000},
         {"name": "Princeton University Undergraduate Financial Aid Program", "minimumGPA": 2.0, "residence": null, "financialNeed": 5000, "amount": 52800}

@@ -9,7 +9,7 @@
         {"name":"Economics","minimumGPA": 3.5},
         {"name":"Data Science","minimumGPA": 3.7}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"First Year Grant","minimumGPA": 2.0,"residence": null,"financialNeed": 10000,"amount": 2000},
         {"name":"MIT Scholarship","minimumGPA": 2.0,"residence": null,"financialNeed": 30000,"amount": 50000}

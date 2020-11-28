@@ -9,7 +9,7 @@
         {"name":"Marketing", "minimumGPA": 3.3},
         {"name":"Social Sciences", "minimumGPA": 3.2}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"Cornell Scholarship","minimumGPA": 3.8,"residence": null,"financialNeed": 10000,"amount": 65000},
         {"name":"Cornell Grant","minimumGPA": 3.6,"residence": null,"financialNeed": 5000,"amount": 50000}

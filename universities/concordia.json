@@ -9,7 +9,7 @@
         {"name":"Marketing", "minimumGPA":"2.3"},
         {"name":"Social Sciences","minimumGPA":"2.2"}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name": "FAFSA", "minimumGPA": "2.0", "residence": "United States", "amount": "20000"},
         {"name":"Concordia Entrance Scholarship","minimumGPA":"3.5","residence": null, "amount":"3000"},
         {"name":"Concordia Entrance Bursary", "minimumGPA":"3.5", "residence":"Canada", "amount":"2500"}

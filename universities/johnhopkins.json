@@ -9,7 +9,7 @@
         {"name":"Neuroscience","minimumGPA": 3.7},
         {"name":"Business","minimumGPA": 3.4}
     ],
-    "scholarship": [
+    "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"The Hodson Trust Scholarship","minimumGPA": 3.8,"residence": null,"financialNeed": 10000,"amount": 30000},
         {"name":"John Hopkins Grant", "minimumGPA": 3.0,"residence": null,"financialNeed": 10000,"amount": 40000}
