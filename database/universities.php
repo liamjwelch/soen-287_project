@@ -43,7 +43,7 @@ function createUniversitiesTable() {
 function createProgramsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE programs (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                                                              name VARCHAR(50) NOT NULL, minimum_gpa DECIMAL(3,2),
+                                                              name VARCHAR(50) NOT NULL, minimumGPA DECIMAL(3,2),
                                                               university VARCHAR(50),
                                                               FOREIGN KEY (university)  REFERENCES universities(id))");
     $success = $statement->execute();
@@ -55,9 +55,9 @@ function createProgramsTable() {
 function createScholarshipsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE scholarships (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                                                                  name VARCHAR(50) NOT NULL, minimum_gpa DECIMAL(3,2),
+                                                                  name VARCHAR(50) NOT NULL, minimumGPA DECIMAL(3,2),
                                                                   residence VARCHAR(50), amount INT NOT NULL,
-                                                                  financial_need INT, university VARCHAR(50),
+                                                                  financialNeed INT, university VARCHAR(50),
                                                                   FOREIGN KEY (university) REFERENCES universities(id))");
     $success = $statement->execute();
     if (!$success) {
@@ -68,7 +68,7 @@ function createScholarshipsTable() {
 function createCostsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE costs (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, resident INT,
-                                                          non_resident INT, cost INT, university VARCHAR(50),
+                                                          nonResident INT, cost INT, university VARCHAR(50),
                                                           FOREIGN KEY (university) REFERENCES universities(id))");
     $success = $statement->execute();
     if (!$success) {
@@ -128,12 +128,12 @@ function addUniversity($values) {
 }
 
 function addUniversityPrograms($connection, $university) {
-    $statement = $connection->prepare("INSERT INTO programs VALUES (:id, :name, :minimum_gpa, :university)");
+    $statement = $connection->prepare("INSERT INTO programs VALUES (:id, :name, :minimumGPA, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
     $statement->bindValue("university", $university["id"]);
     foreach($university["programs"] as $program) {
         $statement->bindValue("name", $program["name"]);
-        $statement->bindValue("minimum_gpa", $program["minimum_gpa"]);
+        $statement->bindValue("minimumGPA", $program["minimumGPA"]);
         $success = $statement->execute();
         if (!$success && $statement->rowCount() !== 1) {
             throw new PDOException("Error when adding program " . $program["name"] . " to database<br>");
@@ -142,16 +142,16 @@ function addUniversityPrograms($connection, $university) {
 }
 
 function addUniversityScholarships($connection, $university) {
-    $statement = $connection->prepare("INSERT INTO scholarships VALUES (:id, :name, :minimum_gpa, :residence, 
-                                                                        :amount, :financial_need, :university)");
+    $statement = $connection->prepare("INSERT INTO scholarships VALUES (:id, :name, :minimumGPA, :residence,
+                                                                        :amount, :financialNeed, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
     $statement->bindValue("university", $university["id"]);
     foreach($university["scholarships"] as $scholarship) {
         $statement->bindValue("name", $scholarship["name"]);
-        $statement->bindValue("minimum_gpa", $scholarship["minimum_gpa"]);
+        $statement->bindValue("minimumGPA", $scholarship["minimumGPA"]);
         $statement->bindValue("residence", $scholarship["residence"]);
         $statement->bindValue("amount", $scholarship["amount"], PDO::PARAM_INT);
-        $statement->bindValue("financial_need", $scholarship["financial_need"], PDO::PARAM_INT);
+        $statement->bindValue("financialNeed", $scholarship["financialNeed"], PDO::PARAM_INT);
         $success = $statement->execute();
         if (!$success && $statement->rowCount() !== 1) {
             throw new PDOException("Error when adding scholarship " . $scholarship["name"] . " to database<br>");
@@ -160,12 +160,12 @@ function addUniversityScholarships($connection, $university) {
 }
 
 function addUniversityCost($connection, $university) {
-    $statement = $connection->prepare("INSERT INTO costs VALUES (:id, :resident, :non_resident, :cost, :university)");
+    $statement = $connection->prepare("INSERT INTO costs VALUES (:id, :resident, :nonResident, :cost, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
     $statement->bindValue("university", $university["id"]);
     $cost = $university["cost"];
     $statement->bindValue("resident", $cost["resident"]);
-    $statement->bindValue("non_resident", $cost["non_resident"]);
+    $statement->bindValue("nonResident", $cost["nonResident"]);
     $statement->bindValue("cost", $cost["cost"]);
     $success = $statement->execute();
     if (!$success && $statement->rowCount() !== 1) {
@@ -178,12 +178,12 @@ function getUniversity($id) {
 
     $getUni = $connection->prepare("SELECT * FROM universities WHERE id = ?");
 
-    $getPrograms = $connection->prepare("SELECT name, minimum_gpa FROM programs WHERE university = ?");
+    $getPrograms = $connection->prepare("SELECT name, minimumGPA FROM programs WHERE university = ?");
 
-    $getScholarships = $connection->prepare("SELECT name, minimum_gpa, residence, amount, financial_need FROM
+    $getScholarships = $connection->prepare("SELECT name, minimumGPA, residence, amount, financialNeed FROM
                                              scholarships WHERE university = ?");
 
-    $getCost = $connection->prepare("SELECT resident, non_resident, cost FROM costs WHERE university = ?");
+    $getCost = $connection->prepare("SELECT resident, nonResident, cost FROM costs WHERE university = ?");
 
     $success = $getUni->execute([$id]);
     if ($success) {
