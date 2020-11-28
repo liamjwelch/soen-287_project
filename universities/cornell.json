@@ -14,7 +14,7 @@
         {"name":"Cornell Scholarship","minimumGPA": 3.8,"residence": null,"financialNeed": 10000,"amount": 65000},
         {"name":"Cornell Grant","minimumGPA": 3.6,"residence": null,"financialNeed": 5000,"amount": 50000}
     ],
-    "application_deadline": "January 2",
+    "deadline": "January 2",
     "description": "Cornell University is a private and statutory Ivy League research university in Ithaca, New York. Founded in 1865 by Ezra Cornell and Andrew Dickson White, the university was intended to teach and make contributions in all fields of knowledge—from the classics to the sciences, and from the theoretical to the applied.",
     "contactPage": "https://admissions.cornell.edu/webform/contact" ,
     "phone": "6072555241",
