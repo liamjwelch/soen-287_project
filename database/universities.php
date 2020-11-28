@@ -172,3 +172,30 @@ function addUniversityCost($connection, $university) {
         throw new PDOException("Error when adding cost for university " . $university["id"] . " to database<br>");
     }
 }
+
+function getUniversity($id) {
+    $connection = createConnection();
+
+    $getUni = $connection->prepare("SELECT * FROM universities WHERE id = ?");
+
+    $getPrograms = $connection->prepare("SELECT name, minimum_gpa FROM programs WHERE university = ?");
+
+    $getScholarships = $connection->prepare("SELECT name, minimum_gpa, residence, amount, financial_need FROM
+                                             scholarships WHERE university = ?");
+
+    $getCost = $connection->prepare("SELECT resident, non_resident, cost FROM costs WHERE university = ?");
+
+    $success = $getUni->execute([$id]) && $getPrograms->execute([$id]) && $getScholarships->execute([$id])
+               && $getCost->execute([$id]);
+    if ($success) {
+        $university = $getUni->fetchAll(PDO::FETCH_ASSOC)[0];
+        $university["programs"] = $getPrograms->fetchAll(PDO::FETCH_ASSOC);
+        $university["scholarships"] = $getScholarships->fetchAll(PDO::FETCH_ASSOC);
+        $university["cost"] = $getCost->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $university;
+    }
+    else {
+        echo "Error when trying to get university $id from database <br>";
+        return null;
+    }
+}
