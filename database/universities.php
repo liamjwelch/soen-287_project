@@ -96,7 +96,11 @@ function parseUniversityProfile($filename) {
     global $university_directory;
     $string = file_get_contents($university_directory . $filename);
     if (!is_null($string)) {
-        return json_decode($string, $associative=true);
+        $result = json_decode($string, $assoc=true);
+        if (is_null($result) || json_last_error() !== JSON_ERROR_NONE) {
+            throw new Exception("Error when parsing file $filename");
+        }
+        return $result;
     }
     throw new Exception("file $filename does not exist");
 }
