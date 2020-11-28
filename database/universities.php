@@ -185,17 +185,27 @@ function getUniversity($id) {
 
     $getCost = $connection->prepare("SELECT resident, non_resident, cost FROM costs WHERE university = ?");
 
-    $success = $getUni->execute([$id]) && $getPrograms->execute([$id]) && $getScholarships->execute([$id])
-               && $getCost->execute([$id]);
+    $success = $getUni->execute([$id]);
     if ($success) {
-        $university = $getUni->fetchAll(PDO::FETCH_ASSOC)[0];
-        $university["programs"] = $getPrograms->fetchAll(PDO::FETCH_ASSOC);
-        $university["scholarships"] = $getScholarships->fetchAll(PDO::FETCH_ASSOC);
-        $university["cost"] = $getCost->fetchAll(PDO::FETCH_ASSOC)[0];
-        return $university;
+        $rows = $getUni->fetchAll(PDO::FETCH_ASSOC);
+        if (count($rows) === 0) {
+            return [];
+        }
+        $university = $rows[0];
+
+        $success = $getPrograms->execute([$id]) && $getScholarships->execute([$id]) && $getCost->execute([$id]);
+        if ($success) {
+            $university["programs"] = $getPrograms->fetchAll(PDO::FETCH_ASSOC);
+            $university["scholarships"] = $getScholarships->fetchAll(PDO::FETCH_ASSOC);
+            $university["cost"] = $getCost->fetchAll(PDO::FETCH_ASSOC)[0];
+            return $university;
+        }
+        else {
+            echo "Error when trying to get data for university $id from database <br>";
+        }
     }
     else {
         echo "Error when trying to get university $id from database <br>";
-        return null;
     }
+    return null;
 }
