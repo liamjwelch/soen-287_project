@@ -20,7 +20,7 @@
     "phone": "6174951000",
     "email": "admissions@harvard.edu",
     "ranking": 2,
-    "cost": {"resident": "85470", "nonResident": "104589"},
+    "cost": {"resident":85470, "nonResident":104589},
     "setting": "suburban",
     "address": "University Hall, Cambridge, MA 02138",
     "avgGPA": 4.18

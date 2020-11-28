@@ -12,8 +12,8 @@
     "scholarships": [
         {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
         {"name":"Freshman Merit Scholarship 1","minimumGPA": 2.0,"residence": null,"financialNeed": null,"amount": 9000},
-        {"name":"Freshman Merit Scholarship 2","minimumGPA":"2.0","residence": null,"financialNeed": null,"amount": 5000},
-        {"name":"Freshman Merit Scholarship 3","minimumGPA":"2.0", "residence": null,"financialNeed": null,"amount": 3000}
+        {"name":"Freshman Merit Scholarship 2","minimumGPA":2.0,"residence": null,"financialNeed": null,"amount": 5000},
+        {"name":"Freshman Merit Scholarship 3","minimumGPA":2.0, "residence": null,"financialNeed": null,"amount": 3000}
 
     ],
     "deadline": "December 1",
