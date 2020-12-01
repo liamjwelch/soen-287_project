@@ -4,75 +4,68 @@ require_once "connection.php";
 require_once "universities.php";
 require "users.php";
 
-$table_name = "users";
-$dbname = "soen287";
-
 $conn = createConnection();
 
-$message = "";
+/*
+ * return an associative arrays with keys being the main table names, and the values the sub tables of a given table.
+ */
+function getTableNames() {
+    return ["users" => [], "universities" => ["programs", "scholarships", "costs"]];
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    dropTable($conn, $table_name);
-    dropTable($conn, "programs");
-    dropTable($conn, "scholarships");
-    dropTable($conn, "costs");
-    dropTable($conn, "universities");
-}
-
-if (!doesTableExist($conn, $dbname, $table_name)) {
-    createTable($conn, $table_name);
+    $table_name = $_POST["table_name"];
+    if ($table_name === "all") {
+        resetAllTables($conn);
+    }
+    else {
+        resetTable($conn, $table_name);
+    }
 }
 else {
-    $message .= "Table already exists<br>";
-}
-
-if (doesTableExist($conn, $dbname, "universities")) {
-    $message .= "Table universities already exists<br>";
-}
-else {
-    createUniversitiesTable();
-}
-
-function createTable($connection, $name) {
-    global $message;
-    $statement = $connection->prepare("CREATE TABLE $name (email VARCHAR(50) PRIMARY KEY NOT NULL,
-                                      password VARCHAR(255) NOT NULL, role VARCHAR(10) NOT NULL, 
-                                      firstName VARCHAR(50) NOT NULL, lastName VARCHAR(50) NOT NULL,
-                                      emailVerified BOOLEAN)");
-    try {
-        if ($statement->execute() === TRUE) {
-            $message .= "Table users created successfully <br>";
-            $result = addUser("nico@example.com", "qwerty", "student", "Nicolas", "Aubry");
-            if ($result) {
-                $message .= "<br>Student nico@example.com added to database<br>";
-            }
-            $result = addUser("john@havard.edu", "password", "recruiter", "John", "Smith");
-            if ($result) {
-                $message .= "<br>Recruiter john@havard.edu added to database<br>";
-            }
-        } else {
-            $message .= "Error creating table: " . $statement->errorInfo()[2] . "<br>";
+    foreach(getTableNames() as $table_name => $value) {
+        if (doesTableExist($conn, $table_name)) {
+            echo "Table $table_name already exists <br>";
         }
-    } catch (PDOException $e) {
-        $message .= "Error creating table: " . $e->getMessage() . "<br>";
+        else {
+            createTable($table_name);
+        }
     }
 }
 
-function doesTableExist($connection, $dbname, $table_name) {
+function doesTableExist($connection, $table_name) {
     $statement = $connection->prepare("SELECT * FROM INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA=? and table_name=?");
-    $statement->execute([$dbname, $table_name]);
+    $statement->execute([DB_NAME, $table_name]);
     $rows = $statement->fetchAll(PDO::FETCH_NUM);
     return count($rows) === 1;
 }
 
+function createTable($table_name) {
+    $message = call_user_func("create{$table_name}Table");
+    echo $message;
+}
+
 function dropTable($connection, $table) {
-    global $message;
     try {
+        foreach(getTableNames()[$table] as $subtable) {
+            $connection->exec("DROP TABLE $subtable");
+        }
         $connection->exec("DROP TABLE $table");
     }
     catch (PDOException $e) {
-        $message .= "Error dropping table $table: " . $e->getMessage() . "<br>";
+        echo "Error dropping table $table: " . $e->getMessage() . "<br>";
     }
+}
+
+function resetAllTables($connection) {
+    foreach(getTableNames() as $table_name => $value) {
+        resetTable($connection, $table_name);
+    }
+}
+
+function resetTable($connection, $table_name) {
+    dropTable($connection, $table_name);
+    createTable($table_name);
 }
 
 ?>
@@ -83,9 +76,24 @@ function dropTable($connection, $table) {
     <title>Database management</title>
 </head>
 <body>
-    <p><?php echo $message ?></p>
+    <h1>Database management</h1>
+
     <form method="post">
-        <input type="submit" value="Reset users table">
+        <input type="hidden" name="table_name" value="all">
+        <input type="submit" value="Reset all tables">
     </form>
+    <?php
+        foreach(getTableNames() as $name => $values) {
+            $message = "";
+            if (count($values) > 0) {
+                $message = "<span> The following tables will also be dropped: " . implode(", ", $values) . "</span>";
+            }
+            echo "<form method='post'>
+                    <input type='hidden' name='table_name' value='$name'>
+                    <input type='submit' value='Reset $name table'>
+                    $message
+                </form>";
+        }
+    ?>
 </body>
 </html>
