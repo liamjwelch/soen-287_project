@@ -249,10 +249,10 @@ function getAllUniversityIds($connection=null) {
     if (is_null($connection)) {
         $connection = createConnection();
     }
-    $getIds = $connection->prepare("SELECT id FROM universities");
-    $success = $getIds->execute();
+    $statement = $connection->prepare("SELECT id FROM universities");
+    $success = $statement->execute();
     if ($success) {
-        $rows = $getIds->fetchAll(PDO::FETCH_NUM);
+        $rows = $statement->fetchAll(PDO::FETCH_NUM);
         $ids = [];
         foreach($rows as $row) {
             $ids[] = $row[0];
