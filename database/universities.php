@@ -263,3 +263,27 @@ function getAllUniversityIds($connection=null) {
         throw new Exception("Error when retrieving all university IDs: statement->execute() returned false");
     }
 }
+
+/*
+ * Return a list (as an array) of all distinct existing program names, across all universities.
+ * Throw an exception if an error occurs.
+ */
+function getAllProgramNames($connection=null) {
+    if (is_null($connection)) {
+        $connection = createConnection();
+    }
+    $statement = $connection->prepare("SELECT DISTINCT name FROM programs");
+    $statement->execute();
+    $success = $statement->execute();
+    if ($success) {
+        $rows = $statement->fetchAll(PDO::FETCH_NUM);
+        $programNames = [];
+        foreach($rows as $row) {
+            $programNames[] = $row[0];
+        }
+        return $programNames;
+    }
+    else {
+        throw new Exception("Error when retrieving all program names: statement->execute() returned false");
+    }
+}
