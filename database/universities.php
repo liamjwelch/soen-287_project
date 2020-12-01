@@ -14,10 +14,11 @@ function createUniversitiesTable() {
                                                                   size INT,
                                                                   ranking INT,
                                                                   location VARCHAR(100),
-                                                                  deadline VARCHAR(10),
+                                                                  deadline VARCHAR(20),
                                                                   contactPage VARCHAR(250),
                                                                   phone CHAR(10),
-                                                                  email VARCHAR(50)
+                                                                  email VARCHAR(50),
+                                                                  avgGPA DECIMAL(3,2)
                                                                   )");
     try {
         $success = $statement->execute();
@@ -55,7 +56,7 @@ function createProgramsTable() {
 function createScholarshipsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE scholarships (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                                                                  name VARCHAR(50) NOT NULL, minimumGPA DECIMAL(3,2),
+                                                                  name VARCHAR(100) NOT NULL, minimumGPA DECIMAL(3,2),
                                                                   residence VARCHAR(50), amount INT NOT NULL,
                                                                   financialNeed INT, university VARCHAR(50),
                                                                   FOREIGN KEY (university) REFERENCES universities(id))");
@@ -68,7 +69,7 @@ function createScholarshipsTable() {
 function createCostsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE costs (id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, resident INT,
-                                                          nonResident INT, cost INT, university VARCHAR(50),
+                                                          nonResident INT, university VARCHAR(50),
                                                           FOREIGN KEY (university) REFERENCES universities(id))");
     $success = $statement->execute();
     if (!$success) {
@@ -109,20 +110,15 @@ function addUniversity($values) {
     $connection = createConnection();
     $statement = $connection->prepare("INSERT INTO universities VALUES (:id, :name, :description, :address, :setting,
                                                                         :size, :ranking, :location, :deadline,
-                                                                        :contactPage, :phone, :email)");
-    $statement->bindValue("id", $values["id"]);
-    $statement->bindValue("name", $values["name"]);
-    $statement->bindValue("description", $values["description"]);
-    $statement->bindValue("address", $values["address"]);
-    $statement->bindValue("setting", $values["setting"]);
-    $statement->bindValue("size", $values["size"], PDO::PARAM_INT);
-    $statement->bindValue("ranking", $values["ranking"], PDO::PARAM_INT);
-    $statement->bindValue("location", $values["location"]);
-    $statement->bindValue("deadline", $values["deadline"]);
-    $statement->bindValue("contactPage", $values["contactPage"]);
-    $statement->bindValue("phone", $values["phone"]);
-    $statement->bindValue("email", $values["email"]);
-    $success = $statement->execute();
+                                                                        :contactPage, :phone, :email, :avgGPA)");
+    $university = [];
+    foreach($values as $key=>$value) {
+        if ($key !== "programs" && $key !== "scholarships" && $key !== "cost") {
+            $university[$key] = $value;
+        }
+    }
+
+    $success = $statement->execute($university);
     if ($success && $statement->rowCount() === 1) {
         addUniversityPrograms($connection, $values);
         addUniversityScholarships($connection, $values);
@@ -164,13 +160,12 @@ function addUniversityScholarships($connection, $university) {
 }
 
 function addUniversityCost($connection, $university) {
-    $statement = $connection->prepare("INSERT INTO costs VALUES (:id, :resident, :nonResident, :cost, :university)");
+    $statement = $connection->prepare("INSERT INTO costs VALUES (:id, :resident, :nonResident, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
     $statement->bindValue("university", $university["id"]);
     $cost = $university["cost"];
     $statement->bindValue("resident", $cost["resident"]);
     $statement->bindValue("nonResident", $cost["nonResident"]);
-    $statement->bindValue("cost", $cost["cost"]);
     $success = $statement->execute();
     if (!$success && $statement->rowCount() !== 1) {
         throw new PDOException("Error when adding cost for university " . $university["id"] . " to database<br>");
@@ -194,7 +189,7 @@ function getUniversity($id) {
     $getScholarships = $connection->prepare("SELECT name, minimumGPA, residence, amount, financialNeed FROM
                                              scholarships WHERE university = ?");
 
-    $getCost = $connection->prepare("SELECT resident, nonResident, cost FROM costs WHERE university = ?");
+    $getCost = $connection->prepare("SELECT resident, nonResident FROM costs WHERE university = ?");
 
     $success = $getUni->execute([$id]);
     if ($success) {
