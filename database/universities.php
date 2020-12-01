@@ -178,9 +178,10 @@ function addUniversityCost($connection, $university_id, $cost) {
  *
  * If no university with the given id exists, then an empty array is returned. If an error occurs, null is returned.
  */
-function getUniversity($id) {
-    $connection = createConnection();
-
+function getUniversity($id, $connection=null) {
+    if (is_null($connection)) {
+        $connection = createConnection();
+    }
     $getUni = $connection->prepare("SELECT * FROM universities WHERE id = ?");
 
     $getPrograms = $connection->prepare("SELECT name, minimumGPA FROM programs WHERE university = ?");
@@ -213,4 +214,52 @@ function getUniversity($id) {
         echo "Error when trying to get university $id from database <br>";
     }
     return null;
+}
+
+/*
+ * Return all the universities in an array of associative arrays. See getUniversity for the format of the returned
+ * universities.
+ *
+ * If no university exists, then an empty array is returned. If an error occurs, null is returned.
+ */
+function getAllUniversities() {
+    $connection = createConnection();
+    try {
+        $allIds = getAllUniversityIds($connection);
+    }
+    catch (PDOException $e) {
+        return null;
+    }
+    $universities = [];
+    foreach($allIds as $id) {
+        try {
+            $uni = getUniversity($id, $connection);
+            if (!is_null($uni)) {
+                $universities[] = $uni;
+            }
+        }
+        catch (PDOException $e) {
+
+        }
+    }
+    return $universities;
+}
+
+function getAllUniversityIds($connection=null) {
+    if (is_null($connection)) {
+        $connection = createConnection();
+    }
+    $getIds = $connection->prepare("SELECT id FROM universities");
+    $success = $getIds->execute();
+    if ($success) {
+        $rows = $getIds->fetchAll(PDO::FETCH_NUM);
+        $ids = [];
+        foreach($rows as $row) {
+            $ids[] = $row[0];
+        }
+        return $ids;
+    }
+    else {
+        throw new Exception("Error when retrieving all university IDs: statement->execute() returned false");
+    }
 }
