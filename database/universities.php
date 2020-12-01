@@ -120,18 +120,18 @@ function addUniversity($values) {
 
     $success = $statement->execute($university);
     if ($success && $statement->rowCount() === 1) {
-        addUniversityPrograms($connection, $values);
-        addUniversityScholarships($connection, $values);
-        addUniversityCost($connection, $values);
+        addUniversityPrograms($connection, $university["id"], $values["programs"]);
+        addUniversityScholarships($connection, $university["id"], $values["scholarships"]);
+        addUniversityCost($connection, $university["id"], $values["cost"]);
     }
     echo "University " . $values["id"] . " successfully added to database<br>";
 }
 
-function addUniversityPrograms($connection, $university) {
+function addUniversityPrograms($connection, $university_id, $programs) {
     $statement = $connection->prepare("INSERT INTO programs VALUES (:id, :name, :minimumGPA, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
-    $statement->bindValue("university", $university["id"]);
-    foreach($university["programs"] as $program) {
+    $statement->bindValue("university", $university_id);
+    foreach($programs as $program) {
         $statement->bindValue("name", $program["name"]);
         $statement->bindValue("minimumGPA", $program["minimumGPA"]);
         $success = $statement->execute();
@@ -141,12 +141,12 @@ function addUniversityPrograms($connection, $university) {
     }
 }
 
-function addUniversityScholarships($connection, $university) {
+function addUniversityScholarships($connection, $university_id, $scholarships) {
     $statement = $connection->prepare("INSERT INTO scholarships VALUES (:id, :name, :minimumGPA, :residence,
                                                                         :amount, :financialNeed, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
-    $statement->bindValue("university", $university["id"]);
-    foreach($university["scholarships"] as $scholarship) {
+    $statement->bindValue("university", $university_id);
+    foreach($scholarships as $scholarship) {
         $statement->bindValue("name", $scholarship["name"]);
         $statement->bindValue("minimumGPA", $scholarship["minimumGPA"]);
         $statement->bindValue("residence", $scholarship["residence"]);
@@ -159,16 +159,15 @@ function addUniversityScholarships($connection, $university) {
     }
 }
 
-function addUniversityCost($connection, $university) {
+function addUniversityCost($connection, $university_id, $cost) {
     $statement = $connection->prepare("INSERT INTO costs VALUES (:id, :resident, :nonResident, :university)");
     $statement->bindValue("id", null);  // MySQL will assign a valid id automatically
-    $statement->bindValue("university", $university["id"]);
-    $cost = $university["cost"];
+    $statement->bindValue("university", $university_id);
     $statement->bindValue("resident", $cost["resident"]);
     $statement->bindValue("nonResident", $cost["nonResident"]);
     $success = $statement->execute();
     if (!$success && $statement->rowCount() !== 1) {
-        throw new PDOException("Error when adding cost for university " . $university["id"] . " to database<br>");
+        throw new PDOException("Error when adding cost for university " . $university_id . " to database<br>");
     }
 }
 
