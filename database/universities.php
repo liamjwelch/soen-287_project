@@ -287,3 +287,11 @@ function getAllProgramNames($connection=null) {
         throw new Exception("Error when retrieving all program names: statement->execute() returned false");
     }
 }
+
+function getUniversityLogoCompleteFilename($id) {
+    return "images/" . $id . "_logo.svg";
+}
+
+function getUniversityImageCompleteFilename($id) {
+    return "images/" . $id . ".jpg";
+}
