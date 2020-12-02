@@ -29,15 +29,16 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         </fieldset>
         <fieldset>
             <legend>Personal Information</legend>
-            <label>First Name:<input type="text" name="first_name" pattern="[A-Za-z-]+" title="only letters and hyphens"
+            <label>First Name:<input type="text" name="first_name" pattern="[A-Za-z-]+" title="only letters and hyphens" max="20"
                                      required>
             </label>
-            <label>Last Name:<input type="text" name="last_name"  pattern="[A-Za-z-]+" title="only letters and hyphens"
+            <label>Last Name:<input type="text" name="last_name" max="20" pattern="[A-Za-z-]+" title="only letters and hyphens"
                                     required></label>
             <label>Phone Number:<input type="tel" name="phone" placeholder="123-456-7890"  pattern="\d{3}-\d{3}-\d{4}"
                                        title="123-456-7890" required></label>
         </fieldset>
         <label><input type="checkbox" name="tc_agreed" class="checkbox" required>I agree with the <a href="terms.php">terms and conditions</a></label>
+        <input type="hidden" name="role" value="student">
         <p id="js-validation-msg" class="error-message"></p>
         <button type="reset">start over</button>
 		<button type="submit">Submit</button>
