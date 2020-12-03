@@ -16,7 +16,7 @@
 </head>
 <body>
 <?php
-    include "navbar.php";
+    include_once "navbar.php";
     echo "<main>$content</main>";
     readfile("footer.html");
 ?>
