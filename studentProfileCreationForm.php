@@ -10,6 +10,12 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 else {
     $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dreams!';
 }
+
+  if(isset($_POST['formSubmit']) ) {
+      header("Location: somewhereElse.php");
+
+  }
+  
 $content = "
 
 <body>
@@ -19,13 +25,17 @@ $content = "
 
 <form id='regForm' action='/action_page.php'>
       <h2>Should Echo User's Name</h2>
+
       <!-- One 'tab' for each step in the form: -->
+      <!-- 1 -->
       <div class='tab'>Your current contact information:
       <p><input placeholder='Address...' oninput='this.className = ''' name='address' max='250'></p>
       <p><input placeholder='City...' oninput='this.className = ''' name='city'></p>    
       <p><input placeholder='Country...' oninput='this.className = ''' name='country'></p>
       <p><input placeholder='Postal Code...' oninput='this.className = ''' name='postalCode'></p>
       </div>
+
+      <!-- 2 -->
       <div class='tab'>Academic/Financial information:
       <p>
       <label>Major:</label>
@@ -43,14 +53,17 @@ $content = "
     <p><input placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>    
     <p><input placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
     </div>
+
+    <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
       <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
     </div>
-    <div class='tab'>Now, the for the exciting part... 
+    <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
       <p>Close your eyes, and picture the school of your dreams. Click Next when you are ready to make those dreams a reality.</p>
     </div>
 
+    <!-- 4 -->
     <div id='setting' class='tab'><p>Preferred Setting:</p>
 
     <div class='tooltip'>
@@ -80,7 +93,43 @@ $content = "
     </label>
     </div>
 
-<!-- END OF FORM--></div>
+    </div>
+
+    <!-- 5 -->
+    <div id='setting' class='tab'><p>Class Size:</p>
+
+    <div class='tooltip'>
+    <label> 
+    <!-- https://images.phillypublishing.com/onwardstate/uploads/2014/09/Freshman-Convocation-8.25.12-71.jpg -->
+    <input type='radio' name='test' value='highPopulation' checked>  
+    <image class='setting' type='image' src='images/highPopulation.jpeg' alt='Submit' width='250' height='150'></image>
+    <span class='tooltiptext'>Want lots of people to meet? Join an institution which hosts a large student population, full of teams, organizations.</span>
+    </label>
+    </div>
+
+    <div class='tooltip'>
+    <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
+    <label>
+    <input type='radio' name='test' value='mediumPopulation' checked>  
+    <image class='setting' type='image' src='images/mediumPopulation.jpg' alt='Submit' width='250' height='150'></image>
+    </label>
+    <span class='tooltiptext'>Not too big, not too small? Just right. For people who don't want to sit infront of a jumbotron for first year lectures, medium population schools are what you're looking for.</span>
+    </div>
+
+    <div class='tooltip'>
+    <label>
+    <input type='radio' name='test' value='lowPopulation' checked>  
+    <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
+    <image class='setting' type='image' src='images/lowPopulation.jpg' alt='Submit' width='250' height='150'></image>
+    <span class='tooltiptext'>Want to rub elbows with your professors? Less students can mean premium education in close contact to your peers and professors.</span>
+    </label>
+    </div>
+
+    </div>
+    <!-- 6 -->
+    <div id='setting' class='tab'>
+      <p>Well done! Please click submit to finish the registration process. Upon submission we will begin matching you to the university of your dreams!</p>
+    </div>
 
   <div style='overflow:auto;'>
     <div style='float:right;'>
@@ -90,6 +139,8 @@ $content = "
   </div>
   <!-- Circles which indicates the steps of the form: -->
   <div style='text-align:center;margin-top:40px;'>
+    <span class='step'></span>
+    <span class='step'></span>
     <span class='step'></span>
     <span class='step'></span>
     <span class='step'></span>
@@ -113,6 +164,7 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById('nextBtn').innerHTML = 'Submit';
+    document.getElementById('nextBtn').name = 'formSubmit';
   } else {
     document.getElementById('nextBtn').innerHTML = 'Next';
   }
@@ -155,9 +207,9 @@ function validateForm() {
     }
   }
   // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName('step')[currentTab].className += ' finish';
-  }
+  // if (valid) {
+  //   document.getElementsByClassName('step')[currentTab].className += ' finish';
+  // }
   return valid; // return the valid status
 }
 
@@ -171,6 +223,8 @@ function fixStepIndicator(n) {
   x[n].className += ' active';
 }
 </script>
+
+</body> 
 ";
 
 include "template.php";
