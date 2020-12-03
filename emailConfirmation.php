@@ -10,10 +10,12 @@ if (isset($_GET["resend"]) && $_GET["resend"]) {
     $_SESSION["token"] = $validationToken;
 }
 
-$token = $_SESSION["token"];
-$encodedEmail = urlencode($_SESSION["email"]);
-$url = "studentProfileCreationForm.php?token=$token&email=$encodedEmail";
-
+if (isset($_SESSION["token"])) {
+    $token = $_SESSION["token"];
+    $encodedEmail = urlencode($_SESSION["email"]);
+    $url = "studentProfileCreationForm.php?token=$token&email=$encodedEmail";
+    $_SESSION["token"] = null;
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +39,14 @@ $url = "studentProfileCreationForm.php?token=$token&email=$encodedEmail";
         Didn't receive an email yet? Click <a href="emailConfirmation.php?resend=1">here</a> to resend the email.
     </p>
     <p>
-        For now, we just print the link <?= "<a href='$url'>here</a>"; ?>
+        <?php
+            if (isset($url)) {
+                echo "For now, we just print the link <a href='$url'>here</a>";
+            }
+            else {
+                echo "You'll need to get another email";
+            }
+        ?>
     </p>
 </main>
 

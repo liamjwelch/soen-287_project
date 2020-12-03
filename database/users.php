@@ -83,3 +83,11 @@ function setToken($email, $token) {
     $statement->execute([$token, $email]);
     return $statement->rowCount() === 1;
 }
+
+function isEmailVerified($email) {
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT emailVerified FROM users WHERE email = BINARY ?");
+    $statement->execute([$email]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return $rows[0][0] === "1";
+}
