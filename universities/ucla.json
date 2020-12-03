@@ -1,7 +1,7 @@
 {
     "id": "ucla",
     "name": "University of California, Los Angeles",
-    "location": "Los Angeles, CA, USA",
+    "location": "Los Angeles, CA, United States",
     "programs": [
         {"name": "Biology", "minimumGPA": 3.0}, 
         {"name": "Political Science", "minimumGPA": 3.0}, 
