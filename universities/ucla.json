@@ -1,0 +1,29 @@
+{
+    "id": "ucla",
+    "name": "University of California, Los Angeles",
+    "location": "Los Angeles, CA, USA",
+    "programs": [
+        {"name": "Biology", "minimumGPA": 3.0}, 
+        {"name": "Political Science", "minimumGPA": 3.0}, 
+        {"name": "Psychology", "minimumGPA": 3.0}, 
+        {"name": "Business", "minimumGPA": 3.0},  
+        {"name": "Statistics", "minimumGPA": 3.0}
+    ],
+    "scholarships": [
+        {"name":"FAFSA","minimumGPA": 2.0,"residence": "United States","financialNeed": 1000,"amount": 20000},
+        {"name":"UCLA Regents Scholarships","minimumGPA": 3.0,"residence": null,"financialNeed": 2000,"amount": 2000}, 
+        {"name":"UCLA Alumni Scholarships","minimumGPA": 2.0,"residence": null,"financialNeed": null,"amount": 20000}, 
+        {"name":"UCLA Achievement Scholarship","minimumGPA": 3.0,"residence": "United States","financialNeed": null,"amount": 10000}
+    ],
+    "deadline": "November 30", 
+    "description": "UCLA is an american public university located in California, founded in 1919. It is composed of many schools and department such as the College of Letters, the Anderson School of Management, the Henry Samueli School of Engineering and Applied Science, the School of Law and the David Geffen School of Medicine.",
+    "size": 45000,
+    "ranking": 15,
+    "contactPage": "https://www.ucla.edu/contact",
+    "email": "ugadm@saonet.ucla.edu",
+    "phone": "3108253101",
+    "cost": { "resident": 36767, "nonResident": 66521 },
+    "address": "Los Angeles, CA 90095, United States",
+    "setting": "urban",
+    "avgGPA": 3.9
+}

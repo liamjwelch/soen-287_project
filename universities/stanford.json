@@ -1,0 +1,28 @@
+{
+    "id": "stanford",
+    "name": "Stanford University",
+    "location": "Stanford, CA, United States",
+    "programs": [
+        {"name":"Aerospace Engineering", "minimumGPA": 3.7},
+        {"name":"Physics", "minimumGPA": 3.5},
+        {"name":"Computer Science", "minimumGPA": 3.5},
+        {"name":"Engineering", "minimumGPA": 3.6},
+        {"name":"Music", "minimumGPA": 3.3}
+    ],
+    "scholarships": [
+        {"name":"FAFSA", "minimumGPA": 2.0, "residence": "United States", "financialNeed": 1000, "amount": 20000},
+        {"name":"Stanford Financial Aid", "minimumGPA": 3.5,"residence": null, "financialNeed": 25000, "amount": 40000}
+    ],
+    "deadline": "January 2",
+    "description": "Stanford University, officially Leland Stanford Junior University,[12] is a private research university in Stanford, California. Stanford is ranked among the most prestigious universities in the world by numerous major education publications.",
+    "contactPage": "https://www.stanford.edu/contact/",
+    "phone": "6507232300",
+    "email": "admission@stanford.edu",
+    "size": 7083,
+    "ranking": 6 ,
+    "cost": { "resident": 78218, "nonResident": 98394},
+    "setting": "rural",
+    "address": "450 Serra Mall, Stanford, CA 94305, United States",
+    "avgGPA": 3.95
+}
+
