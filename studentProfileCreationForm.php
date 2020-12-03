@@ -14,20 +14,20 @@ $content = "
 
 <body>
 
-<!-- adapted from
+<!-- As found on
  https://www.w3schools.com/howto/howto_js_form_steps.asp --->
 
 <form id='regForm' action='/action_page.php'>
-  <h2>Should Echo User's Name</h2>
-  <!-- One 'tab' for each step in the form: -->
-  <div class='tab'>Your current contact information:
-    <p><input placeholder='Address...' oninput='this.className = ''' name='address' max='250'></p>
-    <p><input placeholder='City...' oninput='this.className = ''' name='city'></p>    
-    <p><input placeholder='Country...' oninput='this.className = ''' name='country'></p>
-    <p><input placeholder='Postal Code...' oninput='this.className = ''' name='postalCode'></p>
-  </div>
-    <div class='tab'>Academic/Financial information:
-    <p>
+      <h2>Should Echo User's Name</h2>
+      <!-- One 'tab' for each step in the form: -->
+      <div class='tab'>Your current contact information:
+      <p><input placeholder='Address...' oninput='this.className = ''' name='address' max='250'></p>
+      <p><input placeholder='City...' oninput='this.className = ''' name='city'></p>    
+      <p><input placeholder='Country...' oninput='this.className = ''' name='country'></p>
+      <p><input placeholder='Postal Code...' oninput='this.className = ''' name='postalCode'></p>
+      </div>
+      <div class='tab'>Academic/Financial information:
+      <p>
       <label>Major:</label>
       <select name='majors' id='majorDropdown'>
       <option value=''>To</option>
@@ -42,13 +42,46 @@ $content = "
       </select></p>  
     <p><input placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>    
     <p><input placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
-  </div>
-  <div class='tab'>Tell us a bit about yourself:
-    <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Just a little something special! ;o)'></textarea></p>
-  </div>
-  <div class='tab'>Now, the for the exciting part... 
-    <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
-  </div>
+    </div>
+    <div class='tab'>Tell us a bit about yourself:
+      <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
+    </div>
+    <div class='tab'>Now, the for the exciting part... 
+      <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
+      <p>Close your eyes, and picture the school of your dreams. Click Next when you are ready to make those dreams a reality.</p>
+    </div>
+
+    <div id='setting' class='tab'><p>Preferred Setting:</p>
+
+    <div class='tooltip'>
+    <label> 
+    <!-- https://users.encs.concordia.ca/~sera2010/images/port_montreal_aggrandi.jpg --> 
+    <input type='radio' name='test' value='city' checked>  
+    <image class='setting' type='image' src='images/montreal.jpeg' alt='Submit' width='250' height='150'></image>
+    <span class='tooltiptext'>Want to work hard and play hard? Schools like McGill in Montreal, Canada might be the city vibe you're looking for.</span>
+    </label>
+    </div>
+
+    <div class='tooltip'>
+    <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
+    <label>
+    <input type='radio' name='test' value='suburban' checked>  
+    <image class='setting' type='image' src='images/suburban.jpeg' alt='Submit' width='250' height='150'></image>
+    </label>
+    <span class='tooltiptext'>Slower pace with still plenty of local ammenites? An urban choice such as Harvard in Cambridge, MA. Might be what you've been looking for.</span>
+    </div>
+
+    <div class='tooltip'>
+    <label>
+    <input type='radio' name='test' value='rural' checked>  
+    <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
+    <image class='setting' type='image' src='images/rural.jpeg' alt='Submit' width='250' height='150'></image>
+    <span class='tooltiptext'>A mix of the great outdoors and academic life? Schools like Standford in Outdoors, PA have you covered.</span>
+    </label>
+    </div>
+
+<!-- END OF FORM--></div>
+
   <div style='overflow:auto;'>
     <div style='float:right;'>
       <button type='button' id='prevBtn' onclick='nextPrev(-1)'>Previous</button>
@@ -62,7 +95,8 @@ $content = "
     <span class='step'></span>
     <span class='step'></span>
   </div>
-</form> 
+</form>
+
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab

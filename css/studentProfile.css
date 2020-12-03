@@ -1,9 +1,13 @@
 /*
-Adapted from
+As found on
 https://www.w3schools.com/howto/howto_js_form_steps.asp
 */
 * {
   box-sizing: border-box;
+}
+
+div.tabSetting{
+  display:flex;
 }
 
 body {
@@ -31,6 +35,10 @@ input {
   border: 1px solid #aaaaaa;
 }
 
+image.setting {
+  width:30%;
+}
+
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd;
@@ -54,11 +62,9 @@ color: #FFFFFF;
 cursor: pointer;
 
 }
-
 button:hover {
   opacity: 0.8;
 }
-
 #prevBtn {
   background-color: #bbbbbb;
 }
@@ -79,7 +85,72 @@ button:hover {
   opacity: 1;
 }
 
+select{
+  width:100px;
+}
+
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4CAF50;
+}
+
+
+/*
+IMAGE AS RADIO
+https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons*/
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
+
+
+/*
+TOOLTIP
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_tooltip
+*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -200px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tooltip .tooltiptext::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
