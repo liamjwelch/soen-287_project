@@ -14,29 +14,16 @@ $cities = [];
 $countries = [];
 foreach ($universities as $university) {
     // Create an array with the cities
-    $auxCity = explode(', ', $university['location'])[0];
-    $foundCity = false;
-    foreach ($cities as $city) {
-        if ($city === $auxCity) $foundCity = true;
-    }
-    if(!$foundCity) array_push($cities, $auxCity);
-
+    array_push($cities, explode(', ', $university['location'])[0]);
     // Create an array with the states
-    $auxState = explode(', ', $university['location'])[1];
-    $foundState = false;
-    foreach ($states as $state) {
-        if ($state === $auxState) $foundState = true;
-    }
-    if(!$foundState) array_push($states, $auxState);
-
+    array_push($states, explode(', ', $university['location'])[1]);
     // Create an array with the countries
-    $auxCountry = explode(', ', $university['location'])[2];
-    $foundCountry = false;
-    foreach ($countries as $country) {
-        if ($country === $auxCountry) $foundCountry = true;
-    }
-    if(!$foundCountry) array_push($countries, $auxCountry);
+    array_push($countries, explode(', ', $university['location'])[2]);
 }
+// Remove duplicates from the arrays
+$cities = array_unique($cities);
+$states = array_unique($states);
+$countries = array_unique($countries);
 
 ?>
 
@@ -121,10 +108,10 @@ include_once "navbar.php";
                 <td>
                     <img src="<?php echo getUniversityLogoCompleteFilename($university['id']); ?>"
                          alt="<?php echo $university['id']; ?>"
-                         class="logo">
+                         class="logo" id="uniLogo">
                 </td>
                 <td hidden><?php echo $university['id']; ?></td>
-                <td id="uniName"><a href="<?php echo getUniversityProfile($university['id']);?>">
+                <td id="uniName"><a href="<?php echo "university.php";?>">
                         <?php echo $university['name']; ?></a>
                 </td>
                 <td><?php echo explode(', ', $university['location'])[2]; ?></td>

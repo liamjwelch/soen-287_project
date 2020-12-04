@@ -295,7 +295,3 @@ function getUniversityLogoCompleteFilename($id) {
 function getUniversityImageCompleteFilename($id) {
     return "images/" . $id . ".jpg";
 }
-
-function getUniversityProfile($id) {
-    return $id . ".php";
-}

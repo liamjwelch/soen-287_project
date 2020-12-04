@@ -87,6 +87,7 @@ form.filter input[type=text], select {
 #filterTable a {text-decoration: none; color: #680F13}
 #filterTable ul {text-align: left;}
 #filterTable #uniName {font-weight: bold;}
+#uniLogo { margin: 5px 10px;}
 
 /* Style for smaller screens (less than 800px wide) */
 @media screen and (max-width: 845px) {
