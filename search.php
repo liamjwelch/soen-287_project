@@ -50,7 +50,7 @@ foreach ($universities as $university) {
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==' crossorigin=''/>
     <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==' crossorigin=''>
-        var mymap =null;
+        let mymap =null;
     </script>
 </head>
 <body>
@@ -107,7 +107,6 @@ include_once "navbar.php";
             <i class='fa fa-sliders icons'></i> Filter
         </button>
     </form>
-    <h3 id='msg'></h3>
     <table class='filter-table' id='filterTable'>
         <tr>
             <th>Logo</th>
