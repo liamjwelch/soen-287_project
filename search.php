@@ -4,6 +4,7 @@ session_start();
 $universities = getAllUniversities();
 try {
     $programs = getAllProgramNames();
+    sort($programs, SORT_DESC);
 } catch (Exception $e){
     $programs = null;
 }
@@ -71,7 +72,7 @@ include_once "navbar.php";
 <article class='table-article'>
     <form class='filter'>
         <select name='country' id='country'>
-            <option value="" selected disabled hidden>Select a country</option>
+            <option value="" selected>Select a country</option>
             <?php foreach ($countries as $country) { ?>
                 <option value="<?php echo $country ?>">
                     <?php echo $country; ?>
@@ -79,7 +80,7 @@ include_once "navbar.php";
             <?php } ?>
         </select>
         <select name='state' id='state'>
-            <option value="" selected disabled hidden>Select a state</option>
+            <option value="" selected>Select a state</option>
             <?php foreach ($states as $state) { ?>
                 <option value="<?php echo $state ?>">
                     <?php echo $state; ?>
@@ -87,7 +88,7 @@ include_once "navbar.php";
             <?php } ?>
         </select>
         <select name='city' id='city'>
-            <option value="" selected disabled hidden>Select a city</option>
+            <option value="" selected>Select a city</option>
             <?php foreach ($cities as $city) { ?>
                 <option value="<?php echo $city ?>">
                     <?php echo $city; ?>
@@ -95,7 +96,7 @@ include_once "navbar.php";
             <?php } ?>
         </select>
         <select name='program' id='program'>
-            <option value="" selected disabled hidden>Select a program</option>
+            <option value="" selected>Select a program</option>
             <?php foreach ($programs as $program) { ?>
                 <option value="<?php echo $program ?>">
                     <?php echo $program; ?>
@@ -112,8 +113,9 @@ include_once "navbar.php";
             <th>Logo</th>
             <th>Name of the University</th>
             <th>Country</th>
-            <th>State/Province</th>
+            <th>State</th>
             <th>City</th>
+            <th>Programs</th>
         </tr>
         <?php foreach ($universities as $university) { ?>
             <tr>
@@ -123,12 +125,18 @@ include_once "navbar.php";
                          class="logo">
                 </td>
                 <td hidden><?php echo $university['id']; ?></td>
-                <td><a href="<?php echo getUniversityProfile($university['id']);?>">
+                <td id="uniName"><a href="<?php echo getUniversityProfile($university['id']);?>">
                         <?php echo $university['name']; ?></a>
                 </td>
                 <td><?php echo explode(', ', $university['location'])[2]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[1]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[0]; ?></td>
+                <td id="uniPrograms">
+                    <ul>
+                        <?php foreach ($university['programs'] as $program) {?>
+                            <li><?php echo $program['name']; ?></li>
+                        <?php }?>
+                    </ul>
                 </td>
             </tr>
         <?php } ?>

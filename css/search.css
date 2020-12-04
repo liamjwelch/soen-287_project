@@ -106,15 +106,17 @@ form.filter input[type=text], select {
 
 #filterTable { width: 100%; border-collapse: collapse; text-align: center;}
 #filterTable td, #filterTable th {
-    padding: 15px 10px;
-    font-size: 18px;
+    font-size: 15px;
     height: 60px;
     border: solid #680F13 1px;
 }
-#filterTable th { background-color: #680F13; color: white;}
+#filterTable td {padding: 2px; }
+#filterTable th { background-color: #680F13; color: white; padding: 15px 10px;}
 #filterTable tr:nth-child(even){background-color: white;}
 #filterTable tr:hover {background-color: #ddd;}
 #filterTable a {text-decoration: none; color: #680F13}
+#filterTable ul {text-align: left;}
+#filterTable #uniName {font-weight: bold;}
 
 h3 { color: #680F13; font-size: 22px;}
 
