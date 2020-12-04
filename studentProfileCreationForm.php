@@ -1,22 +1,26 @@
 <?php
 
-    require "database/users.php";
-    require "database/universities.php";
+require_once "database/users.php";
+require_once "database/universities.php";
+require_once "database/students.php";
 
     session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // should create the student and set the email as verified, but for now we just set the email as verified
+    // TODO validate the fields for student profile
     if (isset($_POST["token"]) && strlen($_POST["token"]) === 50 && isset($_POST["email"]) && !empty($_POST["email"])) {
-        if (isTokenValid($_POST["email"], $_POST["token"])) {
-            setEmailVerified($_POST["email"]);
+        try {
+            createStudent($_POST["email"], $_POST["token"], $_POST["address"], $_POST["program"], $_POST["gpa"],
+                          $_POST["preferredSetting"], $_POST["maxDistance"], $_POST["preferredSize"],
+                          $_POST["preferredRanking"], $_POST["householdIncome"], $_POST["budget"],
+                          $_POST["description"]);
             $_SESSION["email"] = $_POST["email"];
             $_SESSION["loggedin"] = true;
             header("location: homepage.php");
             exit();
         }
-        else {
-            // TODO handle that case
+        catch (Exception $e) {
+            echo $e->getMessage() . "<br>"; // TODO improve that
         }
     }
     else {
@@ -52,7 +56,7 @@ else {
     <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
     <form method="post">
         <label>Address<input name="address" value="123, 1st avenue, Montreal, Qc, Canada" required></label>
-        <label>Program<select name="programs">
+        <label>Program<select name="program">
                 <option value="placeholder">Please select your desired program</option>
                 <?php
                 foreach(getAllProgramNames() as $program) {
@@ -67,6 +71,7 @@ else {
         <label>Preferred university ranking<input name="preferredRanking" value="50" required></label>
         <label>household income<input name="householdIncome" value="60000" required></label>
         <label>Your budget per semester<input name="budget" value="20000" required></label>
+        <textarea name="description">Describe yourself in a few words</textarea>
         <input type="hidden" name="token" value="<?= $_GET["token"] ?>">
         <input type="hidden" name="email" value="<?= $email ?>">
         <button type="submit">Submit</button>
