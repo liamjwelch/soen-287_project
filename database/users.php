@@ -73,8 +73,10 @@ function setEmailVerified($email) {
     $connection = createConnection();
     $statement = $connection->prepare("UPDATE users SET emailVerified = 1, validationToken = NULL
                                        WHERE email = BINARY ?");
-    $statement->execute([$email]);
-    return $statement->rowCount() === 1;
+    $success = $statement->execute([$email]);
+    if (!$success || $statement->rowCount() !== 1) {
+        throw new PDOException("Error when setting email $email to verified: " . $statement->errorInfo()[2]);
+    }
 }
 
 function setToken($email, $token) {

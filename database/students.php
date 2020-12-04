@@ -23,7 +23,7 @@ function createStudentsTable() {
             return "Table students created successfully <br>";
         }
         else {
-            return 'Error when creating students table: $statement->execute() returned false' . "<br>";
+            return "Error when creating students table: "  . $statement->errorInfo()[2] . "<br>";
         }
     }
     catch (PDOException $e) {
@@ -42,28 +42,23 @@ function createStudent($email, $token, $address, $program, $gpa, $preferredSetti
         $connection = createConnection();
         $success = $connection->beginTransaction();
         if ($success) {
-            $success = addStudent($email, $address, $program, $gpa, $preferredSetting, $maxDistance, $preferredSize,
-                                  $preferredRanking, $householdIncome, $budget, $description, $connection);
-            if ($success) {
-                $success = setEmailVerified($_POST["email"]);
-                if ($success) {
-                    if(!$connection->commit()) {
-                        $connection->rollBack();
-                        throw new PDOException("An error occurred when finalizing the creation of your account");
-                    }
-                }
-                else {
+            try {
+                addStudent($email, $address, $program, $gpa, $preferredSetting, $maxDistance, $preferredSize,
+                           $preferredRanking, $householdIncome, $budget, $description, $connection);
+                setEmailVerified($_POST["email"]);
+                $success = $connection->commit();
+                if(!$success) {
                     $connection->rollBack();
                     throw new PDOException("An error occurred when finalizing the creation of your account");
                 }
             }
-            else {
+            catch (PDOException $e) {
                 $connection->rollBack();
-                throw new PDOException("An error occurred when trying to add your account to the database");
+                throw $e;
             }
         } else {
             $connection->rollBack();
-            throw new PDOException("An error occurred when trying to create your account");
+            throw new PDOException("Error when trying to begin transaction: " . $connection->errorInfo()[2]);
         }
     }
     else {
@@ -91,5 +86,7 @@ function addStudent($email, $address, $program, $gpa, $preferredSetting, $maxDis
     $statement->bindValue("budget", $budget);
     $statement->bindValue("description", $description);
     $success = $statement->execute();
-    return $success && $statement->rowCount() === 1;
+    if (!$success || $statement->rowCount() !== 1) {
+        throw new PDOException("Error when adding student to the database: " . $statement->errorInfo()[2]);
+    }
 }
