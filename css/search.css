@@ -60,7 +60,7 @@ form.search input[type=text] {
 }
 
 form.filter { display:inline-block; width: 100%;}
-form.filter button { width: 25%; padding: 10px; font-size: 18px;}
+form.filter button { width: 20%; padding: 10px; font-size: 18px;}
 form.filter input[type=text], form.filter select, form.filter button {
     padding: 10px;
     font-family: Verdana, Geneva, sans-serif;
@@ -71,7 +71,7 @@ form.filter input[type=text], select {
     font-size: 16px;
     border: #680F13 solid 2px;
     color: #680F13;
-    width: 25%;
+    width: 20%;
 }
 
 .centered-cards {

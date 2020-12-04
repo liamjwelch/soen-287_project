@@ -2,7 +2,41 @@
 require "database/universities.php";
 session_start();
 $universities = getAllUniversities();
-$programs = getAllProgramNames();
+try {
+    $programs = getAllProgramNames();
+} catch (Exception $e){
+    $programs = null;
+}
+
+$states = [];
+$cities = [];
+$countries = [];
+foreach ($universities as $university) {
+    // Create an array with the cities
+    $auxCity = explode(', ', $university['location'])[0];
+    $foundCity = false;
+    foreach ($cities as $city) {
+        if ($city === $auxCity) $foundCity = true;
+    }
+    if(!$foundCity) array_push($cities, $auxCity);
+
+    // Create an array with the states
+    $auxState = explode(', ', $university['location'])[1];
+    $foundState = false;
+    foreach ($states as $state) {
+        if ($state === $auxState) $foundState = true;
+    }
+    if(!$foundState) array_push($states, $auxState);
+
+    // Create an array with the countries
+    $auxCountry = explode(', ', $university['location'])[2];
+    $foundCountry = false;
+    foreach ($countries as $country) {
+        if ($country === $auxCountry) $foundCountry = true;
+    }
+    if(!$foundCountry) array_push($countries, $auxCountry);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,12 +70,35 @@ include_once "navbar.php";
 <script src='js/map.js' type='text/javascript'></script>
 <article class='table-article'>
     <form class='filter'>
-        <input type='text' placeholder='Country' name='country' id='country'>
-        <input type='text' placeholder='City' name='city' id='city'>
-        <select name='degree' id='degree'>
+        <select name='country' id='country'>
+            <option value="" selected disabled hidden>Select a country</option>
+            <?php foreach ($countries as $country) { ?>
+                <option value="<?php echo $country ?>">
+                    <?php echo $country; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <select name='state' id='state'>
+            <option value="" selected disabled hidden>Select a state</option>
+            <?php foreach ($states as $state) { ?>
+                <option value="<?php echo $state ?>">
+                    <?php echo $state; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <select name='city' id='city'>
+            <option value="" selected disabled hidden>Select a city</option>
+            <?php foreach ($cities as $city) { ?>
+                <option value="<?php echo $city ?>">
+                    <?php echo $city; ?>
+                </option>
+            <?php } ?>
+        </select>
+        <select name='program' id='program'>
+            <option value="" selected disabled hidden>Select a program</option>
             <?php foreach ($programs as $program) { ?>
-                <option value="<?php echo $program['id']; ?>">
-                    <?php echo $program['name']; ?>
+                <option value="<?php echo $program ?>">
+                    <?php echo $program; ?>
                 </option>
             <?php } ?>
         </select>
@@ -55,6 +112,7 @@ include_once "navbar.php";
             <th>Logo</th>
             <th>Name of the University</th>
             <th>Country</th>
+            <th>State/Province</th>
             <th>City</th>
         </tr>
         <?php foreach ($universities as $university) { ?>
@@ -64,13 +122,18 @@ include_once "navbar.php";
                          alt="<?php echo $university['id']; ?>"
                          class="logo">
                 </td>
-                <td><a href="'<?php echo $university['id']; ?>' . '.php'"><?php echo $university['name']; ?></a></td>
-                <td><?php echo (explode( ' , ' , $university['address']).[2]); ?></td>
-                <td><?php echo (explode( ' , ' , $university['address']).[0]); ?></td>
+                <td hidden><?php echo $university['id']; ?></td>
+                <td><a href="<?php echo getUniversityProfile($university['id']);?>">
+                        <?php echo $university['name']; ?></a>
+                </td>
+                <td><?php echo explode(', ', $university['location'])[2]; ?></td>
+                <td><?php echo explode(', ', $university['location'])[1]; ?></td>
+                <td><?php echo explode(', ', $university['location'])[0]; ?></td>
+                </td>
             </tr>
         <?php } ?>
     </table>
-    <script src='js/filter.js' type='text/javascript'></script>
+    <script src="js/filter.js" type="text/javascript"></script>
 </article>
 <?php
 readfile("footer.html");
