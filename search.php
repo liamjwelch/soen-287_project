@@ -104,16 +104,12 @@ include_once "navbar.php";
             <th>Programs</th>
         </tr>
         <?php foreach ($universities as $university) { ?>
-            <tr>
-                <td>
-                    <img src="<?php echo getUniversityLogoCompleteFilename($university['id']); ?>"
-                         alt="<?php echo $university['id']; ?>"
-                         class="logo" id="uniLogo">
+            <tr onclick="window.location='university.php'">
+                <td><img src="<?php echo getUniversityLogoCompleteFilename($university['id']); ?>"
+                         alt="<?php echo $university['id']; ?>" class="logo" id="uniLogo">
                 </td>
                 <td hidden><?php echo $university['id']; ?></td>
-                <td id="uniName"><a href="<?php echo "university.php";?>">
-                        <?php echo $university['name']; ?></a>
-                </td>
+                <td id="uniName"><?php echo $university['name']; ?></td>
                 <td><?php echo explode(', ', $university['location'])[2]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[1]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[0]; ?></td>
