@@ -7,11 +7,12 @@ require_once "users.php";
 function createStudentsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE students (email VARCHAR(50) PRIMARY KEY NOT NULL,
-                                                              address VARCHAR(250),
+                                                              city VARCHAR(50),
+                                                              state VARCHAR(50),
+                                                              country VARCHAR(50),
                                                               program VARCHAR(50),
                                                               gpa DECIMAL(3,2),
                                                               preferredSetting CHAR(10),
-                                                              maxDistance INT,
                                                               preferredSize CHAR(12),
                                                               preferredRanking INT,
                                                               householdIncome INT,
@@ -36,14 +37,14 @@ function createStudentsTable() {
  *  as verified. If an error occurs with one of those operations, both are rollbacked and an exception is thrown.
  *  This function also checks if the token is valid and throws an exception if not.
  */
-function createStudent($email, $token, $address, $program, $gpa, $preferredSetting, $maxDistance, $preferredSize,
+function createStudent($email, $token, $city, $state, $country, $program, $gpa, $preferredSetting, $preferredSize,
                        $preferredRanking, $householdIncome, $budget, $description) {
     if (isTokenValid($email, $token)) {
         $connection = createConnection();
         $success = $connection->beginTransaction();
         if ($success) {
             try {
-                addStudent($email, $address, $program, $gpa, $preferredSetting, $maxDistance, $preferredSize,
+                addStudent($email, $city, $state, $country, $program, $gpa, $preferredSetting, $preferredSize,
                            $preferredRanking, $householdIncome, $budget, $description, $connection);
                 setEmailVerified($_POST["email"]);
                 $success = $connection->commit();
@@ -66,20 +67,21 @@ function createStudent($email, $token, $address, $program, $gpa, $preferredSetti
     }
 }
 
-function addStudent($email, $address, $program, $gpa, $preferredSetting, $maxDistance, $preferredSize,
+function addStudent($email, $city, $state, $country, $program, $gpa, $preferredSetting, $preferredSize,
                     $preferredRanking, $householdIncome, $budget, $description, $connection=null) {
     if (is_null($connection)) {
         $connection = createConnection();
     }
-    $statement = $connection->prepare("INSERT INTO students VALUES (:email, :address, :program, :gpa, :preferredSetting,
-                                       :maxDistance, :preferredSize, :preferredRanking, :householdIncome, :budget, 
+    $statement = $connection->prepare("INSERT INTO students VALUES (:email, :city, :state, :country, :program, :gpa,
+                                       :preferredSetting, :preferredSize, :preferredRanking, :householdIncome, :budget,
                                        :description)");
     $statement->bindValue("email", $email);
-    $statement->bindValue("address", $address);
+    $statement->bindValue("city", $city);
+    $statement->bindValue("state", $state);
+    $statement->bindValue("country", $country);
     $statement->bindValue("program", $program);
     $statement->bindValue("gpa", $gpa);
     $statement->bindValue("preferredSetting", $preferredSetting);
-    $statement->bindValue("maxDistance", $maxDistance);
     $statement->bindValue("preferredSize", $preferredSize);
     $statement->bindValue("preferredRanking", $preferredRanking);
     $statement->bindValue("householdIncome", $householdIncome);

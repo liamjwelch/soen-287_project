@@ -10,8 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // TODO validate the fields for student profile
     if (isset($_POST["token"]) && strlen($_POST["token"]) === 50 && isset($_POST["email"]) && !empty($_POST["email"])) {
         try {
-            createStudent($_POST["email"], $_POST["token"], $_POST["address"], $_POST["program"], $_POST["gpa"],
-                          $_POST["preferredSetting"], $_POST["maxDistance"], $_POST["preferredSize"],
+            createStudent($_POST["email"], $_POST["token"], $_POST["city"], $_POST["state"], $_POST["country"],
+                          $_POST["program"], $_POST["gpa"], $_POST["preferredSetting"], $_POST["preferredSize"],
                           $_POST["preferredRanking"], $_POST["householdIncome"], $_POST["budget"],
                           $_POST["description"]);
             $_SESSION["email"] = $_POST["email"];
@@ -55,7 +55,9 @@ else {
     <h2>(I should not be here on dec 7)</h2>
     <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
     <form method="post">
-        <label>Address<input name="address" value="123, 1st avenue, Montreal, Qc, Canada" required></label>
+        <label>City<input name="city" value="Mos Eisley" required></label>
+        <label>State/Province<input name="state" value="Somewhere" required></label>
+        <label>Country<input name="country" value="Tatooine" required></label>
         <label>Program<select name="program">
                 <option value="placeholder">Please select your desired program</option>
                 <?php
@@ -66,7 +68,6 @@ else {
         </label>
         <label>GPA<input name="gpa" value="3.4" required></label>
         <label>Preferred setting<input name="preferredSetting" value="rural" required></label>
-        <label>Max distance<input name="maxDistance" value="200" required></label>
         <label>Preferred university size<input name="preferredSize" value="2000-5000" required></label>
         <label>Preferred university ranking<input name="preferredRanking" value="50" required></label>
         <label>household income<input name="householdIncome" value="60000" required></label>
