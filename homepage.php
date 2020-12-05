@@ -8,7 +8,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dreams!';
+    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a> to let us find the university of your dreams!';
 }
 $content = "
     
