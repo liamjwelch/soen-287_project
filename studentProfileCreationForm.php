@@ -15,6 +15,22 @@ else {
       header("Location: somewhereElse.php");
 
   }
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $address = trim(filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING));
+    $city = trim(filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING));
+    $country = trim(filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING));
+    $postalCode = trim(filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_STRING));
+    $major = trim(filter_input(INPUT_POST, 'major', FILTER_SANITIZE_STRING));
+    $gpa = trim(filter_input(INPUT_POST, 'gpa', FILTER_SANITIZE_STRING));
+    $householdIncome = trim(filter_input(INPUT_POST, 'householdIncome', FILTER_SANITIZE_STRING));
+    $budget = trim(filter_input(INPUT_POST, 'budget', FILTER_SANITIZE_STRING));
+    $preferredSize = trim(filter_input(INPUT_POST, 'preferredSize', FILTER_SANITIZE_STRING));
+    $preferredSetting = trim(filter_input(INPUT_POST, 'preferredSetting', FILTER_SANITIZE_STRING));
+
+    //LOGIC FOR ADDSTUDENT
+
+  }
   
 $content = "
 
