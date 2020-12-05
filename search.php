@@ -63,32 +63,32 @@ include_once "navbar.php";
         <select name='country' id='country'>
             <option value="" selected>Select a country</option>
             <?php foreach ($countries as $country) { ?>
-                <option value="<?php echo $country ?>">
-                    <?php echo $country; ?>
+                <option value="<?= $country ?>">
+                    <?= $country; ?>
                 </option>
             <?php } ?>
         </select>
         <select name='state' id='state'>
             <option value="" selected>Select a state</option>
             <?php foreach ($states as $state) { ?>
-                <option value="<?php echo $state ?>">
-                    <?php echo $state; ?>
+                <option value="<?= $state ?>">
+                    <?= $state; ?>
                 </option>
             <?php } ?>
         </select>
         <select name='city' id='city'>
             <option value="" selected>Select a city</option>
             <?php foreach ($cities as $city) { ?>
-                <option value="<?php echo $city ?>">
-                    <?php echo $city; ?>
+                <option value="<?= $city ?>">
+                    <?= $city; ?>
                 </option>
             <?php } ?>
         </select>
         <select name='program' id='program'>
             <option value="" selected>Select a program</option>
             <?php foreach ($programs as $program) { ?>
-                <option value="<?php echo $program ?>">
-                    <?php echo $program; ?>
+                <option value="<?= $program ?>">
+                    <?= $program; ?>
                 </option>
             <?php } ?>
         </select>
@@ -108,18 +108,18 @@ include_once "navbar.php";
         </tr>
         <?php foreach ($universities as $university) { ?>
             <tr onclick="window.location='university.php?id= <?= $university['id']; ?>'">
-                <td><img src="<?php echo getUniversityLogoCompleteFilename($university['id']); ?>"
-                         alt="<?php echo $university['id']; ?>" class="logo uniLogo">
+                <td><img src="<?= getUniversityLogoCompleteFilename($university['id']); ?>"
+                         alt="<?= $university['id']; ?>" class="logo uniLogo">
                 </td>
-                <td hidden><?php echo $university['id']; ?></td>
-                <td class="uniName"><?php echo $university['name']; ?></td>
-                <td><?php echo explode(', ', $university['location'])[2]; ?></td>
-                <td><?php echo explode(', ', $university['location'])[1]; ?></td>
-                <td><?php echo explode(', ', $university['location'])[0]; ?></td>
+                <td hidden><?= $university['id']; ?></td>
+                <td class="uniName"><?= $university['name']; ?></td>
+                <td><?= explode(', ', $university['location'])[2]; ?></td>
+                <td><?= explode(', ', $university['location'])[1]; ?></td>
+                <td><?= explode(', ', $university['location'])[0]; ?></td>
                 <td class="uniPrograms">
                     <ul>
                         <?php foreach ($university['programs'] as $program) {?>
-                            <li><?php echo $program['name']; ?></li>
+                            <li><?= $program['name']; ?></li>
                         <?php }?>
                     </ul>
                 </td>
