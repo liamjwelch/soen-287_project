@@ -10,10 +10,13 @@
             echo '<link rel="stylesheet" type="text/css" href="' . $stylesheet . '">';
         }
     ?>
+    <?php
+        echo $headerContent;
+    ?>
 </head>
 <body>
 <?php
-    include "navbar.php";
+    include_once "navbar.php";
     echo "<main>$content</main>";
     readfile("footer.html");
 ?>

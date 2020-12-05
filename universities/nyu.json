@@ -1,7 +1,7 @@
 {
     "id": "nyu",
     "name": "New York University",
-    "location": " New York, NY, USA",
+    "location": "New York, NY, United States",
     "programs": [
         {"name": "Business", "minimumGPA": 3.51},
         {"name": "Management", "minimumGPA": 3.51}, 
