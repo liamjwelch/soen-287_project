@@ -96,6 +96,7 @@ include_once "navbar.php";
             <i class='fa fa-sliders icons'></i> Filter
         </button>
     </form>
+    <h3 id='msg'></h3>
     <table class='filter-table' id='filterTable'>
         <tr>
             <th>Logo</th>
@@ -108,14 +109,14 @@ include_once "navbar.php";
         <?php foreach ($universities as $university) { ?>
             <tr onclick="window.location='university.php'">
                 <td><img src="<?php echo getUniversityLogoCompleteFilename($university['id']); ?>"
-                         alt="<?php echo $university['id']; ?>" class="logo" id="uniLogo">
+                         alt="<?php echo $university['id']; ?>" class="logo uniLogo">
                 </td>
                 <td hidden><?php echo $university['id']; ?></td>
-                <td id="uniName"><?php echo $university['name']; ?></td>
+                <td class="uniName"><?php echo $university['name']; ?></td>
                 <td><?php echo explode(', ', $university['location'])[2]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[1]; ?></td>
                 <td><?php echo explode(', ', $university['location'])[0]; ?></td>
-                <td id="uniPrograms">
+                <td class="uniPrograms">
                     <ul>
                         <?php foreach ($university['programs'] as $program) {?>
                             <li><?php echo $program['name']; ?></li>

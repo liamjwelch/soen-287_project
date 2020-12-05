@@ -1,5 +1,7 @@
 html { min-width: 930px;}
 
+h3 {color: #680F13;}
+
 .search-article { padding-top: 60px; padding-bottom: 10px;}
 .map-article, .table-article { padding-top: 10px; padding-bottom: 60px;}
 .search-article, .map-article, .table-article, .filter-article {
@@ -81,14 +83,14 @@ form.filter input[type=text], select {
     border: solid #680F13 1px;
 }
 #filterTable td { padding: 10px;}
-#filterTable td#uniName { font-weight: bold; color: #680F13;}
+#filterTable td.uniName { font-weight: bold; color: #680F13;}
 #filterTable th { background-color: #680F13; color: white; padding: 15px 10px;}
 #filterTable tr { cursor: pointer;}
 #filterTable tr:nth-child(even){ background-color: white;}
 #filterTable tr:hover { background-color: #ddd;}
 #filterTable a { text-decoration: none; color: #680F13}
 #filterTable ul { text-align: left;}
-#uniLogo { margin: 5px 10px;}
+.uniLogo { margin: 5px 10px;}
 
 /* Style for smaller screens (less than 845px wide) */
 @media screen and (max-width: 845px) {
