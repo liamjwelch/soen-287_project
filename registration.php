@@ -7,16 +7,16 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Create an account - AHED</title>
+    <meta charset="utf-8">
+    <title>Create an account - AHED</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/signup.css">
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
     <script src="js/signup.js" type="text/javascript"></script>
 </head>
 <body>
 <main class="form" onsubmit="return validateForm()">
     <h1>Create an Account</h1>
-	<form class="signup-form" method="post" action="create_user.php">
+    <form class="signup-form" method="post" action="create_user.php">
         <fieldset>
             <legend>Account Information</legend>
             <label>Your Email Address:
@@ -41,7 +41,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         <input type="hidden" name="role" value="student">
         <p id="js-validation-msg" class="error-message"></p>
         <button type="reset">start over</button>
-		<button type="submit">Submit</button>
+        <button type="submit">Submit</button>
         <p class="error-message">
             <?php
             if (isset($_SESSION["errormsg"])) {
@@ -50,10 +50,10 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             }
             ?>
         </p>
-		<p class="message">Already a user?
-			<a href="login.php">Login</a>
-		</p>
-	</form>
+        <p class="message">Already a user?
+            <a href="login.php">Login</a>
+        </p>
+    </form>
 </main>
 </body>
 </html>

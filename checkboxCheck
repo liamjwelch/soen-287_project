@@ -1,0 +1,11 @@
+<style>
+
+</style>
+
+
+<body>
+
+<input id="myInput" type="checkbox" name="myInput"/>
+<label for="myInput">Some text</label>
+
+</body>
