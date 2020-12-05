@@ -26,7 +26,7 @@ document.getElementById('search').addEventListener('keydown', function(event) {
     }
 });
 
-function addr_search() {
+function addrSearch() {
     var addr = document.getElementById("search").value;
     var xmlhttp = new XMLHttpRequest();
     var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + addr;

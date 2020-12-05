@@ -12,13 +12,15 @@ try {
 $states = [];
 $cities = [];
 $countries = [];
+$locationParts = [];
 foreach ($universities as $university) {
+    $locationParts = explode(', ', $university['location']);
     // Create an array with the cities
-    array_push($cities, explode(', ', $university['location'])[0]);
+    array_push($cities, $locationParts[0]);
     // Create an array with the states
-    array_push($states, explode(', ', $university['location'])[1]);
+    array_push($states, $locationParts[1]);
     // Create an array with the countries
-    array_push($countries, explode(', ', $university['location'])[2]);
+    array_push($countries, $locationParts[2]);
 }
 // Remove duplicates from the arrays
 $cities = array_unique($cities);
@@ -37,7 +39,7 @@ $countries = array_unique($countries);
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css' integrity='sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==' crossorigin=''/>
     <script src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js' integrity='sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==' crossorigin=''>
-        let mymap =null;
+        let map =null;
     </script>
 </head>
 <body>
@@ -47,7 +49,7 @@ include_once "navbar.php";
 <article class='search-article'>
     <form class='search'>
         <input type='text' placeholder='Search the university on the map...' name='search' id='search'>
-        <button class='search-button' type='button' name='searchButton' id='searchButton' onclick='addr_search()'><i class='fa fa-search icons'></i> Search</button>
+        <button class='search-button' type='button' name='searchButton' id='searchButton' onclick='addrSearch()'><i class='fa fa-search icons'></i> Search</button>
     </form>
 </article>
 <article class='map-article'>
