@@ -41,14 +41,12 @@ function filterUniversities() {
 
 // Validate if the university contains the selected program
 function containsProgram(selectedProgram, uniPrograms) {
-    let found = false;
     let program;
     for(let i = 0; i < uniPrograms.length; i++) {
         program = uniPrograms[i].textContent || uniPrograms[i].innerText;
         if (program.localeCompare(selectedProgram) === 0) {
-            found = true;
-            break;
+            return true;
         }
     }
-    return found;
+    return false;
 }
