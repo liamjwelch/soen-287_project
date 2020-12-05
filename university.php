@@ -1,49 +1,47 @@
-<html>
-<head></head>
-<body>
-<pre>
 <?php
-
-require_once "database/universities.php";
-
-function print_array($array, $indent) {
-    foreach($array as $key=>$value) {
-        if (is_array($value)) {
-            echo str_repeat(" ", $indent) . "$key:<br>";
-            print_array($value, $indent+4);
-            echo "<br>";
-        }
-        else {
-            echo str_repeat(" ", $indent) . "$key: $value<br>";
-        }
-    }
-}
-
-if (array_key_exists("id", $_GET)) {
-    $id = $_GET["id"];
-}
-else {
-    $id = "all";
-}
-
-if ($id === "all") {
-    $rows = getAllUniversities();
-}
-else {
-    $rows = getUniversity($id);
-}
-if (!is_null($rows)) {
-    if (count($rows) === 0) {
-        echo "University not found";
-    }
-    else {
-        print_array($rows, 0);
-    }
-}
-
+require "database/universities.php";
+session_start();
+$university = getUniversity('harvard');
 ?>
-</pre>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"North America Higher Education Database"</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/university.css">
+</head>
+<body>
+<?php
+include_once "navbar.php";
+?>
+<article class="profile-background">
+    <img src='<?= getUniversityImageCompleteFilename($university['id']); ?>' alt='<?= $university['id']; ?>' class='uni-image'>
+</article>
+<article class="wrapper">
+    <aside class="contact-info">
+        <section class="profile-image">
+            <img src="<?= getUniversityLogoCompleteFilename($university['id']); ?>" alt="logo" id="uniLogo">
+        </section>
+        <section class="info">
+            <h4>CONTACT INFORMATION</h4>
+            <p class="info-title">Tlf:</p>
+            <p><?= $university['phone']; ?></p>
+            <p class="info-title">Email:</p>
+            <p><?= $university['email']; ?></p>
+            <p class="info-title">Webpage:</p>
+            <p><a href="<?= $university['contactPage']; ?>"><?= $university['contactPage']; ?></a></p>
+            <p class="info-title">Address:</p>
+            <p><?= $university['address']; ?></p>
+        </section>
+    </aside>
+    <article class="profile-main">
+
+    </article>
+</article>
+<?php
+readfile("footer.html");
+?>
 </body>
 </html>
-
-
