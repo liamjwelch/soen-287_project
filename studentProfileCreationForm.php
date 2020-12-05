@@ -18,11 +18,6 @@ else {
   
 $content = "
 
-<body>
-
-<!-- As found on
- https://www.w3schools.com/howto/howto_js_form_steps.asp --->
-
 <form id='regForm' action='/action_page.php'>
       <h2>Should Echo User's Name</h2>
 
@@ -38,25 +33,26 @@ $content = "
       <!-- 2 -->
       <div class='tab'>Academic/Financial information:
       <p>
-      <label>Major:</label>
-      <select name='majors' id='majorDropdown'>
-      <option value=''>To</option>
-      <option value=''>be filled in</option>
-      <option value=''>from DB</option>
+      <select name='major' id='majorDropdown'>
+      <option selected disabled>Major</option>
+      <option value='to'>to</option>
+      <option value='be'>be filled in</option>
+      <option value='filled'>from DB</option>
       </select></p>
-      <label>GPA:</label>
-      <select name='gpa' id='gpaDropdown'>
-      <option value=''>To</option>
-      <option value=''>be filled in</option>
-      <option value=''>from DB?</option>
+      <p>
+      <select name='gpa' id='majorDropdown'>
+      <option selected disabled>GPA</option>
+      <option value='to'>To</option>
+      <option value='be'>be filled in</option>
+      <option value='filled'>from DB?</option>
       </select></p>  
-    <p><input placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>    
+    <p><input placeholder='Household income...' oninput='this.className = ''' name='householdIncome'></p>    
     <p><input placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
     </div>
 
     <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
-      <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
+      <p><textarea name='description' id='bio' rows='5' cols='75' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
     </div>
     <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
@@ -69,7 +65,7 @@ $content = "
     <div class='tooltip'>
     <label> 
     <!-- https://users.encs.concordia.ca/~sera2010/images/port_montreal_aggrandi.jpg --> 
-    <input type='radio' name='test' value='city' checked>  
+    <input type='radio' name='preferredSetting' value='city' checked>  
     <image class='setting' type='image' src='images/montreal.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to work hard and play hard? Schools like McGill in Montreal, Canada might be the city vibe you're looking for.</span>
     </label>
@@ -78,7 +74,7 @@ $content = "
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='suburban' checked>  
+    <input type='radio' name='preferredSetting' value='suburban' checked>  
     <image class='setting' type='image' src='images/suburban.jpeg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Slower pace with still plenty of local ammenites? An urban choice such as Harvard in Cambridge, MA. Might be what you've been looking for.</span>
@@ -86,7 +82,7 @@ $content = "
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='rural' checked>  
+    <input type='radio' name='preferredSetting' value='rural' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/rural.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>A mix of the great outdoors and academic life? Schools like Standford in Outdoors, PA have you covered.</span>
@@ -101,7 +97,7 @@ $content = "
     <div class='tooltip'>
     <label> 
     <!-- https://images.phillypublishing.com/onwardstate/uploads/2014/09/Freshman-Convocation-8.25.12-71.jpg -->
-    <input type='radio' name='test' value='highPopulation' checked>  
+    <input type='radio' name='preferredSize' value='highPopulation' checked>  
     <image class='setting' type='image' src='images/highPopulation.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want lots of people to meet? Join an institution which hosts a large student population, full of teams, organizations.</span>
     </label>
@@ -110,7 +106,7 @@ $content = "
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='mediumPopulation' checked>  
+    <input type='radio' name='preferredSize' value='mediumPopulation' checked>  
     <image class='setting' type='image' src='images/mediumPopulation.jpg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Not too big, not too small? Just right. For people who don't want to sit infront of a jumbotron for first year lectures, medium population schools are what you're looking for.</span>
@@ -118,7 +114,7 @@ $content = "
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='lowPopulation' checked>  
+    <input type='radio' name='preferredSize' value='lowPopulation' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/lowPopulation.jpg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to rub elbows with your professors? Less students can mean premium education in close contact to your peers and professors.</span>
@@ -127,7 +123,7 @@ $content = "
 
     </div>
     <!-- 6 -->
-    <div id='setting' class='tab'>
+    <div class='tab'>
       <p>Well done! Please click submit to finish the registration process. Upon submission we will begin matching you to the university of your dreams!</p>
     </div>
 

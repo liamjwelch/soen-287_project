@@ -85,10 +85,17 @@ button:hover {
   opacity: 1;
 }
 
-select{
-  width:100px;
+select {
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 70%;
+  border: 1px solid #aaaaaa;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 }
-
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4CAF50;
