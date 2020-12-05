@@ -8,11 +8,13 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dreams!';
+    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a>.';
 }
 $content = "
     
     <section class='welcome-msg'>
+        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
+        <p>North-american students trust us to find the perfect university for them since 1794!</p>
         <p>$greeting</p>
     </section>
     
@@ -36,7 +38,7 @@ $content = "
         </section>
          <section class='highlight'>
             <img src='images/star.ico' class='icons'>
-            <h2>YOUR RECOMMENDATIONS</h2>
+            <h2>RECOMMENDATIONS</h2>
             <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams.</p>
         </section>
         <section class='highlight'>
