@@ -107,7 +107,7 @@ include_once "navbar.php";
             <th>Programs</th>
         </tr>
         <?php foreach ($universities as $university) { ?>
-            <tr onclick="window.location='university.php?id= <?= $university['id']; ?>'">
+            <tr onclick="window.location='university.php?id=<?= $university['id']; ?>'">
                 <td><img src="<?= getUniversityLogoCompleteFilename($university['id']); ?>"
                          alt="<?= $university['id']; ?>" class="logo uniLogo">
                 </td>
