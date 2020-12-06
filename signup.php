@@ -28,6 +28,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             <label>Your Password:
                 <input type="password" name="password" placeholder="Password" minlength="10" maxlength="250" required>
             </label>
+            <label>Confirm Password:
+                <input type="password" name="confirm" placeholder="Confirm Password" minlength="10" maxlength="250" required>
+            </label>
         </fieldset>
         <fieldset>
             <legend>Personal Information</legend>

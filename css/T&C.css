@@ -1,0 +1,14 @@
+body{
+    background-color:  #680F13;
+}
+
+.terms{
+	width: 1000px;
+	border-color: black;
+	font-weight:bold;
+}
+
+p{
+	font-size: large;
+	font-weight: bold;
+}
