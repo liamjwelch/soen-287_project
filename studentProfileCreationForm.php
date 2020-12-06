@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                           $_POST["description"]);
             $_SESSION["email"] = $_POST["email"];
             $_SESSION["loggedin"] = true;
-            header("location: homepage.php");
+            header("location: studentProfileDisplay.php");
             exit();
         }
         catch (Exception $e) {
