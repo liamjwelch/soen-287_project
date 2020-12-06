@@ -1,5 +1,8 @@
 a {color: #680F13;}
 
+p.userExists {
+    color:purple;
+}
 body {
     padding-top: 10px;
     padding-bottom: 10px;
