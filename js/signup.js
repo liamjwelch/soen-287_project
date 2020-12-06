@@ -5,7 +5,7 @@ function validateForm() {
         display.innerHTML = message;
         return false;
     } else if(!validatePassword()) {
-        var message = "Password is not valid";
+        var message = "Password has to be 10 characters minimum, and must contain one uppercase letter, one lowercase letter, a digit, and a special character";
         var display = document.getElementById("js-validation-msg");
         display.innerHTML = message;
         return false;
@@ -26,7 +26,7 @@ function validateGPA() {
 function validatePassword() {
     var password = document.forms[0].password.value;
     var valid = false;
-    if(/^(?=.*[a-z])/.test(password) && /^(?=.*[A-Z])/.test(password) && /^(?=.*[0-9])/.test(password) && /^(?=.*[!@#\$%\^&\*])/.test(password) && /(?=.{8,})/.test(password)) {
+    if(/^(?=.*[a-z])/.test(password) && /^(?=.*[A-Z])/.test(password) && /^(?=.*[0-9])/.test(password) && /^(?=.*[!@#\$%\^&\*])/.test(password) && /(?=.{10,})/.test(password)) {
         valid = true;
     }
     return valid;
