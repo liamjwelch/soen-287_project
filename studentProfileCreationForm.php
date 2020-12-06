@@ -45,7 +45,7 @@ else {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dummy new student form</title>
+    <title>Student Registration</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/studentProfileCreation.css">
 </head>
@@ -53,29 +53,10 @@ else {
 <form id='regForm' action='' method="post">
 
         <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
-<!--         <label>City<input name="city" value="Mos Eisley" required></label>
-        <label>State/Province<input name="state" value="Somewhere" required></label>
-        <label>Country<input name="country" value="Tatooine" required></label>
-        <label>Program<select name="program"> -->
-<!--                 <option value="placeholder">Please select your desired program</option>
-                <?php
-                foreach(getAllProgramNames() as $program) {
-                    echo "<option value='$program'>$program</option>";
-                }
-                ?>
-        </label> -->
-<!--         <label>GPA<input name="gpa" value="3.4" required></label>
-        <label>Preferred setting<input name="preferredSetting" value="rural" required></label>
-        <label>Preferred university size<input name="preferredSize" value="2000-5000" required></label>
-        <label>Preferred university ranking<input name="preferredRanking" value="50" required></label>
-        <label>household income<input name="householdIncome" value="60000" required></label>
-        <label>Your budget per semester<input name="budget" value="20000" required></label>
-        <textarea name="description">Describe yourself in a few words</textarea> -->
         <input type="hidden" name="token" value="<?= $_GET["token"] ?>">
         <input type="hidden" name="email" value="<?= $email ?>">
         <input type="hidden" name="preferredRanking" value="50" required>
       
-
     <!-- As found on
     https://www.w3schools.com/howto/howto_js_form_steps.asp --->
 
