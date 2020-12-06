@@ -63,9 +63,9 @@ else {
       <!-- One 'tab' for each step in the form: -->
       <!-- 1 -->
       <div class='tab'>Your current contact information:
-      <p><input placeholder='City...' oninput='this.className = ''' name='city' max="50"></p>
-      <p><input placeholder='State...' oninput='this.className = ''' name='state' max="50"></p>    
-      <p><input placeholder='Country...' oninput='this.className = ''' name='country' max="50"></p>
+      <p><input placeholder='City...' oninput='this.className = ''' name='city' maxlength="50"></p>
+      <p><input placeholder='State...' oninput='this.className = ''' name='state' maxlength="50"></p>    
+      <p><input placeholder='Country...' oninput='this.className = ''' name='country' maxlength="50"></p>
       </div>
 
       <!-- 2 -->

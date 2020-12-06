@@ -82,10 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </fieldset>
         <fieldset>
             <legend>Personal Information</legend>
-            <label>First Name:<input type="text" name="firstName" pattern="[A-Za-z-]+" title="only letters and hyphens" max="20"
+            <label>First Name:<input type="text" name="firstName" pattern="[A-Za-z-]+" title="only letters and hyphens" maxlength="20"
                                      required>
             </label>
-            <label>Last Name:<input type="text" name="lastName" max="20" pattern="[A-Za-z-]+" title="only letters and hyphens"
+            <label>Last Name:<input type="text" name="lastName" maxlength="20" pattern="[A-Za-z-]+" title="only letters and hyphens"
                                     required></label>
             <label>Phone Number:<input type="tel" name="phone" placeholder="123-456-7890"  pattern="\d{3}-\d{3}-\d{4}"
                                        title="123-456-7890" required></label>
