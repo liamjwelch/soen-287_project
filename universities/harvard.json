@@ -15,7 +15,7 @@
         {"name":"Harvard Bursaries & Grants","minimumGPA": 3.6,"residence": null,"financialNeed": 5000,"amount": 50000}
     ],
     "deadline": "January 1",
-    "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States[6] and among the most prestigious in the world.",
+    "description": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts. Established in 1636 and named for its first benefactor, clergyman John Harvard, Harvard is the oldest institution of higher learning in the United States and among the most prestigious in the world.",
     "contactPage": "https://www.harvard.edu/contact-harvard",
     "phone": "6174951000",
     "email": "admissions@harvard.edu",
