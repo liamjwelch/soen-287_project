@@ -4,7 +4,7 @@ html {
 }
 
 main {
-    padding: 80px;
+    padding: 70px 80px;
     margin: auto;
     font-family: Verdana, Geneva, sans-serif;
 }
@@ -13,7 +13,7 @@ main {
     display: inline-block;
     width: 100%;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     background: white;
     color: #680F13;
     border: solid 1px #680F13;
