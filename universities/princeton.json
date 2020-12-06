@@ -1,7 +1,7 @@
 {
     "id": "princeton",
     "name": "Princeton University",
-    "location": "Princeton, NJ, USA",
+    "location": "Princeton, NJ, United States",
     "programs": [
         {"name": "Chemistry", "minimumGPA": 3.0}, 
         {"name": "Anthropology", "minimumGPA": 3.0},

@@ -8,7 +8,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dreams!';
+    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a> to let us find the university of your dreams!';
 }
 $content = "
     
@@ -24,6 +24,7 @@ $content = "
         <img src='images/mcgill.jpg' alt='McGill' class='slides_image'>
         <img src='images/concordia.jpg' alt='Concordia' class='slides_image'>
         <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
+        <img src='images/harvard2.jpg' alt='Harvard' class='slides_image'>
     </article>
     
      <article class='centered-article highlights-article'>

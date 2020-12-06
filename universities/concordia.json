@@ -1,7 +1,7 @@
 {
     "id": "concordia",
     "name": "Concordia University",
-    "location": "Montreal, Qc, Canada",
+    "location": "Montreal, QC, Canada",
     "programs": [
         {"name":"Business", "minimumGPA": 2.4},
         {"name":"Computer Science", "minimumGPA":2.45},

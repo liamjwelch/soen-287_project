@@ -1,0 +1,108 @@
+html { min-width: 930px;}
+
+h3 {color: #680F13;}
+
+.search-article { padding-top: 60px; padding-bottom: 10px;}
+.map-article, .table-article { padding-top: 10px; padding-bottom: 60px;}
+.search-article, .map-article, .table-article, .filter-article {
+    padding-left: 80px;
+    padding-right: 80px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+}
+
+.filter-article{
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    padding: 80px;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.table-article {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 80px;
+    padding: 30px;
+    background-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+
+.map-section {
+    padding: 25px 10px 10px 10px;
+    background-color: #680F13;
+    width: 100%;
+}
+#mapId { width: 100%; height: 500px; z-index: 0; cursor: zoom-in;}
+#mapId a { text-decoration: none;color: #680F13;}
+
+button {
+    float: right;
+    background: #680F13;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all .5s linear;
+    outline: none;
+}
+button:active { background-color: #501517;}
+
+form.search input[type=text], form.search button {
+    padding: 15px 10px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, sans-serif;
+    height: 60px;
+}
+form.search button { width: 20%;}
+form.search input[type=text] {
+    width: 80%;
+    border: #680F13 solid 2px;
+    color: #680F13;
+}
+
+form.filter { display:inline-block; width: 100%;}
+form.filter button { width: 20%; padding: 10px; font-size: 18px;}
+form.filter input[type=text], form.filter select, form.filter button {
+    padding: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    height: 50px;
+    float: left;
+}
+form.filter input[type=text], select {
+    font-size: 16px;
+    border: #680F13 solid 2px;
+    color: #680F13;
+    width: 20%;
+}
+
+#filterTable { width: 100%; border-collapse: collapse; text-align: center; margin-top: 20px;}
+#filterTable td, #filterTable th {
+    font-size: 15px;
+    height: 60px;
+    border: solid #680F13 1px;
+}
+#filterTable td { padding: 10px;}
+#filterTable td.uniName { font-weight: bold; color: #680F13;}
+#filterTable th { background-color: #680F13; color: white; padding: 15px 10px;}
+#filterTable tr { cursor: pointer;}
+#filterTable tr:nth-child(even){ background-color: white;}
+#filterTable tr:hover { background-color: #ddd;}
+#filterTable a { text-decoration: none; color: #680F13}
+#filterTable ul { text-align: left;}
+.uniLogo { margin: 5px 10px;}
+
+/* Style for smaller screens (less than 845px wide) */
+@media screen and (max-width: 845px) {
+    /* Hide the text on the search bar */
+    form.search button{ font-size: 0;}
+    /* Display only the icons on the search bar */
+    form.search button .icons { font-size: 20px;}
+}
+
+/* Style for smaller screens (less than 930px wide) */
+@media screen and (max-width: 930px) {
+    nav a { float: left; left: 150px;}
+    /* Hide the logo on the search bar */
+    nav .logo { display: none;}
+}
