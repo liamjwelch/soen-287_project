@@ -3,6 +3,7 @@ body {
 }
 h3 { text-align: center;}
 a { color: #680F13;}
+
 article.wrapper { display: flex;}
 article.wrapper button {
     padding: 15px 25px;
@@ -11,7 +12,7 @@ article.wrapper button {
     color: white;
     font-family: Verdana, Geneva, sans-serif;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
 }
 
