@@ -1,0 +1,28 @@
+{
+    "id": "princeton",
+    "name": "Princeton University",
+    "location": "Princeton, NJ, United States",
+    "programs": [
+        {"name": "Chemistry", "minimumGPA": 3.0}, 
+        {"name": "Anthropology", "minimumGPA": 3.0},
+        {"name": "Finance", "minimumGPA": 3.0},
+        {"name": "Sociology", "minimumGPA": 3.0},
+        {"name": "Psychology", "minimumGPA": 3.0}
+    ],
+    "scholarships": [
+        {"name": "Beinecke Scholarship Program", "minimumGPA": 2.0, "residence": null, "financialNeed": 1000, "amount": 34000},
+        {"name": "AIA/F Diversity Advancement Scholarship", "minimumGPA": 2.0, "residence": null, "financialNeed": 10000, "amount": 20000},
+        {"name": "Princeton University Undergraduate Financial Aid Program", "minimumGPA": 2.0, "residence": null, "financialNeed": 5000, "amount": 52800}
+    ],
+    "deadline": "January 1",
+    "description": "Princeton University is a private Ivy League research university in the state of New Jersey founded in 1746. This university, set in a suburban environment, provides scholarity for 8623 students on about 600 acres of land.",
+    "setting": "suburban",
+    "size": 8623,
+    "ranking": 12,
+    "contactPage": "https://www.princeton.ca/p/contact-us",
+    "email": "uaoffice@princeton.edu",
+    "phone": "6092586743",
+    "cost": {"resident": 70900, "nonResident": 70900},
+    "address": "Princeton, NJ 08544, United States",
+    "avgGPA": 3.9
+}

@@ -1,112 +1,75 @@
 <?php
+<<<<<<< HEAD
+require "database/users.php";
 
-require_once "database/users.php";
-require_once "database/universities.php";
-require_once "database/students.php";
-
-    session_start();
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // TODO validate the fields for student profile
-    if (isset($_POST["token"]) && strlen($_POST["token"]) === 50 && isset($_POST["email"]) && !empty($_POST["email"])) {
-        try {
-            createStudent($_POST["email"], $_POST["token"], $_POST["city"], $_POST["state"], $_POST["country"],
-                          $_POST["program"], $_POST["gpa"], $_POST["preferredSetting"], $_POST["preferredSize"],
-                          $_POST["preferredRanking"], $_POST["householdIncome"], $_POST["budget"],
-                          $_POST["description"]);
-            $_SESSION["email"] = $_POST["email"];
-            $_SESSION["loggedin"] = true;
-            header("location: homepage.php");
-            exit();
-        }
-        catch (Exception $e) {
-            echo $e->getMessage() . "<br>"; // TODO improve that
-        }
-    }
-    else {
-        // TODO handle that case
-    }
-}
-else if(isset($_GET["token"]) && strlen($_GET["token"]) === 50 && isset($_GET["email"]) && !empty($_GET["email"])) {
-    $email = urldecode($_GET["email"]);
-    if (!isTokenValid($email, $_GET["token"])) {
-        header("location: tokenInvalid.php");
-        exit();
-    }
+session_start();
+$title = "North America Higher Education Database";
+$styles = ["css/studentProfile.css"];
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    // if there isn't a valid token and email in the URL, the user probably got here by mistake, just redirect to homepage
-    header("location: homepage.php");
-    exit();
+    $greeting = '<a href="login.php">Log in</a> or <a href="signup.php">sign up</a> to let us find the university of your dreams!';
 }
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dummy new student form</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/studentProfileCreation.css">
-</head>
-<body>
-<form id='regForm' action='' method="post">
+  if(isset($_POST['formSubmit']) ) {
+      header("Location: somewhereElse.php");
 
-        <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
-<!--         <label>City<input name="city" value="Mos Eisley" required></label>
-        <label>State/Province<input name="state" value="Somewhere" required></label>
-        <label>Country<input name="country" value="Tatooine" required></label>
-        <label>Program<select name="program"> -->
-<!--                 <option value="placeholder">Please select your desired program</option>
-                <?php
-                foreach(getAllProgramNames() as $program) {
-                    echo "<option value='$program'>$program</option>";
-                }
-                ?>
-        </label> -->
-<!--         <label>GPA<input name="gpa" value="3.4" required></label>
-        <label>Preferred setting<input name="preferredSetting" value="rural" required></label>
-        <label>Preferred university size<input name="preferredSize" value="2000-5000" required></label>
-        <label>Preferred university ranking<input name="preferredRanking" value="50" required></label>
-        <label>household income<input name="householdIncome" value="60000" required></label>
-        <label>Your budget per semester<input name="budget" value="20000" required></label>
-        <textarea name="description">Describe yourself in a few words</textarea> -->
-        <input type="hidden" name="token" value="<?= $_GET["token"] ?>">
-        <input type="hidden" name="email" value="<?= $email ?>">
-        <input type="hidden" name="preferredRanking" value="50" required>
-      
+  }
 
-    <!-- As found on
-    https://www.w3schools.com/howto/howto_js_form_steps.asp --->
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $address = trim(filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING));
+    $city = trim(filter_input(INPUT_POST, 'city', FILTER_SANITIZE_STRING));
+    $country = trim(filter_input(INPUT_POST, 'country', FILTER_SANITIZE_STRING));
+    $postalCode = trim(filter_input(INPUT_POST, 'postalCode', FILTER_SANITIZE_STRING));
+    $major = trim(filter_input(INPUT_POST, 'major', FILTER_SANITIZE_STRING));
+    $gpa = trim(filter_input(INPUT_POST, 'gpa', FILTER_SANITIZE_STRING));
+    $householdIncome = trim(filter_input(INPUT_POST, 'householdIncome', FILTER_SANITIZE_STRING));
+    $budget = trim(filter_input(INPUT_POST, 'budget', FILTER_SANITIZE_STRING));
+    $preferredSize = trim(filter_input(INPUT_POST, 'preferredSize', FILTER_SANITIZE_STRING));
+    $preferredSetting = trim(filter_input(INPUT_POST, 'preferredSetting', FILTER_SANITIZE_STRING));
+
+    //LOGIC FOR ADDSTUDENT
+
+  }
+  
+$content = "
+
+<form id='regForm' action='/action_page.php'>
+      <h2>Should Echo User's Name</h2>
 
       <!-- One 'tab' for each step in the form: -->
       <!-- 1 -->
       <div class='tab'>Your current contact information:
-      <p><input placeholder='City...' oninput='this.className = ''' name='city' max="50"></p>
-      <p><input placeholder='State...' oninput='this.className = ''' name='state' max="50"></p>    
-      <p><input placeholder='Country...' oninput='this.className = ''' name='country' max="50"></p>
+      <p><input placeholder='Address...' oninput='this.className = ''' name='address' max='250'></p>
+      <p><input placeholder='City...' oninput='this.className = ''' name='city'></p>    
+      <p><input placeholder='Country...' oninput='this.className = ''' name='country'></p>
+      <p><input placeholder='Postal Code...' oninput='this.className = ''' name='postalCode'></p>
       </div>
 
       <!-- 2 -->
       <div class='tab'>Academic/Financial information:
       <p>
-      <select name='program' id='majorDropdown'>
-        <option value="placeholder">Please select your desired program</option>
-            <?php
-            foreach(getAllProgramNames() as $program) {
-                 echo "<option value='$program'>$program</option>";
-            }
-            ?>
+      <select name='major' id='majorDropdown'>
+      <option selected disabled>Major</option>
+      <option value='to'>to</option>
+      <option value='be'>be filled in</option>
+      <option value='filled'>from DB</option>
       </select></p>
-
-    <p><input placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
-    <p><input placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>
+      <p>
+      <select name='gpa' id='majorDropdown'>
+      <option selected disabled>GPA</option>
+      <option value='to'>To</option>
+      <option value='be'>be filled in</option>
+      <option value='filled'>from DB?</option>
+      </select></p>  
+    <p><input placeholder='Household income...' oninput='this.className = ''' name='householdIncome'></p>    
     <p><input placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
     </div>
 
     <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
-      <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
+      <p><textarea name='description' id='bio' rows='5' cols='75' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
     </div>
     <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
@@ -119,7 +82,7 @@ else {
     <div class='tooltip'>
     <label> 
     <!-- https://users.encs.concordia.ca/~sera2010/images/port_montreal_aggrandi.jpg --> 
-    <input type='radio' name='test' value='city' checked>  
+    <input type='radio' name='preferredSetting' value='city' checked>  
     <image class='setting' type='image' src='images/montreal.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to work hard and play hard? Schools like McGill in Montreal, Canada might be the city vibe you're looking for.</span>
     </label>
@@ -128,7 +91,7 @@ else {
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='suburban' checked>  
+    <input type='radio' name='preferredSetting' value='suburban' checked>  
     <image class='setting' type='image' src='images/suburban.jpeg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Slower pace with still plenty of local ammenites? An urban choice such as Harvard in Cambridge, MA. Might be what you've been looking for.</span>
@@ -136,7 +99,7 @@ else {
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='rural' checked>  
+    <input type='radio' name='preferredSetting' value='rural' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/rural.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>A mix of the great outdoors and academic life? Schools like Standford in Outdoors, PA have you covered.</span>
@@ -151,7 +114,7 @@ else {
     <div class='tooltip'>
     <label> 
     <!-- https://images.phillypublishing.com/onwardstate/uploads/2014/09/Freshman-Convocation-8.25.12-71.jpg -->
-    <input type='radio' name='test' value='highPopulation' checked>  
+    <input type='radio' name='preferredSize' value='highPopulation' checked>  
     <image class='setting' type='image' src='images/highPopulation.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want lots of people to meet? Join an institution which hosts a large student population, full of teams, organizations.</span>
     </label>
@@ -160,7 +123,7 @@ else {
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='mediumPopulation' checked>  
+    <input type='radio' name='preferredSize' value='mediumPopulation' checked>  
     <image class='setting' type='image' src='images/mediumPopulation.jpg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Not too big, not too small? Just right. For people who don't want to sit infront of a jumbotron for first year lectures, medium population schools are what you're looking for.</span>
@@ -168,7 +131,7 @@ else {
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='lowPopulation' checked>  
+    <input type='radio' name='preferredSize' value='lowPopulation' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/lowPopulation.jpg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to rub elbows with your professors? Less students can mean premium education in close contact to your peers and professors.</span>
@@ -177,7 +140,7 @@ else {
 
     </div>
     <!-- 6 -->
-    <div id='setting' class='tab'>
+    <div class='tab'>
       <p>Well done! Please click submit to finish the registration process. Upon submission we will begin matching you to the university of your dreams!</p>
     </div>
 
@@ -273,6 +236,91 @@ function fixStepIndicator(n) {
   x[n].className += ' active';
 }
 </script>
+
+</body> 
+";
+
+include "template.php";
+=======
+
+require_once "database/users.php";
+require_once "database/universities.php";
+require_once "database/students.php";
+
+    session_start();
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // TODO validate the fields for student profile
+    if (isset($_POST["token"]) && strlen($_POST["token"]) === 50 && isset($_POST["email"]) && !empty($_POST["email"])) {
+        try {
+            createStudent($_POST["email"], $_POST["token"], $_POST["city"], $_POST["state"], $_POST["country"],
+                          $_POST["program"], $_POST["gpa"], $_POST["preferredSetting"], $_POST["preferredSize"],
+                          $_POST["preferredRanking"], $_POST["householdIncome"], $_POST["budget"],
+                          $_POST["description"]);
+            $_SESSION["email"] = $_POST["email"];
+            $_SESSION["loggedin"] = true;
+            header("location: homepage.php");
+            exit();
+        }
+        catch (Exception $e) {
+            echo $e->getMessage() . "<br>"; // TODO improve that
+        }
+    }
+    else {
+        // TODO handle that case
+    }
+}
+else if(isset($_GET["token"]) && strlen($_GET["token"]) === 50 && isset($_GET["email"]) && !empty($_GET["email"])) {
+    $email = urldecode($_GET["email"]);
+    if (!isTokenValid($email, $_GET["token"])) {
+        header("location: tokenInvalid.php");
+        exit();
+    }
+}
+else {
+    // if there isn't a valid token and email in the URL, the user probably got here by mistake, just redirect to homepage
+    header("location: homepage.php");
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dummy new student form</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+<main class="form">
+    <h1>Dummy new student form</h1>
+    <h2>(I should not be here on dec 7)</h2>
+    <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
+    <form method="post">
+        <label>City<input name="city" value="Mos Eisley" required></label>
+        <label>State/Province<input name="state" value="Somewhere" required></label>
+        <label>Country<input name="country" value="Tatooine" required></label>
+        <label>Program<select name="program">
+                <option value="placeholder">Please select your desired program</option>
+                <?php
+                foreach(getAllProgramNames() as $program) {
+                    echo "<option value='$program'>$program</option>";
+                }
+                ?>
+        </label>
+        <label>GPA<input name="gpa" value="3.4" required></label>
+        <label>Preferred setting<input name="preferredSetting" value="rural" required></label>
+        <label>Preferred university size<input name="preferredSize" value="2000-5000" required></label>
+        <label>Preferred university ranking<input name="preferredRanking" value="50" required></label>
+        <label>household income<input name="householdIncome" value="60000" required></label>
+        <label>Your budget per semester<input name="budget" value="20000" required></label>
+        <textarea name="description">Describe yourself in a few words</textarea>
+        <input type="hidden" name="token" value="<?= $_GET["token"] ?>">
+        <input type="hidden" name="email" value="<?= $email ?>">
+        <button type="submit">Submit</button>
+    </form>
 </main>;
 </body>
 </html>
+>>>>>>> master
