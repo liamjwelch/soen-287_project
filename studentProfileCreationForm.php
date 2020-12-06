@@ -100,7 +100,7 @@ else {
     <div class='tooltip'>
     <label> 
     <!-- https://users.encs.concordia.ca/~sera2010/images/port_montreal_aggrandi.jpg --> 
-    <input type='radio' name='test' value='city' checked>  
+    <input type='radio' name='preferredSetting' value='city' checked>  
     <image class='setting' type='image' src='images/montreal.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to work hard and play hard? Schools like McGill in Montreal, Canada might be the city vibe you're looking for.</span>
     </label>
@@ -109,7 +109,7 @@ else {
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='suburban' checked>  
+    <input type='radio' name='preferredSetting' value='suburban' checked>  
     <image class='setting' type='image' src='images/suburban.jpeg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Slower pace with still plenty of local ammenites? An urban choice such as Harvard in Cambridge, MA. Might be what you've been looking for.</span>
@@ -117,7 +117,7 @@ else {
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='rural' checked>  
+    <input type='radio' name='preferredSetting' value='rural' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/rural.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>A mix of the great outdoors and academic life? Schools like Standford in Outdoors, PA have you covered.</span>
@@ -132,7 +132,7 @@ else {
     <div class='tooltip'>
     <label> 
     <!-- https://images.phillypublishing.com/onwardstate/uploads/2014/09/Freshman-Convocation-8.25.12-71.jpg -->
-    <input type='radio' name='test' value='highPopulation' checked>  
+    <input type='radio' name='preferredSize' value='10000' checked>  
     <image class='setting' type='image' src='images/highPopulation.jpeg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want lots of people to meet? Join an institution which hosts a large student population, full of teams, organizations.</span>
     </label>
@@ -141,7 +141,7 @@ else {
     <div class='tooltip'>
     <!-- https://www.languagescanada.ca/web/default/files/public/public/2014%20UGuelph%20Aerial.jpg -->
     <label>
-    <input type='radio' name='test' value='mediumPopulation' checked>  
+    <input type='radio' name='preferredSize' value='2000-5000' checked>  
     <image class='setting' type='image' src='images/mediumPopulation.jpg' alt='Submit' width='250' height='150'></image>
     </label>
     <span class='tooltiptext'>Not too big, not too small? Just right. For people who don't want to sit infront of a jumbotron for first year lectures, medium population schools are what you're looking for.</span>
@@ -149,7 +149,7 @@ else {
 
     <div class='tooltip'>
     <label>
-    <input type='radio' name='test' value='lowPopulation' checked>  
+    <input type='radio' name='preferredSize' value='1000' checked>  
     <!-- https://choosecolorado.com/wp-content/uploads/2017/08/rural-colorado-mountains-distance-1530x779.jpg -->
     <image class='setting' type='image' src='images/lowPopulation.jpg' alt='Submit' width='250' height='150'></image>
     <span class='tooltiptext'>Want to rub elbows with your professors? Less students can mean premium education in close contact to your peers and professors.</span>

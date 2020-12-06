@@ -110,7 +110,7 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 
 <div class='about'>
 <h2>About me:</h2>
-<p></p>
+<p><?php echo $studentDescription; ?></p>
 <div class='inlineText'>
 <h4>Intended Major:</h4>
 <p><?php echo $major; ?></p>
