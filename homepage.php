@@ -8,7 +8,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a> to let us find the university of your dreams!';
+    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a>';
 }
 $content = "
     
@@ -28,16 +28,16 @@ $content = "
     </article>
     
      <article class='centered-article highlights-article'>
-        <h1>We are the Tinder of prospective students!</h1>
+        <h1>We make sure every students find the right university for them.</h1>
         <section class='highlight'>
             <img src='images/users.ico' class='icons'>
             <h2>YOUR PROFILE</h2>
-            <p>Create YOUR personalized profile!</p>
+            <p>Create YOUR personalized student profile now!</p>
         </section>
          <section class='highlight'>
             <img src='images/star.ico' class='icons'>
             <h2>YOUR RECOMMENDATIONS</h2>
-            <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams.</p>
+            <p> Our AI-driven algorithm will help you find the perfect institution to further your education.</p>
         </section>
         <section class='highlight'>
             <img src='images/map.ico' class='icons'>
@@ -48,7 +48,7 @@ $content = "
  
      <article class='centered-article bragging'>
         <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
-        <p>North-american students trust us to find the perfect university for them since 1794!</p>
+        <p>Every university in North America at your fingertips. What are you waiting for?</p>
     </article>
      
     <article class='centered-article cards'>
