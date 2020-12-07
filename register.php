@@ -1,6 +1,7 @@
 <?php
 
 require_once "database/users.php";
+require_once "email.php";
 
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
@@ -23,36 +24,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $phone = preg_replace("/-/", "", $phone);
 
-    $validationToken = bin2hex(random_bytes(25));
-
     try {
         if(doesUserExist($email)){
             $error = TRUE;
             $errorPrompt = "Sorry, but that email already exists in our records. Please select another email.";
         } else {
-                try {
-                    //WHY DO I NEED TO QUALIFY THIS VARIABLE AGAIN?
-                    $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-
-                    addUser($email, $password, $role, $firstName, $lastName, $phone, $validationToken);
-                    $_SESSION["email"] = $email;
-                    $_SESSION["token"] = $validationToken;  // TODO replace by send email
-                    header("location: emailConfirmation.php");
-                    exit();
-                }
-                catch (PDOException $e) {
-                    // TODO redirect to signup and display error to the user
-                    echo $e->getMessage();
-                }            
-
+            $validationToken = bin2hex(random_bytes(25));
+            addUser($email, $password, $role, $firstName, $lastName, $phone, $validationToken);
+            $encodedEmail = urlencode($email);
+            $url = "http://" . $_SERVER["HTTP_HOST"] . pathinfo($_SERVER["REQUEST_URI"], PATHINFO_DIRNAME);
+            $url .= "/studentProfileCreationForm.php?token=$validationToken&email=$encodedEmail";
+            sendAccountCreationEmail("$firstName $lastName", $email, $url);
+            $_SESSION["email"] = $email;
+            header("location: emailConfirmation.php");
+            exit();
         }
-    } 
-        catch (PDOException $e) {
+    }
+    catch (PDOException $e) {
         // TODO redirect to signup and display error to the user
         echo $e->getMessage();
     }
-
-
 }
 
 ?>
