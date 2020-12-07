@@ -80,7 +80,7 @@ else {
             ?>
       </select></p>
 
-    <p><input type='range' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
+    <p><input type='number' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
     <p><input type='number' placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>
     <p><input type='number' placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
     </div>
