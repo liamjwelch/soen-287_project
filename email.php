@@ -7,107 +7,51 @@ require 'phpmailer/Exception.php';
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 
-        //Email for new match
-        function sendNewMatchEmail ($name, $email, $match)
-        {
-            $mail = new PHPMailer;
 
-            $mail->isSMTP();
+function sendEmail($destEmail, $destName, $subject, $content) {
+    $mail = new PHPMailer;
 
-            $mail->Host = 'smtp.gmail.com';
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->SMTPAuth = true;
 
-            $mail->Port = 587;
+    $mail->Username = 'higher.education.database@gmail.com';
+    $mail->Password = '$soen287';
+    $mail->setFrom('higher.education.database@gmail.com', 'NAHED Team');
 
-            $mail->SMTPAuth = true;
+    $mail->addAddress($destEmail, $destName);
 
-            $mail->Username = 'higher.education.database@gmail.com';
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
 
-            $mail->Password = '$soen287';
+    $mail->Body = $content;
 
-            $mail->setFrom('higher.education.database@gmail.com', 'N.A.H.E.D. Team');
+    if (!$mail->send()) {
+        throw new Exception("Error when sending email to $destEmail: $mail->ErrorInfo");
+    }
+}
 
-            $mail->addAddress($email, $name);
+function sendNewMatchEmail ($name, $email, $university) {
+    $subject = 'New Match Found!';
+    $content = "Dear $name,<br><br>You matched with $university!<br><br>Log in to your account to learn more!
+                <br><br>The NAHED team";
+    sendEmail($email, $name, $subject, $content);
+}
 
-            $mail->isHTML(true);
+function sendMatchDeadlineEmail ($name, $email, $university, $deadline) {
+    $subject = 'Match Deadline Approaching!';
+    $content = "Dear $name,<br><br>The application deadline for $university is $deadline.<br>Don't forget to apply
+                before the deadline by loging-in in your account!<br><br>The NAHED team";
+    sendEmail($email, $name, $subject, $content);
+}
 
-            $mail->Subject = 'New Match Found!';
-        
-            $mail->Body = "Dear ".$name." ".",<br><br>You have a match with a University \"$match\"";
-        
-            if (!$mail->send()) {
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo "<br>Message was sent Successfully!";
-            }
-        }
+function sendAccountCreationEmail ($name, $email, $link) {
+    $subject = 'Complete the creation of your account';
 
-        //Email for match Deadline
-        function sendMatchDeadlineEmail ($name, $email, $match, $deadline)
-        {
-            $mail = new PHPMailer;
+    $content = "Dear $name,<br><br>Thank you for creating an account at the North American Higher Education Database.
+                Please click the following link to finish the creation of your account:<br><br><a href='$link'>$link</a>
+                <br><br>The NAHED team";
 
-            $mail->isSMTP();
-
-            $mail->Host = 'smtp.gmail.com';
-
-            $mail->Port = 587;
-
-            $mail->SMTPAuth = true;
-
-            $mail->Username = 'higher.education.database@gmail.com';
-
-            $mail->Password = '$soen287';
-
-            $mail->setFrom('higher.education.database@gmail.com', 'N.A.H.E.D. Team');
-
-            $mail->addAddress($email, $name);
-
-            $mail->isHTML(true);
-
-            $mail->Subject = 'Match Deadline Approaching!';
-        
-            $mail->Body = "Dear ".$name." ".",<br><br>The deadline for \"$match\" is $deadline";
-        
-            if (!$mail->send()) {
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo "<br>Message was sent Successfully!";
-            }
-        }
-
-        //Email for Account verification
-        function sendAccountCreationEmail ($name, $email, $link)
-        {
-            $mail = new PHPMailer;
-
-            $mail->isSMTP();
-
-            $mail->Host = 'smtp.gmail.com';
-
-            $mail->Port = 587;
-
-            $mail->SMTPAuth = true;
-
-            $mail->Username = 'higher.education.database@gmail.com';
-
-            $mail->Password = '$soen287';
-
-            $mail->setFrom('higher.education.database@gmail.com', 'N.A.H.E.D. Team');
-
-            $mail->addAddress($email, $name);
-
-            $mail->isHTML(true);
-
-            $mail->Subject = 'Account Created!';
-        
-            $mail->Body = "Dear ".$name." ".",<br><br>Thank you for creating an account at the North American Higher Education Database. Please click the following link to confirm your account.
-            <br><br>Click here: $link<br><br>If this was not you please contact us at higher.education.database@gmail.com";
-        
-            if (!$mail->send()) {
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo "<br>Message was sent Successfully!";
-            }
-        }
-    
-?>
+    sendEmail($email, $name, $subject, $content);
+}
