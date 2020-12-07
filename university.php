@@ -3,13 +3,21 @@ require "database/universities.php";
 session_start();
 $university = getUniversity($_GET['id']);
 $programs = $university['programs'];
+
+// Only for testing purposes
 $score = 0.5;
-// Not sure how we'll access this elements
-//$gpa = $_SESSION['user']['gpa'];
 $gpa = floatval(3.50);
-//$budget = $_SESSION['user']['budget'];
 $budget = 10000;
 $residence = "United States";
+
+/*if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    $student = getStudent($_SESSION["email"]);
+    $gpa = $student['gpa'];
+    $budget =  $student['budget'];
+    $residence =  $student['country'];
+}*/
+// $score = ???
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +52,7 @@ include_once "navbar.php";
     <article class="profile-main">
         <section id="title">
             <h1><?= $university['name']; ?>
-                <button type="submit" name="sendEmail" value="sendEmail"><i class="fa fa-envelope"></i> Send email</button>
+                <a id="sendEmail" href="mailto:<?= $university['email']; ?>?Subject=Application"><i class="fa fa-envelope"></i> Send email</a>
             </h1>
             <p>World Ranking: <?= $university['ranking']; ?></p>
             <h4>Matching score: <?= $score ?></h4>
@@ -56,7 +64,10 @@ include_once "navbar.php";
             <a href="#financial" id="navFinancial"><i class="fa fa-money icons"></i><p>Financial Aid</p></a>
         </nav>
         <section class="profile-section" id="description">
-            <p><?= $university['description']; ?></p>
+            <p><strong>DESCRIPTION:</strong><br><?= $university['description']; ?></p>
+            <p><strong>COST:</strong><br>
+            <strong>Residents: </strong><?= $university['cost']['resident']; ?>$<br>
+            <strong>Non-residents: </strong><?= $university['cost']['nonResident']; ?>$</p>
         </section>
         <section class="profile-section" id="programs">
             <table id="programs-table">

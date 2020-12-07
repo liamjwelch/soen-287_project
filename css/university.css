@@ -15,6 +15,16 @@ article.wrapper button {
     font-size: 14px;
     cursor: pointer;
 }
+#sendEmail {
+    padding: 15px 25px;
+    background-color: #680F13;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+}
 
 /* Background image */
 article.profile-background { width: 100%;}
@@ -110,6 +120,7 @@ nav.profile-bar a.active {
     color: white;
 }
 
+/* Navbar sections */
 .profile-section{
     margin: 0;
     padding: 30px 40px;
