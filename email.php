@@ -1,14 +1,15 @@
 
 <?php
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\SMTP;
-        date_default_timezone_set('Etc/UTC');
+use PHPMailer\PHPMailer\PHPMailer;
+date_default_timezone_set('Etc/UTC');
+
+require 'phpmailer/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
 
         //Email for new match
         function sendNewMatchEmail ($name, $email, $match)
         {
-            require 'vendor/autoload.php';
-
             $mail = new PHPMailer;
 
             $mail->isSMTP();
@@ -43,8 +44,6 @@
         //Email for match Deadline
         function sendMatchDeadlineEmail ($name, $email, $match, $deadline)
         {
-            require 'vendor/autoload.php';
-
             $mail = new PHPMailer;
 
             $mail->isSMTP();
@@ -79,8 +78,6 @@
         //Email for Account verification
         function sendAccountCreationEmail ($name, $email, $link)
         {
-            require 'vendor/autoload.php';
-
             $mail = new PHPMailer;
 
             $mail->isSMTP();
