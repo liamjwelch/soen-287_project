@@ -1,0 +1,72 @@
+a {color: #680F13;}
+
+p.userExists {
+    color:purple;
+}
+body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: url("../images/login-background.jpg") 50% fixed;
+    background-size: cover;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #680F13;
+}
+
+button {
+    text-transform: uppercase;
+    background: #680F13;
+    width: 30%;
+    border: 0;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.checkbox {
+    width: auto;
+    margin: auto 5px;
+    vertical-align: middle;
+    color: #680F13;
+}
+
+.error-message {
+    color: red;
+}
+
+fieldset {
+    border-color: #680F13;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.form {
+    width: 30%;
+    min-width: 420px;
+    margin: auto;
+    background-color: hsl(0, 47%, 99%, 0.9);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 20pt;
+}
+
+input {
+    font-size: 14px;
+    background-color: hsl(0, 20%, 90%, 0.8);
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom:5px;
+}
