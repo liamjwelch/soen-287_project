@@ -9,8 +9,9 @@
             $line = fgets($fileToOpen);
             $testimonies[] = $line;
         }
+        fclose($fileToOpen);
     }
-
+    
     echo json_encode($testimonies);
 
 ?>

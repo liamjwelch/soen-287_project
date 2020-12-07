@@ -70,7 +70,6 @@ else {
         <section class='card' id='card'></section>
     </section>
     <script src='js/carousel.js' type='text/javascript'></script>
-    <script src='js/testimonies.js' type='text/javascript'></script>
 <?php readfile("footer.html"); ?>
 </body>
 </html>
