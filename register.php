@@ -2,6 +2,7 @@
 
 require_once "database/users.php";
 require_once "email.php";
+require_once "functions/accountCreation.php";
 
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
@@ -29,11 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $error = TRUE;
             $errorPrompt = "Sorry, but that email already exists in our records. Please select another email.";
         } else {
-            $validationToken = bin2hex(random_bytes(25));
+            $validationToken = generateValidationToken();
             addUser($email, $password, $role, $firstName, $lastName, $phone, $validationToken);
-            $encodedEmail = urlencode($email);
-            $url = "http://" . $_SERVER["HTTP_HOST"] . pathinfo($_SERVER["REQUEST_URI"], PATHINFO_DIRNAME);
-            $url .= "/studentProfileCreationForm.php?token=$validationToken&email=$encodedEmail";
+            $url = getEmailVerificationURL($validationToken, $email);
             sendAccountCreationEmail("$firstName $lastName", $email, $url);
             $_SESSION["email"] = $email;
             header("location: emailConfirmation.php");

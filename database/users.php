@@ -53,6 +53,14 @@ function getUserFirstName($email) {
     return $rows[0][0];
 }
 
+function getUserFullName($email) {
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT firstName, lastName FROM users WHERE email = BINARY ?");
+    $statement->execute([$email]);
+    $rows = $statement->fetchAll(PDO::FETCH_NUM);
+    return implode(" ", $rows[0]);
+}
+
 function doesUserExist($email) {
     $connection = createConnection();
     $statement = $connection->prepare("SELECT email FROM users WHERE email = BINARY ?");

@@ -1,13 +1,22 @@
 <?php
 
 require "database/users.php";
+require_once "functions/accountCreation.php";
+require_once "email.php";
 
 session_start();
 
 if (isset($_GET["resend"]) && $_GET["resend"]) {
-    $validationToken = bin2hex(random_bytes(25));
-    setToken($_SESSION["email"], $validationToken);
-    $_SESSION["token"] = $validationToken;
+    if (isset($_SESSION["email"])) {
+        $validationToken = generateValidationToken();
+        setToken($_SESSION["email"], $validationToken);
+        $url = getEmailVerificationURL($validationToken, $_SESSION["email"]);
+        $name = getUserFullName($_SESSION["email"]);
+        sendAccountCreationEmail($name, $_SESSION["email"], $url);
+    }
+    else {
+        // TODO tell user that email no longer in session and he should log in to be able to get it
+    }
 }
 
 ?>
