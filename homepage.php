@@ -1,8 +1,10 @@
 <?php
 require "database/users.php";
+require "database/universities.php";
 session_start();
 $title = "North America Higher Education Database";
 $styles = ["css/homepage.css"];
+$universities = getAllUniversities();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
@@ -27,17 +29,12 @@ else {
         <p>Every university in North America at your fingertips. What are you waiting for?</p>
         <p><?= $greeting; ?></p>
     </article>
-    <!-- AUTOMATIC SLIDESHOW IMAGES -->
     <section class='slideshow'>
-        <img src='images/mit.jpg' alt='MIT' class='slides_image'>
-        <img src='images/harvard.jpg' alt='Harvard' class='slides_image'>
-        <img src='images/stanford.jpg' alt='Stanford' class='slides_image'>
-        <img src='images/mcgill.jpg' alt='McGill' class='slides_image'>
-        <img src='images/concordia.jpg' alt='Concordia' class='slides_image'>
-        <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
-        <img src='images/harvard2.jpg' alt='Harvard' class='slides_image'>
+        <?php foreach ($universities as $university) {?>
+            <img src='<?= getUniversityImageCompleteFilename($university['id']); ?>' alt='<?= $university['id']; ?>' class='slides_image'>
+        <?php } ?>
     </section>
-     <section class='centered-section highlights-section'>
+    <section class='centered-section highlights-section'>
         <h1>We make sure every student find the right university</h1>
         <table>
             <tr>
@@ -64,7 +61,7 @@ else {
                 </td>
             </tr>
         </table>
-     </section>
+    </section>
     <section class='centered-section cards-section'>
         <h1>Testimonials from our users</h1>
         <section class='card' id='card'></section>
