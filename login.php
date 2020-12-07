@@ -12,14 +12,14 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 	<meta charset="utf-8">
 	<title>Login - AHED</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
-<main class="form">
+<main class="form login-main">
 	<form class="login-form" method="post" action="validate_login.php">
-		<input type="text" name="email" placeholder="Email Address"/>
-		<input type="password" name="password" placeholder="Password"/>
-		<button type="submit" name="login">Login</button>
+		<input type="text" name="email" class="login-input" placeholder="Email Address"/>
+		<input type="password" name="password" class="login-input" placeholder="Password"/>
+		<button type="submit" name="login" class="login-button">Login</button>
         <p class="error-message">
             <?php
                 if (isset($_SESSION["errormsg"])) {

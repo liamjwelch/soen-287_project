@@ -52,20 +52,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="utf-8">
     <title>Create an account - AHED</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
     <script src="js/register.js" type="text/javascript"></script>
 </head>
 <body>
-<main class="form" onsubmit="return validateForm()">
-    <h1>Create an Account</h1>
+<main class="form signup-main" onsubmit="return validateForm()">
     <form class="signup-form" method="post" action="">
+        <h1>Create an Account</h1>
         <fieldset>
             <legend>Account Information</legend>
-            <label>Your Email Address:
+            <label>Email Address:
                 <input type="text" name="email" placeholder="me@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
                        title="valid email address" maxlength="50" required>
             </label>
-            <label>Your Password:
+            <label>Password:
                 <input type="password" name="password" placeholder="Password" minlength="10" maxlength="250" required>
             </label>
         </fieldset>
@@ -82,10 +82,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <label><input type="checkbox" name="tc_agreed" class="checkbox" required>I agree with the <a href="terms.php">terms and conditions</a></label>
         <input type="hidden" name="role" value="student">
         <p id="js-validation-msg" class="error-message"></p>
-        <button type="reset">start over</button>
-        <button type="submit">Submit</button>
+        <button type="reset" class="registration-button">start over</button>
+        <button type="submit" class="registration-button">Submit</button>
         <p class="error-message">
-        <p class="userExists"><?php if ($error) echo $errorPrompt;?></p>
+        <p class="userExists"><?php if ($error) echo $errorPrompt;?>
             <?php
             if (isset($_SESSION["errormsg"])) {
                 echo $_SESSION["errormsg"];
