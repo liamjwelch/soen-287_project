@@ -1,8 +1,35 @@
 <?php
-require "database/universities.php";
+require_once "database/universities.php";
+require_once "database/students.php";
+require_once "match.php";
+
 session_start();
-// This must be changed by the recommendation function
-$recommendations = getAllUniversities();
+
+function getRecommendations() {
+    $universities = getAllUniversities();
+    $student = getStudent($_SESSION["email"]);
+    if (is_null($student)) {
+        return [];
+    }
+    foreach($universities as &$university) {
+        $university["score"] = getMatchingScore($student, $university);
+    }
+    usort($universities, function ($uni1, $uni2) {  // sort universities by score in decreasing order (highest first)
+        return $uni2["score"] <=> $uni1["score"];
+    });
+    return $universities;
+}
+
+$recommendations = [];
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    $recommendations = getRecommendations();
+}
+else {
+    header("location: login.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +47,8 @@ include_once "navbar.php";
 ?>
 
 <main>
-    <?php foreach ($recommendations as $recommendation) {?>
+    <?php foreach ($recommendations as $recommendation) {
+        ?>
         <section class='university-card' onclick="window.location='university.php?id=<?= $recommendation['id']; ?>'">
             <section class="uni-logo">
                 <img src='<?= getUniversityLogoCompleteFilename($recommendation['id'])?>'
@@ -28,7 +56,7 @@ include_once "navbar.php";
             </section>
             <section class="uni-info">
                 <h2><?= $recommendation['name']; ?></h2>
-                <h4>Matching score: X</h4>
+                <h4>Matching score: <?= $recommendation["score"]; ?></h4>
                 <p><?= $recommendation['description']; ?></p>
             </section>
         </section>

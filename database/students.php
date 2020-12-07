@@ -92,3 +92,18 @@ function addStudent($email, $city, $state, $country, $program, $gpa, $preferredS
         throw new PDOException("Error when adding student to the database: " . $statement->errorInfo()[2]);
     }
 }
+
+function getStudent($email) {
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT * FROM students WHERE email = BINARY ?");
+
+    $success = $statement->execute([$email]);
+    if ($success) {
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if (count($rows) === 1) {
+            return $rows[0];
+        }
+        return null;
+    }
+    throw new PDOException("Error when getting student: " . $statement->errorInfo());
+}
