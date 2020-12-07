@@ -12,10 +12,14 @@ else {
 }
 $content = "
     
-    <section class='welcome-msg'>
-        <p>$greeting</p>
-    </section>
-    
+    <article class='centered-article bragging'>
+        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
+        <p>Every university in North America at your fingertips. What are you waiting for?</p>
+        <section class='welcome-msg'>
+            <p>$greeting</p>
+        </section>
+    </article> 
+
     <!-- AUTOMATIC SLIDESHOW IMAGES -->
     <article class='slideshow'>
         <img src='images/mit.jpg' alt='MIT' class='slides_image'>
@@ -28,7 +32,7 @@ $content = "
     </article>
     
      <article class='centered-article highlights-article'>
-        <h1>We make sure every students find the right university for them.</h1>
+        <h1>We make sure every students find the right university for them</h1>
         <section class='highlight'>
             <img src='images/users.ico' class='icons'>
             <h2>YOUR PROFILE</h2>
@@ -45,26 +49,14 @@ $content = "
             <p>Our cloud-based geographical search has you covered!</p>
         </section>
      </article>
- 
-     <article class='centered-article bragging'>
-        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
-        <p>Every university in North America at your fingertips. What are you waiting for?</p>
-    </article>
      
     <article class='centered-article cards'>
-        <section class='card'>
-            <h2>STOP WASTING TIME</h2>
-            <p>Don't spend your precious time researching about 15 universities.</p>
-            <p>We know everything about every university!</p>
-        </section>
-        <section class='card'>
-            <h2>NO NEED TO TAKE HARD DECISION</h2>
-            <p>Our AI will make the right decision for YOUR future.</p>
-            <p>All you need to do is fill up your profile with your preferences.</p>
-        </section>
+        <h1 class='cards-h1'>TESTIMONIES FROM OUR USERS</h1>
+        <section class='card' id='card'></section>
     </article>
 	
-	<script src='js/carousel.js' type='text/javascript'></script>
+    <script src='js/carousel.js' type='text/javascript'></script>
+    <script src='js/testimonies.js' type='text/javascript'></script>
 ";
 
 include "template.php";

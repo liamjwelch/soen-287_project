@@ -1,6 +1,6 @@
 .welcome-msg {
     background-color: rgba(255, 255, 255, 0.3);
-    position: absolute;
+    position: center;
     width: 100%;
     padding: 10px 80px;
     text-align: center;
@@ -9,16 +9,20 @@
     color: #680F13;
 }
 
-.welcome-msg a {
-    color: #680F13;
+.welcome-msg a { color: #680F13; }
+
+.slides_image {
+    display: block; 
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.slides_image { width: 100%;}
-
 .centered-article {
-    padding: 80px 120px;
+    padding: 15px 120px;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
+    background-color: white;
 }
 
 .bragging { background: white; color: #680F13;}
@@ -48,9 +52,9 @@
     color: #680F13;
     border-bottom: 4px solid #ccc;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
-.card:hover {
-    border-color: #C4A1A1;
-}
+.card:hover { border-color: #C4A1A1; }
+
+.cards-h1 { color: white; }
