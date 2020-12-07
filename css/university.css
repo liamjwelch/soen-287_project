@@ -192,6 +192,12 @@ nav.profile-bar a.active {
     padding: 0px 20px;
     font-size: 15px;
 }
+#notFound {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
 
 /* Style for smaller screens (less than 925px wide) */

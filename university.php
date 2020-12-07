@@ -6,7 +6,7 @@ $programs = $university['programs'];
 
 // Only for testing purposes
 $score = 0.5;
-$gpa = floatval(3.50);
+$gpa = floatval(1.50);
 $budget = 10000;
 $residence = "United States";
 
@@ -103,19 +103,20 @@ include_once "navbar.php";
             </section>
         </section>
         <section class="profile-section" id="financial">
-                <?php foreach ($university['scholarships'] as $scholarship) {?>
-                    <section class="scholarship">
-                        <h4><strong>Scholarship: </strong><?= $scholarship['name']; ?></h4>
-                        <p name="gpa"><strong>Minimum GPA: </strong><?= $scholarship['minimumGPA']; ?></p>
-                        <p><strong>Amount: </strong><?= $scholarship['amount']; ?>$</p>
-                        <?php if($scholarship['financialNeed'] !== null) {?>
-                            <p name="financialNeed"><strong>Financial need: </strong><?= $scholarship['financialNeed']; ?>$</p>
-                        <?php } else {?>
-                            <p name="financialNeed"><strong>Financial need: </strong>0$</p>
-                        <?php }?>
-                    </section>
-                <?php } ?>
-                <button type="button" name="eligibility" value="Eligibility" onclick="checkEligibility()"><i class="fa fa-check"></i> Check eligibility</button>
+            <?php foreach ($university['scholarships'] as $scholarship) {?>
+                <section class="scholarship">
+                    <h4><strong>Scholarship: </strong><?= $scholarship['name']; ?></h4>
+                    <p name="gpa"><strong>Minimum GPA: </strong><?= $scholarship['minimumGPA']; ?></p>
+                    <p><strong>Amount: </strong><?= $scholarship['amount']; ?>$</p>
+                    <?php if($scholarship['financialNeed'] !== null) {?>
+                        <p name="financialNeed"><strong>Financial need: </strong><?= $scholarship['financialNeed']; ?>$</p>
+                    <?php } else {?>
+                        <p name="financialNeed"><strong>Financial need: </strong>0$</p>
+                    <?php }?>
+                </section>
+            <?php } ?>
+            <p id="notFound"></p>
+            <button type="button" name="eligibility" value="Eligibility" onclick="checkEligibility()"><i class="fa fa-check"></i> Check eligibility</button>
         </section>
     </article>
 </article>
@@ -123,6 +124,7 @@ include_once "navbar.php";
     // Display scholarships depending on user's eligibility
     function checkEligibility() {
         const scholarships = document.getElementsByClassName('scholarship');
+        let cont = scholarships.length;
         for (let i = 0; i < scholarships.length; i++) {
             scholarships.item(i).style.display = "";
 
@@ -137,11 +139,18 @@ include_once "navbar.php";
             }
 
             // Validate if the student meets the requirements
-            if (gpa !== null && parseFloat(gpa) < <?=$gpa; ?>) {
+            if (gpa !== null && parseFloat(gpa) > <?=$gpa; ?>) {
                 scholarships.item(i).style.display = "none";
+                cont--;
             } else if(financialNeed !== null && parseInt(financialNeed.slice(0, -1)) > <?=$budget; ?>) {
                 scholarships.item(i).style.display = "none";
+                cont--;
             }
+        }
+
+        // If the student is not eligible for any scholarship, display a message
+        if(cont === 0) {
+            document.getElementById('notFound').innerText = "Sorry, you are not eligible for any scholarship.";
         }
     }
 </script>
