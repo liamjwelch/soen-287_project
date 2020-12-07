@@ -7,7 +7,7 @@
 <html lang="en">
 
     <head>
-        <link rel="styleSheet" type="text/css" href="css.T&C.css">
+        <link rel="styleSheet" type="text/css" href="css/T&C.css">
     </head>
 
     <body>
