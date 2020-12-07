@@ -87,7 +87,7 @@ else {
 
     <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
-      <p><textarea name='description' id='bio' rows='4' cols='50' oninput='this.className = ''' placeholder='Provide a brief bio to let your personality shine!'></textarea></p>
+      <p><textarea name='description' id='bio' rows='4' oninput='this.className = ''' placeholder='Provide just a few details, you can add more to your profile later!'></textarea></p>
     </div>
     <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>

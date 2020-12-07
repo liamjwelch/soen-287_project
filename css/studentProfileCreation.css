@@ -41,6 +41,10 @@ input {
   font-size: 12px; 
 }
 
+textarea{
+  width:40%;
+}
+
 .message a {
   color: #680F13;
   text-decoration: none;
