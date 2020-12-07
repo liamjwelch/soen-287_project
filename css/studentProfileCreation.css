@@ -1,3 +1,9 @@
+p.message{
+  font-size: 19px;
+  font-style:oblique;
+  margin-bottom: 4px;
+}
+
 body {
   padding-top: 8%;
   background: url("../images/login-background.jpg") 50% fixed;
@@ -56,6 +62,10 @@ https://www.w3schools.com/howto/howto_js_form_steps.asp
 
 div.tabSetting{
   display:flex;
+}
+
+div.tab{
+  margin-top: 10px;
 }
 
 body {

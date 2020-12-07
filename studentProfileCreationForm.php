@@ -52,7 +52,7 @@ else {
 <body>
 <form id='regForm' action='' method="post">
 
-        <p><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
+        <p class="message"><?php echo getUserFirstName($email) . ", finish setting up your profile"; ?></p>
         <input type="hidden" name="token" value="<?= $_GET["token"] ?>">
         <input type="hidden" name="email" value="<?= $email ?>">
         <input type="hidden" name="preferredRanking" value="50" required>
@@ -80,7 +80,7 @@ else {
             ?>
       </select></p>
 
-    <p><input type='number' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
+    <p><input type='range' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
     <p><input type='number' placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>
     <p><input type='number' placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
     </div>
