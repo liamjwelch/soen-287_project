@@ -127,9 +127,8 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 <h4>GPA:</h4>
 <p><?php echo $row['gpa']; ?></p>
 <h4>Preferences for future school:</h4>
-<p><?php echo $preferredSetting; ?></p>
-<p><?php echo $preferredRanking; ?></p>
-<p><?php echo $preferredSize; ?></p>
+<p><?php echo $row['preferredSetting']; ?></p>
+<p><?php echo $row['preferredSize']; ?></p>
 </div>
 <div>
 </body>
