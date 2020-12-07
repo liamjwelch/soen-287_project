@@ -4,6 +4,10 @@ require_once "connection.php";
 require_once "users.php";
 
 
+define("SCHOOL_SIZE_SMALL", "0-10000");
+define("SCHOOL_SIZE_MEDIUM", "10000-30000");
+define("SCHOOL_SIZE_LARGE", "30000-1000000");  // using 1 million as "no upper bound"
+
 function createStudentsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE students (email VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -21,6 +25,8 @@ function createStudentsTable() {
     try {
         $success = $statement->execute();
         if ($success) {
+            addStudent("nico@example.com", "Montreal", "QC", "Canada", "Computer Science", 3.45, "suburban",
+                       SCHOOL_SIZE_SMALL, 20, 30000, 5000, "I'm Nico! I like Linux, Python and Weizenbier!");
             return "Table students created successfully <br>";
         }
         else {
