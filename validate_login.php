@@ -9,10 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     try {
         if (doCredentialsExist($email, $password)) {
-            $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $email;
-            header("location: homepage.php");
-            return;
+
+            if (isEmailVerified($email)) {
+                $_SESSION["loggedin"] = true;
+                header("location: homepage.php");
+            }
+            else {
+                // email still not validated or account creation incomplete
+                header("location: emailConfirmation.php");
+            }
+            exit();
         }
         else {
             $_SESSION["errormsg"] = "Invalid login credentials";

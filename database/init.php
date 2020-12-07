@@ -3,6 +3,7 @@
 require_once "connection.php";
 require_once "universities.php";
 require "users.php";
+require "students.php";
 
 $conn = createConnection();
 
@@ -10,7 +11,7 @@ $conn = createConnection();
  * return an associative arrays with keys being the main table names, and the values the sub tables of a given table.
  */
 function getTableNames() {
-    return ["users" => [], "universities" => ["programs", "scholarships", "costs"]];
+    return ["users" => [], "universities" => ["programs", "scholarships", "costs"], "students" => []];
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

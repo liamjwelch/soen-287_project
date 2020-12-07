@@ -16,7 +16,7 @@
         {"name":"McGill Student Loan","minimumGPA": 3.2,"residence": null,"financialNeed": 10000, "amount": 10000}
     ],
     "deadline": "January 2",
-    "description": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV,[9] the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. ",
+    "description": "McGill University is a public research university in Montreal, Quebec, Canada. Founded in 1821 by royal charter granted by King George IV, the university bears the name of James McGill, a Scottish merchant whose bequest in 1813 formed the university's precursor, University of McGill College (or simply, McGill College); the name was officially changed to McGill University in 1885. ",
     "contactPage": "https://www.mcgill.ca/contact-us/",
     "phone": "5143984455",
     "email": "student.services@mcgill.ca",

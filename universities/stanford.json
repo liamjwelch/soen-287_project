@@ -14,7 +14,7 @@
         {"name":"Stanford Financial Aid", "minimumGPA": 3.5,"residence": null, "financialNeed": 25000, "amount": 40000}
     ],
     "deadline": "January 2",
-    "description": "Stanford University, officially Leland Stanford Junior University,[12] is a private research university in Stanford, California. Stanford is ranked among the most prestigious universities in the world by numerous major education publications.",
+    "description": "Stanford University, officially Leland Stanford Junior University, is a private research university in Stanford, California. Stanford is ranked among the most prestigious universities in the world by numerous major education publications.",
     "contactPage": "https://www.stanford.edu/contact/",
     "phone": "6507232300",
     "email": "admission@stanford.edu",
