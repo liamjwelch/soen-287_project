@@ -22,7 +22,7 @@
     "email": "webmaster@berkeley.edu",
     "size": 43204 ,
     "ranking": 22,
-    "cost": {"residents": 36700, "nonResidents": 66500},
+    "cost": {"resident": 36700, "nonResident": 66500},
     "setting": "urban",
     "address": "200 California Hall, Berkeley, CA 94720",
     "avgGPA": 3.89
