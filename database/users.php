@@ -53,6 +53,14 @@ function getUserFirstName($email) {
     return $rows[0][0];
 }
 
+function getUserFirstAndLast($email) {
+    $connection = createConnection();
+    $statement = $connection->prepare("SELECT firstName, lastName FROM users WHERE email = BINARY ?");
+    $statement->execute([$email]);
+    $result = $statement->fetch();
+    return $result;
+}
+
 function doesUserExist($email) {
     $connection = createConnection();
     $statement = $connection->prepare("SELECT email FROM users WHERE email = BINARY ?");

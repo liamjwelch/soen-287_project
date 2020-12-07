@@ -14,13 +14,6 @@ else {
 
 $row = getStudent($_SESSION["email"]);
 
-$studentDescription = $row['city'];
-$major = 'Physics';
-$GPA = '3.2';
-$preferredSize = 'Small';
-$preferredRanking = 'Top 50';
-$preferredSetting = 'Suburban';
-$city = $row['city'];
 
 ?>
 
@@ -102,6 +95,7 @@ button:hover, a:hover {
 <main>
 <body>
 <?php $row = getStudent($_SESSION['email']); ?>
+<?php $firstAndLast = getUserFirstAndLast($_SESSION["email"]); ?>
 <!-- 
 Appropriated from
 https://www.w3schools.com/howto/howto_css_profile_card.asp
@@ -111,7 +105,7 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 
 <div class='card'>
   <img src='images/albertE.jpg' alt='John' style='width:100%'>
-  <h1><?php echo getUserFirstName($_SESSION["email"]); ?></h1>
+  <h1><?php echo $firstAndLast['firstName'] ?>  <?php echo $firstAndLast['lastName'] ?></h1>
   <p class='title'><?php echo $row["program"]; ?></p>
   <a href='https://en.wikipedia.org/wiki/Albert_Einstein'><i class='fa fa-twitter'></i></a>
   <a href='https://en.wikipedia.org/wiki/Albert_Einstein'><i class='fa fa-linkedin'></i></a>
@@ -122,13 +116,14 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 <div class='about'>
 <h2>About me:</h2>
 <p><?php echo $row['description']; ?></p>
+<p>Here's a quote I take inspiration from: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
 <div class='inlineText'>
 </div>
 <h4>GPA:</h4>
 <p><?php echo $row['gpa']; ?></p>
 <h4>Preferences for future school:</h4>
-<p><?php echo $row['preferredSetting']; ?></p>
-<p><?php echo $row['preferredSize']; ?></p>
+<p>I would prefer to be in a "<?php echo $row['preferredSetting']; ?>" setting.</p>
+<p>The size of student population which best suits me is: "<?php echo $row['preferredSize']; ?>" students.</p>
 </div>
 <div>
 </body>
