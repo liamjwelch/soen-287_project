@@ -1,0 +1,57 @@
+html {
+    min-width: 700px;
+    overflow: scroll;
+}
+
+main {
+    padding: 70px 80px;
+    margin: auto;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.university-card {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 30px;
+    background: white;
+    color: #680F13;
+    border: solid 1px #680F13;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.university-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.uni-logo {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 210px;
+}
+.uni-logo img {
+    width: 170px;
+    margin: auto;
+}
+
+.uni-info {
+    display: inline-block;
+    width: calc(100% - 210px);
+    float: right;
+    padding: 10px 40px;
+}
+
+.uni-info h2{ text-transform: uppercase;}
+.uni-info p{
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Style for smaller screens (less than 675px wide) */
+@media screen and (max-width: 700px) {
+    /* Hide the text on the navbar */
+    nav a{ font-size: 0;}
+    /* Display only the icons on the navbar */
+    nav .icons { font-size: 30px; line-height: 80px;}
+}
