@@ -12,13 +12,11 @@ else {
 }
 $content = "
     
-    <article class='centered-article bragging'>
+    <section class='welcome-msg'>
         <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
         <p>Every university in North America at your fingertips. What are you waiting for?</p>
-        <section class='welcome-msg'>
-            <p>$greeting</p>
-        </section>
-    </article> 
+        <p>$greeting</p>
+    </section>
 
     <!-- AUTOMATIC SLIDESHOW IMAGES -->
     <article class='slideshow'>
@@ -32,26 +30,36 @@ $content = "
     </article>
     
      <article class='centered-article highlights-article'>
-        <h1>We make sure every students find the right university for them</h1>
-        <section class='highlight'>
-            <img src='images/users.ico' class='icons'>
-            <h2>YOUR PROFILE</h2>
-            <p>Create YOUR personalized student profile now!</p>
-        </section>
-         <section class='highlight'>
-            <img src='images/star.ico' class='icons'>
-            <h2>YOUR RECOMMENDATIONS</h2>
-            <p> Our AI-driven algorithm will help you find the perfect institution to further your education.</p>
-        </section>
-        <section class='highlight'>
-            <img src='images/map.ico' class='icons'>
-            <h2>NEXT TO HOME OR ABROAD?</h2>
-            <p>Our cloud-based geographical search has you covered!</p>
-        </section>
+        <h1>We make sure every student find the right university</h1>
+        <table>
+            <tr>
+                <td>
+                    <section class='highlight'>
+                        <img src='images/users.ico' class='icons'>
+                        <h2>YOUR PROFILE</h2>
+                        <p>Create your student profile now! Add relevant information and find personalized features.</p>
+                    </section>
+                </td>
+                <td>
+                    <section class='highlight'>
+                    <img src='images/star.ico' class='icons'>
+                    <h2>RECOMMENDATIONS</h2>
+                    <p> Our AI-driven algorithm will help you find the perfect institution to further your education.</p>
+                    </section>
+                </td>
+                <td>
+                    <section class='highlight'>
+                        <img src='images/map.ico' class='icons'>
+                        <h2>NEXT TO HOME OR ABROAD?</h2>
+                        <p>Our cloud-based geographical search has you covered!</p>
+                    </section>
+                </td>
+            </tr>     
+        </table>
      </article>
      
-    <article class='centered-article cards'>
-        <h1 class='cards-h1'>TESTIMONIES FROM OUR USERS</h1>
+    <article class='centered-article cards-article'>
+        <h1>Testimonials from our users</h1>
         <section class='card' id='card'></section>
     </article>
 	
