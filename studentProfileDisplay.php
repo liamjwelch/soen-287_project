@@ -13,7 +13,6 @@ else {
 }
 
 $row = getStudent($_SESSION["email"]);
-//print_r($row['state']);
 
 $studentDescription = $row['city'];
 $major = 'Physics';
@@ -23,12 +22,23 @@ $preferredRanking = 'Top 50';
 $preferredSetting = 'Suburban';
 $city = $row['city'];
 
+?>
 
-$content = "
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $title;?></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <?php
+        foreach ($styles as $stylesheet) {
+            echo '<link rel="stylesheet" type="text/css" href="' . $stylesheet . '">';
+        }
+    ?>
 
-<style>
-
-div.inline{
+    <style>
+      div.inline{
 display:flex;
 }
 
@@ -86,11 +96,12 @@ a {
 button:hover, a:hover {
   opacity: 0.7;
 }
-
-</style>
-
+    </style>
+</head>
+<?php include "navbar.php" ?>
+<main>
 <body>
-
+<?php $row = getStudent($_SESSION['email']); ?>
 <!-- 
 Appropriated from
 https://www.w3schools.com/howto/howto_css_profile_card.asp
@@ -100,8 +111,8 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 
 <div class='card'>
   <img src='images/albertE.jpg' alt='John' style='width:100%'>
-  <h1>Albert Einstein</h1>
-  <p class='title'>Physics Major</p>
+  <h1><?php echo getUserFirstName($_SESSION["email"]); ?></h1>
+  <p class='title'><?php echo $row["program"]; ?></p>
   <a href='https://en.wikipedia.org/wiki/Albert_Einstein'><i class='fa fa-twitter'></i></a>
   <a href='https://en.wikipedia.org/wiki/Albert_Einstein'><i class='fa fa-linkedin'></i></a>
   <a href='https://en.wikipedia.org/wiki/Albert_Einstein'><i class='fa fa-facebook'></i></a>
@@ -110,23 +121,18 @@ https://www.w3schools.com/howto/howto_css_profile_card.asp
 
 <div class='about'>
 <h2>About me:</h2>
-<p><?php echo $studentDescription; ?></p>
+<p><?php echo $row['description']; ?></p>
 <div class='inlineText'>
-<h4>Intended Major:</h4>
-<p><?php echo $major; ?></p>
 </div>
 <h4>GPA:</h4>
-<p></p>
+<p><?php echo $row['gpa']; ?></p>
 <h4>Preferences for future school:</h4>
 <p><?php echo $preferredSetting; ?></p>
 <p><?php echo $preferredRanking; ?></p>
 <p><?php echo $preferredSize; ?></p>
-
 </div>
-
 <div>
-
 </body>
-";
-
-include "template.php";
+</main>
+<?php readfile("footer.html"); ?>
+</html>

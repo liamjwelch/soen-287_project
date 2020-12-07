@@ -95,7 +95,7 @@ function addStudent($email, $city, $state, $country, $program, $gpa, $preferredS
 
 function getStudent($email) {
     $connection = createConnection();
-    $statement = $connection->prepare("SELECT city, state, country FROM students WHERE email = BINARY ?");
+    $statement = $connection->prepare("SELECT city, state, country, program, gpa, preferredSetting, preferredSize, description FROM students WHERE email = BINARY ?");
     $statement->execute([$email]);
     $row = $statement->fetch();
     //print_r($row);
