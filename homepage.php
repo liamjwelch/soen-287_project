@@ -13,8 +13,6 @@ else {
 $content = "
     
     <section class='welcome-msg'>
-        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
-        <p>North-american students trust us to find the perfect university for them since 1794!</p>
         <p>$greeting</p>
     </section>
     
@@ -38,7 +36,7 @@ $content = "
         </section>
          <section class='highlight'>
             <img src='images/star.ico' class='icons'>
-            <h2>RECOMMENDATIONS</h2>
+            <h2>YOUR RECOMMENDATIONS</h2>
             <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams.</p>
         </section>
         <section class='highlight'>
