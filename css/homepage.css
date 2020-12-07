@@ -24,7 +24,7 @@
     margin-right: auto;
 }
 
-.centered-article {
+.centered-section {
     padding: 40px 80px;
     font-family: Verdana, Geneva, sans-serif;
     text-align: center;
@@ -34,16 +34,16 @@
 .bragging { background: white; color: #680F13;}
 .bragging p { margin: 0;}
 
-.highlights-article { color: #680F13; }
-.highlights-article h1 { font-size: 25px; text-transform: uppercase;}
-.highlights-article h2 { font-size: 20px;}
-.highlights-article table td { width: 33%;}
+.highlights-section { color: #680F13; }
+.highlights-section h1 { font-size: 25px; text-transform: uppercase;}
+.highlights-section h2 { font-size: 20px;}
+.highlights-section table td { width: 33%;}
 .highlight { margin: 20px;}
 .highlight img { width: 30%;}
 .highlight p { text-align: justify; padding: 0 10px;}
 
-.cards-article { background: #680F13; color: white; }
-.cards-article h1 { text-transform: uppercase; }
+.cards-section { background: #680F13; color: white; }
+.cards-section h1 { text-transform: uppercase; }
 
 .card {
     display: inline-block;
