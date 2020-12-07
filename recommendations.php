@@ -23,7 +23,11 @@ function getRecommendations() {
 $recommendations = [];
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    $recommendations = getRecommendations();
+    foreach(getRecommendations() as $recommendation) {
+        if ($recommendation["score"] > 0) {
+            $recommendations[] = $recommendation;
+        }
+    }
 }
 else {
     header("location: login.php");
@@ -47,7 +51,9 @@ include_once "navbar.php";
 ?>
 
 <main>
-    <?php foreach ($recommendations as $recommendation) {
+    <?php
+    if (count($recommendations) > 0) {
+        foreach ($recommendations as $recommendation) {
         ?>
         <section class='university-card' onclick="window.location='university.php?id=<?= $recommendation['id']; ?>'">
             <section class="uni-logo">
@@ -60,7 +66,21 @@ include_once "navbar.php";
                 <p><?= $recommendation['description']; ?></p>
             </section>
         </section>
-    <?php }?>
+    <?php
+        }
+    }
+    else {
+        echo "<section class='university-card'>
+                <section class='uni-logo' style='background-color: #680F13'>
+                    <img src='images/logo.png' alt='AHED LOGO'>
+                </section>
+                <section class='uni-info'>
+                    <h2>Sorry, no match found</h2>
+                    <p>Modify your profile and try again.</p>
+                </section>
+            </section>";
+    }
+    ?>
 </main>
 <?php
 readfile("footer.html");
