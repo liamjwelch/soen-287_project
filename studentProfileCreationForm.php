@@ -47,7 +47,7 @@ else {
     <meta charset="UTF-8">
     <title>Dummy new student form</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
 <main class="form">
@@ -59,12 +59,12 @@ else {
         <label>State/Province<input name="state" value="Somewhere" required></label>
         <label>Country<input name="country" value="Tatooine" required></label>
         <label>Program<select name="program">
-                <option value="placeholder">Please select your desired program</option>
-                <?php
-                foreach(getAllProgramNames() as $program) {
-                    echo "<option value='$program'>$program</option>";
-                }
-                ?>
+            <option value="placeholder">Please select your desired program</option>
+            <?php
+            foreach(getAllProgramNames() as $program) {
+                echo "<option value='$program'>$program</option>";
+            }
+            ?>
         </label>
         <label>GPA<input name="gpa" value="3.4" required></label>
         <label>Preferred setting<input name="preferredSetting" value="rural" required></label>

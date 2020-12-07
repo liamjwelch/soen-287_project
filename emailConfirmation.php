@@ -1,56 +1,41 @@
 <?php
 
 require "database/users.php";
+require_once "functions/accountCreation.php";
+require_once "email.php";
 
 session_start();
 
 if (isset($_GET["resend"]) && $_GET["resend"]) {
-    $validationToken = bin2hex(random_bytes(25));
-    setToken($_SESSION["email"], $validationToken);
-    $_SESSION["token"] = $validationToken;
+    if (isset($_SESSION["email"])) {
+        $validationToken = generateValidationToken();
+        setToken($_SESSION["email"], $validationToken);
+        $url = getEmailVerificationURL($validationToken, $_SESSION["email"]);
+        $name = getUserFullName($_SESSION["email"]);
+        sendAccountCreationEmail($name, $_SESSION["email"], $url);
+    }
+    else {
+        // TODO tell user that email no longer in session and he should log in to be able to get it
+    }
 }
 
-if (isset($_SESSION["token"])) {
-    $token = $_SESSION["token"];
-    $encodedEmail = urlencode($_SESSION["email"]);
-    $url = "studentProfileCreationForm.php?token=$token&email=$encodedEmail";
-    $_SESSION["token"] = null;
-}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Confirm your email address</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/form.css">
 </head>
 <body>
-<?php include "navbar.php"; ?>
-
-<main>
-    <h1>Confirm your email address</h1>
-    <p>
-        An email was sent to <?= $_SESSION["email"]; ?>.
-        Follow the instructions in the email to complete the creation of your account.
-    </p>
-    <p>
-        Didn't receive an email yet? Click <a href="emailConfirmation.php?resend=1">here</a> to resend the email.
-    </p>
-    <p>
-        <?php
-            if (isset($url)) {
-                echo "For now, we just print the link <a href='$url'>here</a>";
-            }
-            else {
-                echo "You'll need to get another email";
-            }
-        ?>
-    </p>
+<main class="confirmation">
+    <h2>Confirm your email address</h2>
+    <p class="email">An email was sent to <?= $_SESSION["email"]; ?>.</p>
+    <p class="email">Follow the instructions in the email to complete the creation of your account.</p>
+    <p class="confirmationMessage">Didn't receive an email yet? Click <a href="emailConfirmation.php?resend=1">here</a> to resend the email.</p>
 </main>
-
-<?php readfile("footer.html"); ?>
 </body>
 </html>
 
