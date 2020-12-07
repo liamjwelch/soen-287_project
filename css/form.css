@@ -11,8 +11,9 @@ h1 {
   text-transform: uppercase;
   color: #680F13;
 }
+h2 { text-transform: uppercase;}
 
-.form {
+main {
   min-width: 420px;
   margin: auto;
   background-color: rgba(254, 251, 251, 0.9);
@@ -30,6 +31,11 @@ h1 {
 }
 .signup-form {
   padding: 40px;
+}
+.confirmation {
+  width: 70%;
+  padding: 40px 45px;
+  color: #680F13;
 }
 
 input {
@@ -100,3 +106,10 @@ legend {
 }
 a {color: #680F13;}
 p.userExists { color:purple;}
+
+.email { margin: 10px 0 0; font-size: 15px;}
+.confirmationMessage {
+  margin: 20px 0 0;
+  color: #b38080;
+  font-size: 14px;
+}

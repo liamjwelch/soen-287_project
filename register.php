@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="js/register.js" type="text/javascript"></script>
 </head>
 <body>
-<main class="form signup-main" onsubmit="return validateForm()">
+<main class="signup-main" onsubmit="return validateForm()">
     <form class="signup-form" method="post" action="">
         <h1>Create an Account</h1>
         <fieldset>
