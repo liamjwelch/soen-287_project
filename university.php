@@ -43,7 +43,7 @@ include_once "navbar.php";
     <aside class="contact-info">
         <section class="info">
             <h4>CONTACT INFORMATION</h4>
-            <p class="info-title"><strong>Tlf: </strong><?= $university['phone']; ?></p>
+            <p class="info-title"><strong>Phone: </strong><?= $university['phone']; ?></p>
             <p class="info-title"><strong>Email: </strong><?= $university['email']; ?></p>
             <p class="info-title"><strong>Webpage: </strong><a href="<?= $university['contactPage']; ?>"><?= $university['contactPage']; ?></a></p>
             <p class="info-title"><strong>Address:</strong><br><?= $university['address']; ?></p>
@@ -66,8 +66,8 @@ include_once "navbar.php";
         <section class="profile-section" id="description">
             <p><strong>DESCRIPTION:</strong><br><?= $university['description']; ?></p>
             <p><strong>COST:</strong><br>
-            <strong>Residents: </strong><?= $university['cost']['resident']; ?>$<br>
-            <strong>Non-residents: </strong><?= $university['cost']['nonResident']; ?>$</p>
+            <strong>Residents of <?= explode(', ', $university['location'])[2]; ?>: </strong><?= $university['cost']['resident']; ?>$<br>
+            <strong>Others: </strong><?= $university['cost']['nonResident']; ?>$</p>
         </section>
         <section class="profile-section" id="programs">
             <table id="programs-table">
