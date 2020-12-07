@@ -26,8 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $validationToken = bin2hex(random_bytes(25));
 
     try {
-        $foundEmail = checkUserExistence($email);
-        if($email = $foundEmail){
+        if(doesUserExist($email)){
             $error = TRUE;
             $errorPrompt = "Sorry, but that email already exists in our records. Please select another email.";
         } else {

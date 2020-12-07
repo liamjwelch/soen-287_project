@@ -53,12 +53,16 @@ function getUserFirstName($email) {
     return $rows[0][0];
 }
 
-function checkUserExistence($email) {
+function doesUserExist($email) {
     $connection = createConnection();
     $statement = $connection->prepare("SELECT email FROM users WHERE email = BINARY ?");
     $statement->execute([$email]);
-    $rows = $statement->fetchAll(PDO::FETCH_NUM);
-    return $rows[0][0];
+    $foundEmail = $statement->fetchAll(PDO::FETCH_NUM);
+    if ($email = $foundEmail) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
 function doCredentialsExist($username, $password) {
