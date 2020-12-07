@@ -1,8 +1,6 @@
 <?php
-
-    $file = "testimony.txt";
+    $file = "testimonials.txt";
     $testimonies = array();
-
     if(file_exists($file)) {
         $fileToOpen = fopen($file, "r");
         while(!feof($fileToOpen)) {
@@ -11,7 +9,4 @@
         }
         fclose($fileToOpen);
     }
-    
     echo json_encode($testimonies);
-
-?>
