@@ -15,6 +15,7 @@ h2 { text-transform: uppercase;}
 
 main {
   min-width: 420px;
+  min-height: auto;
   margin: auto;
   background-color: rgba(254, 251, 251, 0.9);
   text-align: center;
