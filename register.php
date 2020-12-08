@@ -62,26 +62,31 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <h1>Create an Account</h1>
         <fieldset>
             <legend>Account Information</legend>
-            <label>Email Address:
-                <input type="text" name="email" placeholder="me@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
+            <label>
+                <input type="text" name="email" placeholder="email@example.com" pattern="[\w.-]+@[\w.-]+\.[A-Za-z]{2,}"
                        title="valid email address" maxlength="50" required>
             </label>
-            <label>Password:
+            <label>
                 <input type="password" name="password" placeholder="Password" minlength="10" maxlength="250" required>
             </label>
-            <label>Confirm Password:
+            <label>
                 <input type="password" name="confirm" placeholder="Confirm Password" minlength="10" maxlength="250" required>
             </label>
         </fieldset>
         <fieldset>
             <legend>Personal Information</legend>
-            <label>First Name:<input type="text" name="firstName" pattern="[A-Za-z-]+" title="only letters and hyphens" maxlength="20"
-                                     required>
+            <label>
+                <input type="text" name="firstName" placeholder="First Name"
+                          pattern="[A-Za-z-]+" title="only letters and hyphens" maxlength="20" required>
             </label>
-            <label>Last Name:<input type="text" name="lastName" maxlength="20" pattern="[A-Za-z-]+" title="only letters and hyphens"
-                                    required></label>
-            <label>Phone Number:<input type="tel" name="phone" placeholder="123-456-7890"  pattern="\d{3}-\d{3}-\d{4}"
-                                       title="123-456-7890" required></label>
+            <label>
+                <input type="text" name="lastName" maxlength="20" placeholder="Last Name"
+                          pattern="[A-Za-z-]+" title="only letters and hyphens" required>
+            </label>
+            <label>
+                <input type="tel" name="phone" placeholder="Phone: 123-456-7890"  pattern="\d{3}-\d{3}-\d{4}"
+                          title="123-456-7890" required>
+            </label>
         </fieldset>
         <label><input type="checkbox" name="tc_agreed" class="checkbox" required>I agree with the <a id="modal-button" href="#">terms and conditions</a></label>
 
