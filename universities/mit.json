@@ -14,7 +14,7 @@
         {"name":"First Year Grant","minimumGPA": 2.0,"residence": null,"financialNeed": 10000,"amount": 2000},
         {"name":"MIT Scholarship","minimumGPA": 2.0,"residence": null,"financialNeed": 30000,"amount": 50000}
     ],
-    "deadline": "january 1",
+    "deadline": "January 1",
     "description": "Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts. The institute is a land-grant, sea-grant, and space-grant university, with an urban campus that extends more than a mile (1.6 km) alongside the Charles River. The institute also encompasses a number of major off-campus facilities such as the MIT Lincoln Laboratory, the Bates Center, and the Haystack Observatory, as well as affiliated laboratories such as the Broad and Whitehead Institutes.",
     "contactPage": "https://www.mit.edu/contact/",
     "phone": "6172531000",

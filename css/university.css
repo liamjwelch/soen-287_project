@@ -1,0 +1,210 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+}
+h3 { text-align: center;}
+a { color: #680F13;}
+
+article.wrapper { display: flex;}
+article.wrapper button {
+    padding: 15px 25px;
+    border: none;
+    background-color: #680F13;
+    color: white;
+    font-family: Verdana, Geneva, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+#sendEmail {
+    padding: 15px 25px;
+    background-color: #680F13;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Background image */
+article.profile-background { width: 100%;}
+.uni-image { width: 100%; height: 300px; object-fit: cover;}
+
+/* Profile image */
+section.profile-image {
+    position: absolute;
+    top: 300px;
+    margin-left: 60px;
+    height: 150px;
+    width: 150px;
+    border: solid 2px #680F13;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+}
+#uniLogo {
+    width: 110px;
+    height: 110px;
+    display: block;
+    margin: auto;
+}
+
+/* Contact info aside */
+aside.contact-info{ padding: 30px 0; overflow: scroll; min-width: 265px; max-width: 275px}
+.info {
+    padding: 43px 30px;
+    margin: auto;
+    color: #680F13;
+}
+.info h4 {font-size: 13px;}
+.info p {font-size: 12px; padding-top: 6px;}
+
+article.profile-main {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/* Title section */
+#title{
+    padding: 10px 30px 10px 30px;
+}
+#title h1 {
+    color: #680F13;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-block-start: 10px;
+    margin-block-end: 0;
+    font-size: 30px
+}
+#title h4 {
+    padding: 10px;
+    text-align: center;
+    width: 170px;
+    font-size: 13px;
+    color: #680F13;
+    border: solid 1px #680F13;
+}
+#title p {font-size: 13px; color: dimgray;}
+#title button { float: right;}
+
+/* Navigation bar */
+nav.profile-bar {
+    display: inline-block;
+    border: solid 1px #D5D8DC;
+    color: #680F13;
+    width: 100%;
+}
+nav.profile-bar a {
+    border: solid 1px #D5D8DC;
+    float: left;
+    color: #680F13;
+    padding: 5px 40px;
+    text-align: center;
+}
+nav.profile-bar .icons {
+    margin-block-start: 5px;
+    color: #D5D8DC;
+    font-size: 30px;
+}
+nav.profile-bar p {
+    font-size: 10px;
+    margin-block-start: 5px;
+}
+nav.profile-bar a:hover {
+    background-color: #680F13;
+    color: #D5D8DC;
+}
+nav.profile-bar a.active {
+    background-color: #680F13;
+    color: white;
+}
+
+/* Navbar sections */
+.profile-section{
+    margin: 0;
+    padding: 30px 40px;
+    color: #680F13;
+    font-size: 17px;
+}
+
+/* General info section */
+#description p {
+    margin-block-start: 0;
+    text-align: justify;
+    line-height: 150%;
+}
+
+/* Programs section */
+#programs-table {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    color: #680F13;
+    border: solid 2px #D5D8DC;
+    border-collapse: collapse;
+    box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.2);
+}
+#programs-table th, #programs-table td {
+    padding: 13px 20px;
+    border: solid 2px #D5D8DC;
+}
+#programs-table th {
+    background-color: #D5D8DC;
+    color: #501517;
+}
+
+/* Application section */
+#deadline {
+    padding: 15px 30px 15px 0;
+    width: 320px;
+    border: solid 1px #680F13;
+    border-radius: 20px;
+}
+#deadline a { text-decoration: none;}
+#deadline img {
+    width: 83px;
+    height: 70px;
+}
+#deadlineData {
+    padding-left: 25px;
+    font-size: 15px;
+}
+
+/* Financial aid section */
+#financial {
+    padding-top: 10px;
+}
+.scholarship {
+    margin: 20px 0;
+    border: solid 2px #D5D8DC;
+    border-radius: 2px;
+    box-shadow: 1px 5px 15px -1px rgba(0,0,0,0.2);
+    line-height: 100%;
+}
+.scholarship h4 {
+    margin: 0;
+    padding: 15px 20px;
+    background-color: #D5D8DC;
+    color: #501517;
+}
+.scholarship p {
+    padding: 0px 20px;
+    font-size: 15px;
+}
+#notFound {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* Style for smaller screens (less than 925px wide) */
+@media screen and (max-width: 925px) {
+    /* Hide the text on the navbar */
+    nav.profile-bar a{ font-size: 0;}
+    /* Display only the icons on the navbar */
+    nav.profile-bar .icons { font-size: 20px;}
+    nav.profile-bar .icons { line-height: 50px;}
+}
