@@ -50,7 +50,7 @@ footer a { color: #680F13;}
 #logout { font-size: 15px; }
 
 /* Style for smaller screens (less than 800px wide) */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     /* Hide the text on the navbar */
     nav a{ font-size: 0;}
     /* Display only the icons on the navbar */
