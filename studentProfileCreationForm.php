@@ -245,7 +245,6 @@ function validateForm() {
         display.innerHTML = message;
         return false;
     }
-    return true;
 
   return valid; // return the valid status
 }
