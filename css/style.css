@@ -37,17 +37,17 @@ nav a.active { font-weight: bold; background-color: #8D3A3B;}
 
 footer {
     width: 100%;
-    padding: 45px 60px;
+    padding: 35px 60px;
     background-color: white;
     text-align: center;
     color: #680F13;
     font-family: Verdana, Geneva, sans-serif;
     font-size: 12px;
 }
-footer a { color: #680F13; text-decoration: none;}
-.our_info { font-size: 10px;}
-.our_info a { text-decoration: underline;}
+footer a { color: #680F13;}
+.footer_info { font-size: 10px;}
 #teapot { width: 45px; height: 40px;}
+#logout { font-size: 15px; }
 
 /* Style for smaller screens (less than 800px wide) */
 @media screen and (max-width: 800px) {
