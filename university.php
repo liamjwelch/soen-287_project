@@ -8,6 +8,7 @@ session_start();
 $university = getUniversity($_GET['id']);
 $programs = $university['programs'];
 
+$student = null;
 $score = null;
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
@@ -123,7 +124,15 @@ include_once "navbar.php";
                 </section>
             <?php } ?>
             <p id="notFound"></p>
-            <button type="button" name="eligibility" value="Eligibility" onclick="checkEligibility()"><i class="fa fa-check"></i> Check eligibility</button>
+            <?php
+            if (is_null($student)) {
+                echo '<p>Log in to check if your eligible for scholarships</p>';
+            }
+            else {
+                echo '<button type="button" name="eligibility" value="Eligibility" onclick="checkEligibility()">
+                      <i class="fa fa-check"></i> Check eligibility</button>';
+            }
+            ?>
         </section>
     </article>
 </article>
