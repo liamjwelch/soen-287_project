@@ -63,9 +63,9 @@ else {
       <!-- One 'tab' for each step in the form: -->
       <!-- 1 -->
       <div class='tab'>Your current contact information:
-      <p><input placeholder='City...' oninput='this.className = ''' name='city' maxlength="50"></p>
-      <p><input placeholder='State...' oninput='this.className = ''' name='state' maxlength="50"></p>    
-      <p><input placeholder='Country...' oninput='this.className = ''' name='country' maxlength="50"></p>
+      <p><input placeholder='City...'  name='city' maxlength="50"></p>
+      <p><input placeholder='State...'  name='state' maxlength="50"></p>    
+      <p><input placeholder='Country...' name='country' maxlength="50"></p>
       </div>
 
       <!-- 2 -->
@@ -80,15 +80,15 @@ else {
             ?>
       </select></p>
 
-    <p><input type='number' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
-    <p><input type='number' placeholder='Household income...' oninput='this.className = ''' name='householdIncome'></p>
-    <p><input type='number' placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
+    <p><input type='number' min='1' max='4' placeholder='GPA' name='gpa'></p>
+    <p><input type='number' placeholder='Household income...' name='householdIncome'></p>
+    <p><input type='number' placeholder='Budget?' name='budget'></p>
     <p id="js-validation-msg"></p>
     </div>
 
     <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
-      <p><textarea name='description' id='bio' rows='4' oninput='this.className = ''' placeholder='Provide just a few details, you can add more to your profile later!'></textarea></p>
+      <p><textarea name='description' id='bio' rows='4' placeholder='Provide just a few details, you can add more to your profile later!'></textarea></p>
     </div>
     <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
@@ -245,6 +245,14 @@ function validateForm() {
         display.innerHTML = message;
         return false;
     }
+
+       if (validateGPA()) {
+        var message = "";
+        var display = document.getElementById("js-validation-msg");
+        display.innerHTML = message;
+        //return valid;
+    }
+
 
   return valid; // return the valid status
 }
