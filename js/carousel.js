@@ -36,5 +36,5 @@ function testimonials() {
         currentTestimonyIndex = 0;
     else
         currentTestimonyIndex++;
-    setTimeout(testimonials, 10000);
+    setTimeout(testimonials, 6000);
 }
