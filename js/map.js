@@ -1,4 +1,3 @@
-//var popup = L.popup();
 map = L.map('mapId').setView([40.8088861, -96.7077751], 4);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -28,14 +27,15 @@ function addrSearch() {
     xmlhttp.send();
 }
 
+// Create marker with link to university profile
 function createMarkers(address, id, name) {
     var xmlhttp = new XMLHttpRequest();
-    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + addr;
+    const url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + address;
 
     xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            const coordinates = JSON.parse(xmlhttp.responseText);
-            const uni = L.latLng([coordinates[0].lat, coordinates[0].lat]);
+        if (this.readyState === 4 && this.status === 200) {
+            var coordinates = JSON.parse(xmlhttp.responseText);
+            const uni = L.latLng([coordinates[0].lat, coordinates[0].lon]);
             const link = "<a href='university.php?id=" + id + "'>" + name + "</a>";
             L.marker(uni).addTo(map).bindPopup(link);
         }

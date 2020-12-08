@@ -63,23 +63,6 @@ include_once "navbar.php";
     <?php foreach ($universities as $university) {?>
         createMarkers("<?= $university['address']; ?>", "<?= $university['id']; ?>", "<?= $university['name']; ?>");
     <?php } ?>
-
-    // Create marker with link to university profile
-    function createMarkers(address, id, name) {
-        var xmlhttp = new XMLHttpRequest();
-        const url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + address;
-
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                var coordinates = JSON.parse(xmlhttp.responseText);
-                const uni = L.latLng([coordinates[0].lat, coordinates[0].lon]);
-                const link = "<a href='university.php?id=" + id + "'>" + name + "</a>";
-                L.marker(uni).addTo(map).bindPopup(link);
-            }
-        };
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-    }
 </script>
 <article class='table-article'>
     <form class='filter'>
