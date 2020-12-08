@@ -58,6 +58,12 @@ include_once "navbar.php";
     </section>
 </article>
 <script src='js/map.js' type='text/javascript'></script>
+<script>
+    // Initialize Map
+    <?php foreach ($universities as $university) {?>
+        createMarkers("<?= $university['address']; ?>", "<?= $university['id']; ?>", "<?= $university['name']; ?>");
+    <?php } ?>
+</script>
 <article class='table-article'>
     <form class='filter'>
         <select name='country' id='country'>
