@@ -239,10 +239,6 @@ function validateForm() {
     }
   }
 
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-
    if (!validateGPA()) {
         var message = "GPA must be a number between 0 and 4.3";
         var display = document.getElementById("js-validation-msg");
