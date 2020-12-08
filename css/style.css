@@ -3,6 +3,11 @@
 body {
     margin: 0;
     background-color: #EBEDEF;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 nav.page-bar {
@@ -33,6 +38,10 @@ nav.page-bar a.active { font-weight: bold; background-color: #371216;}
     height: 70px;
     width: 70px;
     margin: 5px 20px;
+}
+
+main {
+    min-height: calc(100% - 80px - 220px);  /* height of body - height of nav - height of footer */
 }
 
 footer {
