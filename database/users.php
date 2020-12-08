@@ -13,6 +13,7 @@ function createUsersTable() {
         if ($statement->execute() === TRUE) {
             $message .= "Table users created successfully <br>";
             $result = addUser("nico@example.com", "qwerty", "student", "Nicolas", "Aubry", "1234553456");
+            setEmailVerified("nico@example.com");
             if ($result) {
                 $message .= "<br>Student nico@example.com added to database<br>";
             }
