@@ -83,6 +83,7 @@ else {
     <p><input type='number' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
     <p><input type='number' placeholder='Household income...' oninput='this.className = ''' name='householdIncome'></p>
     <p><input type='number' placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
+    <p id="js-validation-msg"></p>
     </div>
 
     <!-- 3 -->
@@ -237,6 +238,14 @@ function validateForm() {
       valid = false;
     }
   }
+
+   if (!validateGPA()) {
+        var message = "GPA must be a number between 0 and 4.3";
+        var display = document.getElementById("js-validation-msg");
+        display.innerHTML = message;
+        return false;
+    }
+    return true;
   // If the valid status is true, mark the step as finished and valid:
   // if (valid) {
   //   document.getElementsByClassName('step')[currentTab].className += ' finish';
@@ -252,6 +261,12 @@ function fixStepIndicator(n) {
   }
   //... and adds the 'active' class on the current step:
   x[n].className += ' active';
+}
+
+
+function validateGPA() {
+    var gpa = document.forms[0].gpa.value;
+    return gpa >= 0 && gpa <= 4.3;
 }
 </script>
 </main>
