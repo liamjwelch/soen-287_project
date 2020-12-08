@@ -1,22 +1,22 @@
 <?php
+
 require "database/universities.php";
+require "database/students.php";
+require "match.php";
+
 session_start();
 $university = getUniversity($_GET['id']);
 $programs = $university['programs'];
 
-// Only for testing purposes
-$score = 0.5;
-$gpa = floatval(1.50);
-$budget = 10000;
-$residence = "United States";
+$score = null;
 
-/*if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $student = getStudent($_SESSION["email"]);
     $gpa = $student['gpa'];
     $budget =  $student['budget'];
     $residence =  $student['country'];
-}*/
-// $score = ???
+    $score = getMatchingScore($student, $university);
+}
 
 ?>
 
@@ -55,7 +55,14 @@ include_once "navbar.php";
                 <a id="sendEmail" href="mailto:<?= $university['email']; ?>?Subject=Application"><i class="fa fa-envelope"></i> Send email</a>
             </h1>
             <p>World Ranking: <?= $university['ranking']; ?></p>
-            <h4>Matching score: <?= $score ?></h4>
+            <h4>Matching score:<?php
+                if (is_null($score)) {
+                    echo "log in to get your score";
+                }
+                else {
+                    echo $score;
+                }
+            ?></h4>
         </section>
         <nav class="profile-bar">
             <a class="active" href="#description" id="navDescription"><i class="fa fa-info icons"></i><p>General Info</p></a>
