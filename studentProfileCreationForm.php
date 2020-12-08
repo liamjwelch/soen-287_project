@@ -250,7 +250,6 @@ function validateForm() {
         var message = "";
         var display = document.getElementById("js-validation-msg");
         display.innerHTML = message;
-        //return valid;
     }
 
 
