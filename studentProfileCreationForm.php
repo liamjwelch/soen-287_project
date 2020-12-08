@@ -63,9 +63,9 @@ else {
       <!-- One 'tab' for each step in the form: -->
       <!-- 1 -->
       <div class='tab'>Your current contact information:
-      <p><input placeholder='City...'  name='city' maxlength="50"></p>
-      <p><input placeholder='State...'  name='state' maxlength="50"></p>    
-      <p><input placeholder='Country...' name='country' maxlength="50"></p>
+      <p><input oninput="this.className = ''" placeholder='City...'  name='city' maxlength="50"></p>
+      <p><input oninput="this.className = ''" placeholder='State...'  name='state' maxlength="50"></p>    
+      <p><input oninput="this.className = ''" placeholder='Country...' name='country' maxlength="50"></p>
       </div>
 
       <!-- 2 -->
@@ -80,9 +80,9 @@ else {
             ?>
       </select></p>
 
-    <p><input type='number' min='1' max='4' placeholder='GPA' name='gpa'></p>
-    <p><input type='number' placeholder='Household income...' name='householdIncome'></p>
-    <p><input type='number' placeholder='Budget?' name='budget'></p>
+    <p><input oninput="this.className = ''" type='number' min='1' max='4' placeholder='GPA' name='gpa'></p>
+    <p><input oninput="this.className = ''" type='number' placeholder='Household income...' name='householdIncome'></p>
+    <p><input oninput="this.className = ''" type='number' placeholder='Budget?' name='budget'></p>
     <p id="js-validation-msg"></p>
     </div>
 
@@ -239,6 +239,9 @@ function validateForm() {
     }
   }
 
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
    if (!validateGPA()) {
         var message = "GPA must be a number between 0 and 4.3";
         var display = document.getElementById("js-validation-msg");
@@ -250,6 +253,7 @@ function validateForm() {
         var message = "";
         var display = document.getElementById("js-validation-msg");
         display.innerHTML = message;
+        //return valid;
     }
 
 
