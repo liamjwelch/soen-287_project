@@ -4,6 +4,10 @@ require_once "connection.php";
 require_once "users.php";
 
 
+define("SCHOOL_SIZE_SMALL", "0-10000");
+define("SCHOOL_SIZE_MEDIUM", "10000-30000");
+define("SCHOOL_SIZE_LARGE", "30000-1000000");  // using 1 million as "no upper bound"
+
 function createStudentsTable() {
     $connection = createConnection();
     $statement = $connection->prepare("CREATE TABLE students (email VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -21,6 +25,8 @@ function createStudentsTable() {
     try {
         $success = $statement->execute();
         if ($success) {
+            addStudent("nico@example.com", "Montreal", "QC", "Canada", "Computer Science", 3.45, "suburban",
+                       SCHOOL_SIZE_SMALL, 20, 30000, 5000, "I'm Nico! I like Linux, Python and Weizenbier!");
             return "Table students created successfully <br>";
         }
         else {
@@ -95,9 +101,15 @@ function addStudent($email, $city, $state, $country, $program, $gpa, $preferredS
 
 function getStudent($email) {
     $connection = createConnection();
-    $statement = $connection->prepare("SELECT city, state, country, program, gpa, preferredSetting, preferredSize, description FROM students WHERE email = BINARY ?");
-    $statement->execute([$email]);
-    $row = $statement->fetch();
-    //print_r($row);
-    return $row;
+    $statement = $connection->prepare("SELECT * FROM students WHERE email = BINARY ?");
+
+    $success = $statement->execute([$email]);
+    if ($success) {
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+        if (count($rows) === 1) {
+            return $rows[0];
+        }
+        return null;
+    }
+    throw new PDOException("Error when getting student: " . $statement->errorInfo());
 }

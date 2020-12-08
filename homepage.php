@@ -1,70 +1,72 @@
 <?php
 require "database/users.php";
-
+require "database/universities.php";
 session_start();
 $title = "North America Higher Education Database";
 $styles = ["css/homepage.css"];
+$universities = getAllUniversities();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     $greeting = "Welcome back, ". getUserFirstName($_SESSION["email"]) . "!";
 }
 else {
-    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a> to let us find the university of your dreams!';
+    $greeting = '<a href="login.php">Log in</a> or <a href="register.php">register</a>';
 }
-$content = "
-    
-    <section class='welcome-msg'>
-        <p>$greeting</p>
-    </section>
-    
-    <!-- AUTOMATIC SLIDESHOW IMAGES -->
-    <article class='slideshow'>
-        <img src='images/mit.jpg' alt='MIT' class='slides_image'>
-        <img src='images/harvard.jpg' alt='Harvard' class='slides_image'>
-        <img src='images/stanford.jpg' alt='Stanford' class='slides_image'>
-        <img src='images/mcgill.jpg' alt='McGill' class='slides_image'>
-        <img src='images/concordia.jpg' alt='Concordia' class='slides_image'>
-        <img src='images/toronto.jpg' alt='Toronto' class='slides_image'>
-        <img src='images/harvard2.jpg' alt='Harvard' class='slides_image'>
-    </article>
-    
-     <article class='centered-article highlights-article'>
-        <h1>We are the Tinder of prospective students!</h1>
-        <section class='highlight'>
-            <img src='images/users.ico' class='icons'>
-            <h2>YOUR PROFILE</h2>
-            <p>Create YOUR personalized profile!</p>
-        </section>
-         <section class='highlight'>
-            <img src='images/star.ico' class='icons'>
-            <h2>YOUR RECOMMENDATIONS</h2>
-            <p>Our AI-driven algorithm will match YOU with the university of YOUR dreams.</p>
-        </section>
-        <section class='highlight'>
-            <img src='images/map.ico' class='icons'>
-            <h2>NEXT TO HOME OR ABROAD?</h2>
-            <p>Our cloud-based geographical search has you covered!</p>
-        </section>
-     </article>
- 
-     <article class='centered-article bragging'>
-        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
-        <p>North-american students trust us to find the perfect university for them since 1794!</p>
-    </article>
-     
-    <article class='centered-article cards'>
-        <section class='card'>
-            <h2>STOP WASTING TIME</h2>
-            <p>Don't spend your precious time researching about 15 universities.</p>
-            <p>We know everything about every university!</p>
-        </section>
-        <section class='card'>
-            <h2>NO NEED TO TAKE HARD DECISION</h2>
-            <p>Our AI will make the right decision for YOUR future.</p>
-            <p>All you need to do is fill up your profile with your preferences.</p>
-        </section>
-    </article>
-	
-	<script src='js/carousel.js' type='text/javascript'></script>
-";
+?>
 
-include "template.php";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"North America Higher Education Database"</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<?php include_once "navbar.php"; ?>
+    <article class='welcome-msg'>
+        <h1>AMERICAN HIGHER EDUCATION DATABASE</h1>
+        <p>Every university in North America at your fingertips. What are you waiting for?</p>
+        <p><?= $greeting; ?></p>
+    </article>
+    <section class='slideshow'>
+        <?php foreach ($universities as $university) {?>
+            <img src='<?= getUniversityImageCompleteFilename($university['id']); ?>' alt='<?= $university['id']; ?>' class='slides_image'>
+        <?php } ?>
+    </section>
+    <section class='centered-section highlights-section'>
+        <h1>We make sure every student find the right university</h1>
+        <table>
+            <tr>
+                <td>
+                    <section class='highlight'>
+                        <img src='images/users.ico' alt='User icon' class='icons'>
+                        <h2>YOUR PROFILE</h2>
+                        <p>Create your student profile now! Add relevant information and find personalized features.</p>
+                    </section>
+                </td>
+                <td>
+                    <section class='highlight'>
+                        <img src='images/star.ico' alt='Star icon' class='icons'>
+                        <h2>RECOMMENDATIONS</h2>
+                        <p> Our AI-driven algorithm will help you find the perfect institution to further your education.</p>
+                    </section>
+                </td>
+                <td>
+                    <section class='highlight'>
+                        <img src='images/map.ico' alt='Map icon' class='icons'>
+                        <h2>NEXT TO HOME OR ABROAD?</h2>
+                        <p>Our cloud-based geographical search has you covered!</p>
+                    </section>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section class='centered-section cards-section'>
+        <h1>Testimonials from our users</h1>
+        <section class='card' id='card'></section>
+    </section>
+    <script src='js/carousel.js' type='text/javascript'></script>
+<?php readfile("footer.html"); ?>
+</body>
+</html>

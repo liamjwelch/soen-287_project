@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                           $_POST["description"]);
             $_SESSION["email"] = $_POST["email"];
             $_SESSION["loggedin"] = true;
-            header("location: studentProfileDisplay.php");
+            header("location: homepage.php");
             exit();
         }
         catch (Exception $e) {
@@ -63,9 +63,9 @@ else {
       <!-- One 'tab' for each step in the form: -->
       <!-- 1 -->
       <div class='tab'>Your current contact information:
-      <p><input placeholder='City...' oninput='this.className = ''' name='city' maxlength="50"></p>
-      <p><input placeholder='State...' oninput='this.className = ''' name='state' maxlength="50"></p>    
-      <p><input placeholder='Country...' oninput='this.className = ''' name='country' maxlength="50"></p>
+      <p><input oninput="this.className = ''" placeholder='City...'  name='city' maxlength="50"></p>
+      <p><input oninput="this.className = ''" placeholder='State...'  name='state' maxlength="50"></p>    
+      <p><input oninput="this.className = ''" placeholder='Country...' name='country' maxlength="50"></p>
       </div>
 
       <!-- 2 -->
@@ -80,14 +80,15 @@ else {
             ?>
       </select></p>
 
-    <p><input type='number' min='1' max='4' placeholder='GPA' oninput='this.className = ''' name='gpa'></p>
-    <p><input type='number' placeholder='Household income...' oninput='this.className = ''' name='houseHoldIncome'></p>
-    <p><input type='number' placeholder='Budget?' oninput='this.className = ''' name='budget'></p>
+    <p><input oninput="this.className = ''" type='number' min='1' max='4' placeholder='GPA' name='gpa'></p>
+    <p><input oninput="this.className = ''" type='number' placeholder='Household income...' name='householdIncome'></p>
+    <p><input oninput="this.className = ''" type='number' placeholder='Budget?' name='budget'></p>
+    <p id="js-validation-msg"></p>
     </div>
 
     <!-- 3 -->
     <div class='tab'>Tell us a bit about yourself:
-      <p><textarea name='description' id='bio' rows='4' oninput='this.className = ''' placeholder='Provide just a few details, you can add more to your profile later!'></textarea></p>
+      <p><textarea name='description' id='bio' rows='4' placeholder='Provide just a few details, you can add more to your profile later!'></textarea></p>
     </div>
     <div class='tab'>Now, for the exciting part... 
       <p>Let's decide on some attributes of your dream school, to match with our superior AI driven Match-Me algorithm.</p>
@@ -237,10 +238,24 @@ function validateForm() {
       valid = false;
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
-  // if (valid) {
-  //   document.getElementsByClassName('step')[currentTab].className += ' finish';
-  // }
+
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+
+   if (!validateGPA()) {
+        var message = "GPA must be a number between 0 and 4.3";
+        var display = document.getElementById("js-validation-msg");
+        display.innerHTML = message;
+        return false;
+    }
+
+       if (validateGPA()) {
+        var message = "";
+        var display = document.getElementById("js-validation-msg");
+        display.innerHTML = message;
+    }
+    
   return valid; // return the valid status
 }
 
@@ -252,6 +267,12 @@ function fixStepIndicator(n) {
   }
   //... and adds the 'active' class on the current step:
   x[n].className += ' active';
+}
+
+
+function validateGPA() {
+    var gpa = document.forms[0].gpa.value;
+    return gpa >= 0 && gpa <= 4.3;
 }
 </script>
 </main>
